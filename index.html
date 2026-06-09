@@ -1,0 +1,1462 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Upridzal — Digital Strategist</title>
+  <meta name="description" content="Digital Strategist specializing in Meta Ads, Content Strategy, and AI Tools. 3 years of helping brands and SMEs grow in digital." />
+  <meta name="author" content="Upridzal" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Upridzal — Digital Strategist" />
+  <meta property="og:description" content="Meta Ads · Content Strategy · AI Tools" />
+  <meta property="og:image" content="assets/og-image.jpg" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Upridzal — Digital Strategist" />
+  <meta name="twitter:description" content="Meta Ads · Content Strategy · AI Tools" />
+
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%230D0D0D'/%3E%3Ctext x='50' y='68' font-family='monospace' font-size='60' font-weight='bold' text-anchor='middle' fill='%23C8F135'%3EU%3C/text%3E%3C/svg%3E" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@500;600;700;800&family=DM+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+
+  <style>
+    :root {
+      --bg: #0D0D0D;
+      --surface: #151515;
+      --surface-2: #1C1C1C;
+      --text: #F0EDE8;
+      --text-dim: #888888;
+      --accent: #C8F135;
+      --border: #2A2A2A;
+      --font-display: 'Syne', sans-serif;
+      --font-body: 'DM Sans', sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+      --container: 1100px;
+      --ease: cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--bg);
+      color: var(--text);
+      font-size: 16px;
+      line-height: 1.6;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* Background grid pattern */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.015) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.015) 1px, transparent 1px);
+      background-size: 40px 40px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background: radial-gradient(ellipse at top, rgba(200,241,53,0.04), transparent 60%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .container {
+      max-width: var(--container);
+      margin: 0 auto;
+      padding: 0 24px;
+      position: relative;
+      z-index: 1;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    ::selection { background: var(--accent); color: var(--bg); }
+
+    /* ============ NAVBAR ============ */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      padding: 20px 0;
+      transition: all 0.3s var(--ease);
+      backdrop-filter: blur(0px);
+    }
+
+    .navbar.scrolled {
+      background: rgba(13, 13, 13, 0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 14px 0;
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 20px;
+      letter-spacing: -0.02em;
+    }
+    .logo span { color: var(--accent); }
+
+    .nav-menu {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+      align-items: center;
+    }
+
+    .nav-menu a {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text-dim);
+      transition: color 0.2s;
+      position: relative;
+    }
+
+    .nav-menu a:hover,
+    .nav-menu a.active {
+      color: var(--text);
+    }
+
+    .nav-menu a.active::before {
+      content: '';
+      position: absolute;
+      left: -10px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+
+    .lang-toggle {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--text-dim);
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      padding: 5px 12px;
+      border-radius: 999px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .lang-toggle:hover,
+    .lang-toggle.active-id {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .hamburger {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--text);
+      cursor: pointer;
+      padding: 8px;
+    }
+
+    /* ============ BUTTONS ============ */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 24px;
+      font-family: var(--font-body);
+      font-size: 15px;
+      font-weight: 500;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      cursor: pointer;
+      transition: all 0.3s var(--ease);
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: var(--bg);
+      animation: glow 3s ease-in-out infinite;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(200, 241, 53, 0.35);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--text);
+      border-color: var(--border);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      transform: translateY(-2px);
+    }
+
+    @keyframes glow {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(200, 241, 53, 0.3); }
+      50% { box-shadow: 0 0 0 8px rgba(200, 241, 53, 0); }
+    }
+
+    /* ============ HERO ============ */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 120px 0 80px;
+      position: relative;
+    }
+
+    .hero-grid {
+      width: 100%;
+      max-width: 880px;
+    }
+
+    .hero-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-mono);
+      font-size: 12px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      padding: 8px 14px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      margin-bottom: 32px;
+    }
+
+    .hero-label::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 8px var(--accent);
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.6; transform: scale(1.3); }
+    }
+
+    .hero h1 {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: clamp(40px, 7vw, 88px);
+      line-height: 1.02;
+      letter-spacing: -0.03em;
+      margin-bottom: 32px;
+    }
+
+    .hero h1 .accent {
+      color: var(--accent);
+      font-style: italic;
+      font-weight: 600;
+    }
+
+    .typewriter {
+      display: inline-block;
+      border-right: 3px solid var(--accent);
+      animation: blink 0.9s step-end infinite;
+      white-space: pre-wrap;
+    }
+
+    .typewriter.done { border-right-color: transparent; animation: none; }
+
+    @keyframes blink {
+      0%, 100% { border-color: var(--accent); }
+      50% { border-color: transparent; }
+    }
+
+    .hero-sub {
+      font-size: 17px;
+      color: var(--text-dim);
+      max-width: 560px;
+      margin-bottom: 40px;
+      line-height: 1.6;
+    }
+
+    .hero-sub strong {
+      color: var(--text);
+      font-weight: 500;
+    }
+
+    .hero-ctas {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    /* Terminal window decoration */
+    .terminal {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      font-family: var(--font-mono);
+      font-size: 12.5px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+    }
+
+    .terminal-bar {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 10px 14px;
+      background: var(--surface-2);
+      border-bottom: 1px solid var(--border);
+    }
+    .terminal-bar .dot {
+      width: 11px; height: 11px; border-radius: 50%;
+      background: var(--border);
+    }
+    .terminal-bar .label {
+      margin-left: 12px;
+      font-size: 11px;
+      color: var(--text-dim);
+    }
+
+    .terminal-body {
+      padding: 16px;
+      min-height: 200px;
+      color: var(--text);
+    }
+
+    .terminal-body .line { margin-bottom: 4px; white-space: pre; }
+    .terminal-body .prompt { color: var(--accent); }
+    .terminal-body .dim { color: var(--text-dim); }
+
+    /* ============ SECTIONS ============ */
+    section { padding: 100px 0; position: relative; }
+
+    .section-head {
+      margin-bottom: 60px;
+    }
+
+    .section-tag {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 12px;
+      display: inline-block;
+    }
+
+    .section-title {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: clamp(32px, 5vw, 56px);
+      letter-spacing: -0.02em;
+      line-height: 1.05;
+      margin-bottom: 14px;
+    }
+
+    .section-desc {
+      color: var(--text-dim);
+      font-size: 17px;
+      max-width: 560px;
+    }
+
+    /* ============ ABOUT ============ */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .about-text p {
+      color: var(--text);
+      font-size: 17px;
+      line-height: 1.75;
+      margin-bottom: 18px;
+    }
+    .about-text p:last-child { margin-bottom: 0; }
+    .about-text strong { color: var(--accent); font-weight: 500; }
+
+    .stats {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+    }
+
+    .stat {
+      padding-bottom: 28px;
+      border-bottom: 1px solid var(--border);
+    }
+    .stat:last-child { border-bottom: none; padding-bottom: 0; }
+
+    .stat-num {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: clamp(56px, 7vw, 88px);
+      color: var(--accent);
+      line-height: 1;
+      letter-spacing: -0.04em;
+      margin-bottom: 6px;
+    }
+
+    .stat-label {
+      font-size: 14px;
+      color: var(--text-dim);
+      font-family: var(--font-mono);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    /* ============ SKILLS ============ */
+    .skill-groups {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px 60px;
+    }
+
+    .skill-group h3 {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--text-dim);
+      margin-bottom: 18px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .pill {
+      padding: 10px 16px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      font-size: 14px;
+      color: var(--text);
+      cursor: default;
+      transition: all 0.25s var(--ease);
+    }
+
+    .pill:hover {
+      background: var(--accent);
+      color: var(--bg);
+      border-color: var(--accent);
+      transform: translateY(-2px);
+    }
+
+    /* ============ WORKS ============ */
+    .works {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .work {
+      display: grid;
+      grid-template-columns: 80px 1fr auto;
+      gap: 32px;
+      align-items: start;
+      padding: 36px 32px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      transition: all 0.35s var(--ease);
+      cursor: default;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .work::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, transparent 50%, rgba(200,241,53,0.04));
+      opacity: 0;
+      transition: opacity 0.35s var(--ease);
+      pointer-events: none;
+    }
+
+    .work:hover {
+      border-color: var(--accent);
+      transform: translateY(-4px);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+    }
+
+    .work:hover::before { opacity: 1; }
+
+    .work-num {
+      font-family: var(--font-mono);
+      font-size: 14px;
+      color: var(--accent);
+      letter-spacing: 0.05em;
+      padding-top: 4px;
+    }
+
+    .work-body h3 {
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 24px;
+      letter-spacing: -0.01em;
+      margin-bottom: 10px;
+      line-height: 1.2;
+    }
+
+    .work-tag {
+      display: inline-block;
+      padding: 4px 12px;
+      background: rgba(200,241,53,0.08);
+      color: var(--accent);
+      border-radius: 999px;
+      font-size: 12px;
+      font-family: var(--font-mono);
+      margin-bottom: 14px;
+      letter-spacing: 0.03em;
+    }
+
+    .work-body p {
+      color: var(--text-dim);
+      font-size: 15.5px;
+      line-height: 1.65;
+      max-width: 560px;
+    }
+
+    .work-duration {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--text-dim);
+      letter-spacing: 0.06em;
+      margin-bottom: 14px;
+    }
+
+    .work-duration::before {
+      content: '';
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--accent);
+      opacity: 0.7;
+      flex-shrink: 0;
+    }
+
+    .work-stats {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 24px;
+      margin-top: 20px;
+      padding-top: 18px;
+      border-top: 1px solid var(--border);
+    }
+
+    .work-stat {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .work-stat-num {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 20px;
+      color: var(--accent);
+      letter-spacing: -0.02em;
+      line-height: 1;
+    }
+
+    .work-stat-label {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      color: var(--text-dim);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .work-arrow {
+      align-self: center;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s var(--ease);
+      flex-shrink: 0;
+    }
+
+    .work:hover .work-arrow {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: var(--bg);
+      transform: rotate(-45deg);
+    }
+
+    /* ============ INLINE WORK PROOFS ============ */
+    .work-proofs {
+      display: flex;
+      gap: 12px;
+      margin-top: 20px;
+      flex-wrap: wrap;
+    }
+
+    .proof {
+      position: relative;
+      width: 156px;
+      aspect-ratio: 16 / 10;
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background: var(--surface-2);
+      transition: all 0.3s var(--ease);
+      flex-shrink: 0;
+      display: block;
+    }
+
+    .proof img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s var(--ease);
+    }
+
+    .proof:hover {
+      border-color: var(--accent);
+      transform: translateY(-3px);
+      box-shadow: 0 12px 24px rgba(0,0,0,0.3);
+    }
+
+    .proof:hover img { transform: scale(1.06); }
+
+    .proof .placeholder {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      color: var(--text-dim);
+      font-family: var(--font-mono);
+      font-size: 9.5px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .proof .placeholder svg {
+      width: 22px;
+      height: 22px;
+      opacity: 0.45;
+    }
+
+    .proof-metric {
+      position: absolute;
+      inset: auto 0 0 0;
+      padding: 18px 12px 10px;
+      background: linear-gradient(to top, rgba(0,0,0,0.92) 30%, transparent);
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 16px;
+      color: var(--accent);
+      letter-spacing: -0.01em;
+      line-height: 1;
+      display: flex;
+      align-items: baseline;
+      gap: 6px;
+    }
+
+    .proof-metric span {
+      font-family: var(--font-mono);
+      font-weight: 400;
+      font-size: 9.5px;
+      color: var(--text);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      opacity: 0.85;
+    }
+
+    /* ============ SERVICES ============ */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .service {
+      padding: 36px 28px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      transition: all 0.3s var(--ease);
+      position: relative;
+    }
+
+    .service:hover {
+      border-color: var(--accent);
+      transform: translateY(-4px);
+    }
+
+    .service-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      background: rgba(200,241,53,0.1);
+      color: var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 24px;
+    }
+
+    .service h3 {
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 22px;
+      margin-bottom: 12px;
+      letter-spacing: -0.01em;
+    }
+
+    .service p {
+      color: var(--text-dim);
+      font-size: 15px;
+      line-height: 1.65;
+    }
+
+    /* ============ CTA ============ */
+    .cta {
+      text-align: center;
+      padding: 140px 0;
+    }
+
+    .cta-title {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: clamp(48px, 8vw, 96px);
+      line-height: 1.0;
+      letter-spacing: -0.04em;
+      margin-bottom: 24px;
+    }
+    .cta-title .accent { color: var(--accent); font-style: italic; font-weight: 600; }
+
+    .cta-desc {
+      color: var(--text-dim);
+      font-size: 18px;
+      max-width: 540px;
+      margin: 0 auto 40px;
+      line-height: 1.6;
+    }
+
+    .cta-ctas {
+      display: flex;
+      gap: 14px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 60px;
+    }
+
+    .socials {
+      display: flex;
+      gap: 28px;
+      justify-content: center;
+      flex-wrap: wrap;
+      font-family: var(--font-mono);
+      font-size: 13px;
+      color: var(--text-dim);
+    }
+
+    .socials a {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: color 0.2s;
+    }
+
+    .socials a:hover { color: var(--accent); }
+
+    /* ============ FOOTER ============ */
+    footer {
+      padding: 40px 0;
+      border-top: 1px solid var(--border);
+      text-align: center;
+      color: var(--text-dim);
+      font-size: 13.5px;
+      font-family: var(--font-mono);
+    }
+
+    footer p { margin-bottom: 6px; }
+    footer .tagline { color: var(--text); font-family: var(--font-body); font-style: italic; font-size: 14px; }
+
+    /* ============ SCROLL ANIMATIONS ============ */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s var(--ease), transform 0.8s var(--ease);
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ============ RESPONSIVE ============ */
+    @media (max-width: 900px) {
+      .hero-grid { grid-template-columns: 1fr; gap: 40px; }
+      .terminal { max-width: 420px; }
+      .about-grid { grid-template-columns: 1fr; gap: 50px; }
+      .skill-groups { grid-template-columns: 1fr; gap: 32px; }
+      .services-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 768px) {
+      .container { padding: 0 20px; }
+      section { padding: 70px 0; }
+
+      .nav-menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 75%;
+        max-width: 320px;
+        height: 100vh;
+        background: var(--surface);
+        flex-direction: column;
+        justify-content: center;
+        gap: 28px;
+        padding: 40px;
+        transition: right 0.4s var(--ease);
+        border-left: 1px solid var(--border);
+      }
+      .nav-menu.open { right: 0; }
+      .nav-menu a { font-size: 20px; font-family: var(--font-display); }
+
+      .hamburger { display: block; z-index: 110; }
+
+      .hero { padding: 100px 0 60px; }
+      .hero-sub { font-size: 16px; }
+
+      .work {
+        grid-template-columns: 60px 1fr;
+        padding: 28px 22px;
+        gap: 20px;
+      }
+      .work-arrow { display: none; }
+      .work-body h3 { font-size: 20px; }
+
+      .cta { padding: 90px 0; }
+      .stats { gap: 24px; }
+      .stat { padding-bottom: 20px; }
+
+      .proof { width: calc(50% - 6px); }
+    }
+
+    @media (max-width: 480px) {
+      .hero-ctas { flex-direction: column; align-items: stretch; }
+      .btn { justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ============ NAVBAR ============ -->
+  <nav class="navbar" id="navbar">
+    <div class="container nav-inner">
+      <a href="#" class="logo">Upridzal<span>.</span></a>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <i data-lucide="menu"></i>
+      </button>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="#about" data-link data-i18n="nav-about">About</a></li>
+        <li><a href="#skills" data-link data-i18n="nav-skills">Skills</a></li>
+        <li><a href="#work" data-link data-i18n="nav-work">Work</a></li>
+        <li><a href="#services" data-link data-i18n="nav-services">Services</a></li>
+        <li><a href="#contact" data-link data-i18n="nav-contact">Contact</a></li>
+        <li><button class="lang-toggle" id="langToggle" onclick="toggleLang()">ID</button></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="hero">
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-text">
+          <div class="hero-label" data-i18n="hero-label">Digital Strategist</div>
+          <h1>
+            <span data-i18n="hero-h1a">I help brands</span> <span class="accent" data-i18n="hero-h1b">grow</span><br>
+            <span data-i18n="hero-h1c">through strategy that's</span><br>
+            <span class="typewriter" id="typewriter"></span>
+          </h1>
+          <p class="hero-sub">
+            <strong>Meta Ads · Content Strategy · AI Tools.</strong>
+          </p>
+          <div class="hero-ctas">
+            <a href="#work" class="btn btn-primary">
+              <span data-i18n="hero-cta1">See My Work</span>
+              <i data-lucide="arrow-right" style="width:16px;height:16px"></i>
+            </a>
+            <a href="#contact" class="btn btn-secondary" data-i18n="hero-cta2">Get in Touch</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ABOUT ============ -->
+  <section id="about">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="section-tag" data-i18n="tag-about">// 01 · About</span>
+        <h2 class="section-title" data-i18n="about-title">About Me</h2>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-text reveal">
+          <p data-i18n="about-p1">Three years deep in digital marketing: from audience research and content creation, to managing Meta Ads from setup to optimization.</p>
+          <p data-i18n="about-p2">I believe good strategy isn't just about ideas. It's about <strong>systems that can be repeated</strong>, measured, and constantly improved.</p>
+          <p data-i18n="about-p3">These days I also use AI to work faster, and I teach others how to do the same on TikTok.</p>
+        </div>
+
+        <div class="stats reveal">
+          <div class="stat">
+            <div class="stat-num" data-count="3" data-suffix="+">0</div>
+            <div class="stat-label" data-i18n="stat1">Years of Experience</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num" data-count="2033">0</div>
+            <div class="stat-label" data-i18n="stat2">TikTok Followers</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">∞</div>
+            <div class="stat-label" data-i18n="stat3">Cups of Coffee</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SKILLS ============ -->
+  <section id="skills">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="section-tag" data-i18n="tag-skills">// 02 · Skill Stack</span>
+        <h2 class="section-title" data-i18n="skills-title">Skill Stack</h2>
+        <p class="section-desc" data-i18n="skills-desc">What I bring to every project.</p>
+      </div>
+
+      <div class="skill-groups">
+        <div class="skill-group reveal">
+          <h3>Strategy</h3>
+          <div class="pills">
+            <span class="pill">Content Strategy</span>
+            <span class="pill">Campaign Planning</span>
+            <span class="pill">Audience Research</span>
+            <span class="pill">Brand Positioning</span>
+          </div>
+        </div>
+
+        <div class="skill-group reveal">
+          <h3>Execution</h3>
+          <div class="pills">
+            <span class="pill">Meta Ads</span>
+            <span class="pill">Content Creation</span>
+            <span class="pill">Copywriting</span>
+            <span class="pill">TikTok Ads</span>
+          </div>
+        </div>
+
+        <div class="skill-group reveal">
+          <h3>Tools &amp; AI</h3>
+          <div class="pills">
+            <span class="pill">Claude</span>
+            <span class="pill">ChatGPT</span>
+            <span class="pill">Gemini</span>
+            <span class="pill">Canva</span>
+            <span class="pill">Meta Ads Manager</span>
+            <span class="pill">CapCut</span>
+          </div>
+        </div>
+
+        <div class="skill-group reveal">
+          <h3>Vibe Coding</h3>
+          <div class="pills">
+            <span class="pill">Claude Code</span>
+            <span class="pill">Cursor</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ WORKS ============ -->
+  <section id="work">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="section-tag" data-i18n="tag-works">// 03 · Selected Works</span>
+        <h2 class="section-title" data-i18n="works-title">Selected Works</h2>
+        <p class="section-desc" data-i18n="works-desc">A few projects I've worked on.</p>
+      </div>
+
+      <div class="works">
+        <article class="work reveal">
+          <div class="work-num">01</div>
+          <div class="work-body">
+            <span class="work-tag">Content Strategy · Content Creation</span>
+            <h3>Personal Branding</h3>
+            <div class="work-duration" data-i18n="dur-pb">May 2025 to Present</div>
+            <p data-i18n="desc-pb">Helped an F&amp;B entrepreneur build their personal brand on TikTok from scratch. In just one month, the account hit 355K+ total views and grew to 500+ followers, driven by a content strategy built around authentic storytelling and niche positioning.</p>
+            <div class="work-stats">
+              <div class="work-stat"><div class="work-stat-num">500+</div><div class="work-stat-label">Followers</div></div>
+              <div class="work-stat"><div class="work-stat-num">355K</div><div class="work-stat-label">Total Views</div></div>
+            </div>
+            <div class="work-proofs">
+              <a class="proof" href="assets/proof/fnb-tiktok-analytics.jpg" target="_blank" rel="noopener">
+                <img src="assets/proof/fnb-tiktok-analytics.jpg" alt="TikTok analytics 355K views in one month" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+                <div class="placeholder" style="display:none"><i data-lucide="image"></i>Add proof</div>
+                <div class="proof-metric">355K<span>Views / 1 Month</span></div>
+              </a>
+            </div>
+          </div>
+          <div class="work-arrow"><i data-lucide="arrow-up-right" style="width:18px;height:18px"></i></div>
+        </article>
+
+        <article class="work reveal">
+          <div class="work-num">02</div>
+          <div class="work-body">
+            <span class="work-tag">Email Marketing · Marketing Management</span>
+            <h3>Research Synergy Foundation</h3>
+            <div class="work-duration" data-i18n="dur-rsf">January 2025 to Present</div>
+            <p data-i18n="desc-rsf">Drove targeted email marketing campaigns with a 21% open rate to boost event conversions. Also led marketing planning and management, contributing to a 9% year-over-year profit growth.</p>
+            <div class="work-stats">
+              <div class="work-stat"><div class="work-stat-num">400+</div><div class="work-stat-label">Emails Sent</div></div>
+              <div class="work-stat"><div class="work-stat-num">60+</div><div class="work-stat-label">Content Created</div></div>
+              <div class="work-stat"><div class="work-stat-num">1B</div><div class="work-stat-label">Yearly Revenue (IDR)</div></div>
+            </div>
+            <div class="work-proofs">
+              <a class="proof" href="assets/proof/rsf-social.jpg" target="_blank" rel="noopener">
+                <img src="assets/proof/rsf-social.jpg" alt="Research Synergy Foundation Instagram" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+                <div class="placeholder" style="display:none"><i data-lucide="image"></i>Add proof</div>
+                <div class="proof-metric">IG<span>Social Media</span></div>
+              </a>
+            </div>
+          </div>
+          <div class="work-arrow"><i data-lucide="arrow-up-right" style="width:18px;height:18px"></i></div>
+        </article>
+
+        <article class="work reveal">
+          <div class="work-num">03</div>
+          <div class="work-body">
+            <span class="work-tag">Social Media · Meta Ads</span>
+            <h3>Teman Publikasi</h3>
+            <div class="work-duration" data-i18n="dur-tp">October 2025 to Present</div>
+            <p data-i18n="desc-tp">Ran Meta Ads campaigns targeting researchers and academics, consistently achieving ROAS above 3x and peaking at 7x. Also initiated a full Instagram feed redesign to elevate the brand's visual identity, resulting in a more cohesive look that improved content engagement.</p>
+            <div class="work-stats">
+              <div class="work-stat"><div class="work-stat-num">100+</div><div class="work-stat-label">Content Created</div></div>
+              <div class="work-stat"><div class="work-stat-num">1M+</div><div class="work-stat-label">Organic Reach</div></div>
+              <div class="work-stat"><div class="work-stat-num">100M+</div><div class="work-stat-label">Revenue (IDR)</div></div>
+            </div>
+            <div class="work-proofs">
+              <a class="proof" href="assets/proof/teman-ads-roas.jpg" target="_blank" rel="noopener">
+                <img src="assets/proof/teman-ads-roas.jpg" alt="Meta Ads ROAS dashboard" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+                <div class="placeholder" style="display:none"><i data-lucide="image"></i>Add proof</div>
+                <div class="proof-metric">7x<span>ROAS Peak</span></div>
+              </a>
+              <a class="proof" href="assets/proof/teman-redesign.jpg" target="_blank" rel="noopener">
+                <img src="assets/proof/teman-redesign.jpg" alt="Instagram feed redesign before and after" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+                <div class="placeholder" style="display:none"><i data-lucide="image"></i>Add proof</div>
+                <div class="proof-metric">↗<span>Feed Redesign</span></div>
+              </a>
+            </div>
+          </div>
+          <div class="work-arrow"><i data-lucide="arrow-up-right" style="width:18px;height:18px"></i></div>
+        </article>
+
+        <article class="work reveal">
+          <div class="work-num">04</div>
+          <div class="work-body">
+            <span class="work-tag">Social Media · Meta Ads</span>
+            <h3>Slamet Motor Bandung</h3>
+            <div class="work-duration" data-i18n="dur-sm">March 2025 to May 2025</div>
+            <p data-i18n="desc-sm">Built a new social media account from zero to 500+ followers in two months, generating hundreds of leads with a ROAS of 13.</p>
+            <div class="work-stats">
+              <div class="work-stat"><div class="work-stat-num">500+</div><div class="work-stat-label">Followers Gained</div></div>
+              <div class="work-stat"><div class="work-stat-num">300+</div><div class="work-stat-label">Leads</div></div>
+              <div class="work-stat"><div class="work-stat-num">500K+</div><div class="work-stat-label">Reach</div></div>
+            </div>
+            <div class="work-proofs">
+              <a class="proof" href="assets/proof/slamet-roas.jpg" target="_blank" rel="noopener">
+                <img src="assets/proof/slamet-roas.jpg" alt="Meta Ads ROAS dashboard" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+                <div class="placeholder" style="display:none"><i data-lucide="image"></i>Add proof</div>
+                <div class="proof-metric">13<span>ROAS</span></div>
+              </a>
+              <a class="proof" href="assets/proof/slamet-followers.jpg" target="_blank" rel="noopener">
+                <img src="assets/proof/slamet-followers.jpg" alt="Followers growth" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+                <div class="placeholder" style="display:none"><i data-lucide="image"></i>Add proof</div>
+                <div class="proof-metric">500+<span>Followers / 2mo</span></div>
+              </a>
+            </div>
+          </div>
+          <div class="work-arrow"><i data-lucide="arrow-up-right" style="width:18px;height:18px"></i></div>
+        </article>
+
+        <article class="work reveal">
+          <div class="work-num">05</div>
+          <div class="work-body">
+            <span class="work-tag">Content Strategy · Content Creation</span>
+            <h3>Want to Sayang</h3>
+            <div class="work-duration" data-i18n="dur-wts">2024</div>
+            <p data-i18n="desc-wts">Developed a video content strategy for a blind date event organizer and relationship consultancy. After noticing static romance-quote posts underperformed, I pivoted to a casual, conversational format featuring 2 to 3 people discussing relatable romance topics. The format consistently drove 1,000+ views on Instagram and peaked at 29,000+ views on TikTok.</p>
+            <div class="work-stats">
+              <div class="work-stat"><div class="work-stat-num">30+</div><div class="work-stat-label">Participants / Batch</div></div>
+              <div class="work-stat"><div class="work-stat-num">50K+</div><div class="work-stat-label">Reach</div></div>
+            </div>
+            <div class="work-proofs">
+              <a class="proof" href="assets/proof/wts-tiktok.jpg" target="_blank" rel="noopener">
+                <img src="assets/proof/wts-tiktok.jpg" alt="TikTok analytics — 54K post views in 90 days" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+                <div class="placeholder" style="display:none"><i data-lucide="image"></i>Add proof</div>
+                <div class="proof-metric">54K<span>TikTok Views / 90d</span></div>
+              </a>
+              <a class="proof" href="assets/proof/wts-instagram.jpg" target="_blank" rel="noopener">
+                <img src="assets/proof/wts-instagram.jpg" alt="Instagram views" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+                <div class="placeholder" style="display:none"><i data-lucide="image"></i>Add proof</div>
+                <div class="proof-metric">1K+<span>IG / Video</span></div>
+              </a>
+            </div>
+          </div>
+          <div class="work-arrow"><i data-lucide="arrow-up-right" style="width:18px;height:18px"></i></div>
+        </article>
+
+        <article class="work reveal">
+          <div class="work-num">06</div>
+          <div class="work-body">
+            <span class="work-tag">Vibe Coding</span>
+            <h3>Portfolio Website (This Site)</h3>
+            <p data-i18n="desc-port">This site itself, built with vanilla HTML/CSS/JS and AI-assisted development as a showcase of vibe coding skills.</p>
+          </div>
+          <div class="work-arrow"><i data-lucide="arrow-up-right" style="width:18px;height:18px"></i></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SERVICES ============ -->
+  <section id="services">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="section-tag" data-i18n="tag-services">// 04 · Services</span>
+        <h2 class="section-title" data-i18n="svc-title">Services</h2>
+        <p class="section-desc" data-i18n="svc-desc">How I can help.</p>
+      </div>
+
+      <div class="services-grid">
+        <div class="service reveal">
+          <div class="service-icon"><i data-lucide="layout-grid"></i></div>
+          <h3 data-i18n="svc1-title">Content Strategy &amp; Creation</h3>
+          <p data-i18n="svc1-desc">From audience research and editorial calendars to producing the content itself: copy, carousels, and short-form video. For brands that want content with a clear direction, ready to ship.</p>
+        </div>
+
+        <div class="service reveal">
+          <div class="service-icon"><i data-lucide="target"></i></div>
+          <h3 data-i18n="svc2-title">Meta Ads Management</h3>
+          <p data-i18n="svc2-desc">Setup, optimization, and reporting for Meta Ads. ROAS-focused, not just vanity metrics.</p>
+        </div>
+
+        <div class="service reveal">
+          <div class="service-icon"><i data-lucide="sparkles"></i></div>
+          <h3 data-i18n="svc3-title">Digital Strategy</h3>
+          <p data-i18n="svc3-desc">End-to-end digital strategy tailored to your goals: growth, awareness, or conversions. Powered by data and sharpened by AI to move faster and hit harder.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CTA ============ -->
+  <section class="cta" id="contact">
+    <div class="container">
+      <div class="reveal">
+        <h2 class="cta-title">
+          <span data-i18n="cta-h1">Got a project?</span><br>
+          <span class="accent" data-i18n="cta-h2">Let's talk.</span>
+        </h2>
+        <p class="cta-desc" data-i18n="cta-desc">
+          Open for freelance projects, collaborations, and quick consultations.
+        </p>
+
+        <div class="cta-ctas">
+          <a href="http://wa.me/6281220694447" target="_blank" rel="noopener" class="btn btn-primary">
+            <i data-lucide="message-circle" style="width:16px;height:16px"></i>
+            <span data-i18n="cta-wa">Chat on WhatsApp</span>
+          </a>
+          <a href="mailto:upridzalpratama@gmail.com" class="btn btn-secondary">
+            <i data-lucide="mail" style="width:16px;height:16px"></i>
+            <span data-i18n="cta-email">Send an Email</span>
+          </a>
+        </div>
+
+        <div class="socials">
+          <a href="https://tiktok.com/@upridzal" target="_blank" rel="noopener">
+            <i data-lucide="music-2" style="width:14px;height:14px"></i>
+            TikTok / @upridzal
+          </a>
+          <a href="https://www.linkedin.com/in/upridzalmadanipratama/" target="_blank" rel="noopener">
+            <i data-lucide="linkedin" style="width:14px;height:14px"></i>
+            LinkedIn
+          </a>
+          <a href="mailto:upridzalpratama@gmail.com">
+            <i data-lucide="mail" style="width:14px;height:14px"></i>
+            upridzalpratama@gmail.com
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer>
+    <div class="container">
+      <p class="tagline">Built with vibe. Driven by strategy.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Initialize Lucide icons
+    lucide.createIcons();
+
+    // ============ i18n TRANSLATIONS ============
+    const translations = {
+      en: {
+        'nav-about': 'About', 'nav-skills': 'Skills', 'nav-work': 'Work',
+        'nav-services': 'Services', 'nav-contact': 'Contact',
+        'hero-label': 'Digital Strategist',
+        'hero-h1a': 'I help brands', 'hero-h1b': 'grow',
+        'hero-h1c': "through strategy that's",
+        'hero-cta1': 'See My Work', 'hero-cta2': 'Get in Touch',
+        'tag-about': '// 01 · About', 'about-title': 'About Me',
+        'about-p1': 'Three years deep in digital marketing: from audience research and content creation, to managing Meta Ads from setup to optimization.',
+        'about-p2': "I believe good strategy isn't just about ideas. It's about <strong>systems that can be repeated</strong>, measured, and constantly improved.",
+        'about-p3': 'These days I also use AI to work faster, and I teach others how to do the same on TikTok.',
+        'stat1': 'Years of Experience', 'stat2': 'TikTok Followers', 'stat3': 'Cups of Coffee',
+        'tag-skills': '// 02 · Skill Stack', 'skills-title': 'Skill Stack',
+        'skills-desc': 'What I bring to every project.',
+        'tag-works': '// 03 · Selected Works', 'works-title': 'Selected Works',
+        'works-desc': "A few projects I've worked on.",
+        'dur-pb': 'May 2025 to Present',
+        'desc-pb': "Helped an F&B entrepreneur build their personal brand on TikTok from scratch. In just one month, the account hit 355K+ total views and grew to 500+ followers, driven by a content strategy built around authentic storytelling and niche positioning.",
+        'dur-rsf': 'January 2025 to Present',
+        'desc-rsf': 'Drove targeted email marketing campaigns with a 21% open rate to boost event conversions. Also led marketing planning and management, contributing to a 9% year-over-year profit growth.',
+        'dur-tp': 'October 2025 to Present',
+        'desc-tp': 'Ran Meta Ads campaigns targeting researchers and academics, consistently achieving ROAS above 3x and peaking at 7x. Also initiated a full Instagram feed redesign to elevate the brand\'s visual identity, resulting in a more cohesive look that improved content engagement.',
+        'dur-sm': 'March 2025 to May 2025',
+        'desc-sm': 'Built a new social media account from zero to 500+ followers in two months, generating hundreds of leads with a ROAS of 13.',
+        'dur-wts': '2024',
+        'desc-wts': 'Developed a video content strategy for a blind date event organizer and relationship consultancy. After noticing static romance-quote posts underperformed, I pivoted to a casual, conversational format featuring 2 to 3 people discussing relatable romance topics. The format consistently drove 1,000+ views on Instagram and peaked at 29,000+ views on TikTok.',
+        'desc-port': 'This site itself, built with vanilla HTML/CSS/JS and AI-assisted development as a showcase of vibe coding skills.',
+        'tag-services': '// 04 · Services', 'svc-title': 'Services', 'svc-desc': 'How I can help.',
+        'svc1-title': 'Content Strategy & Creation',
+        'svc1-desc': 'From audience research and editorial calendars to producing the content itself: copy, carousels, and short-form video. For brands that want content with a clear direction, ready to ship.',
+        'svc2-title': 'Meta Ads Management',
+        'svc2-desc': 'Setup, optimization, and reporting for Meta Ads. ROAS-focused, not just vanity metrics.',
+        'svc3-title': 'Digital Strategy',
+        'svc3-desc': 'End-to-end digital strategy tailored to your goals: growth, awareness, or conversions. Powered by data and sharpened by AI to move faster and hit harder.',
+        'cta-h1': 'Got a project?', 'cta-h2': "Let's talk.",
+        'cta-desc': 'Open for freelance projects, collaborations, and quick consultations.',
+        'cta-wa': 'Chat on WhatsApp', 'cta-email': 'Send an Email',
+      },
+      id: {
+        'nav-about': 'Tentang', 'nav-skills': 'Keahlian', 'nav-work': 'Portofolio',
+        'nav-services': 'Layanan', 'nav-contact': 'Kontak',
+        'hero-label': 'Digital Strategist',
+        'hero-h1a': 'Saya bantu brand', 'hero-h1b': 'tumbuh',
+        'hero-h1c': 'lewat strategi yang',
+        'hero-cta1': 'Lihat Karya', 'hero-cta2': 'Hubungi Saya',
+        'tag-about': '// 01 · Tentang', 'about-title': 'Tentang Saya',
+        'about-p1': 'Tiga tahun berkutat di digital marketing: dari riset audiens dan pembuatan konten, hingga mengelola Meta Ads dari setup sampai optimasi.',
+        'about-p2': 'Strategi yang bagus bukan cuma soal ide. Ini soal <strong>sistem yang bisa dijalankan berulang</strong>, diukur hasilnya, dan terus diperbaiki.',
+        'about-p3': 'Sekarang saya juga aktif pakai AI untuk kerja lebih cepat, dan berbagi caranya ke orang lain lewat TikTok.',
+        'stat1': 'Tahun Pengalaman', 'stat2': 'Followers TikTok', 'stat3': 'Kopi yang Habis',
+        'tag-skills': '// 02 · Skill Stack', 'skills-title': 'Skill Stack',
+        'skills-desc': 'Yang saya bawa ke setiap project.',
+        'tag-works': '// 03 · Portofolio', 'works-title': 'Portofolio',
+        'works-desc': 'Beberapa project yang pernah saya kerjakan.',
+        'dur-pb': 'Mei 2025 sampai Sekarang',
+        'desc-pb': 'Membantu seorang entrepreneur F&B membangun personal brand di TikTok dari nol. Hanya dalam satu bulan, akun berhasil meraih 355K+ total tayangan dan tumbuh ke 500+ followers, berkat strategi konten berbasis storytelling autentik dan niche yang tepat.',
+        'dur-rsf': 'Januari 2025 sampai Sekarang',
+        'desc-rsf': 'Menjalankan kampanye email marketing bertarget dengan open rate 21% untuk mendorong konversi event. Sekaligus memimpin perencanaan dan manajemen marketing yang berkontribusi pada pertumbuhan profit 9% secara tahunan.',
+        'dur-tp': 'Oktober 2025 sampai Sekarang',
+        'desc-tp': 'Mengelola kampanye Meta Ads untuk audiens peneliti dan akademisi, dengan ROAS konsisten di atas 3x dan puncaknya 7x. Juga menginisiasi redesign feed Instagram untuk memperkuat identitas visual brand sehingga konten lebih kohesif dan meningkatkan engagement.',
+        'dur-sm': 'Maret 2025 sampai Mei 2025',
+        'desc-sm': 'Membangun akun media sosial dari nol hingga 500+ followers dalam dua bulan, menghasilkan ratusan leads dengan ROAS 13.',
+        'dur-wts': '2024',
+        'desc-wts': 'Mengembangkan strategi konten video untuk penyelenggara blind date dan konsultasi hubungan. Setelah memperhatikan postingan quote romansa tidak performa, saya pivot ke format percakapan santai menampilkan 2 sampai 3 orang membahas topik romansa yang relatable. Format ini secara konsisten meraih 1.000+ tayangan di Instagram dan puncaknya 29.000+ tayangan di TikTok.',
+        'desc-port': 'Website ini sendiri, dibangun dengan HTML/CSS/JS murni menggunakan AI-assisted development sebagai showcase kemampuan vibe coding.',
+        'tag-services': '// 04 · Layanan', 'svc-title': 'Layanan', 'svc-desc': 'Apa yang bisa saya bantu.',
+        'svc1-title': 'Strategi & Pembuatan Konten',
+        'svc1-desc': 'Dari riset audiens dan editorial calendar sampai eksekusi kontennya langsung: copywriting, carousel, dan video pendek. Untuk brand yang mau konten dengan arah yang jelas dan siap tayang.',
+        'svc2-title': 'Manajemen Meta Ads',
+        'svc2-desc': 'Setup, optimasi, dan pelaporan iklan Meta. Fokus pada ROAS, bukan sekadar angka vanity.',
+        'svc3-title': 'Strategi Digital',
+        'svc3-desc': 'Strategi digital end-to-end yang disesuaikan dengan target kamu: pertumbuhan, awareness, atau konversi. Didukung data dan dipertajam dengan AI untuk bergerak lebih cepat dan lebih efektif.',
+        'cta-h1': 'Punya project?', 'cta-h2': 'Mari ngobrol.',
+        'cta-desc': 'Terbuka untuk project freelance, kolaborasi, dan konsultasi singkat.',
+        'cta-wa': 'Chat via WhatsApp', 'cta-email': 'Kirim Email',
+      }
+    };
+
+    let currentLang = 'en';
+
+    function toggleLang() {
+      currentLang = currentLang === 'en' ? 'id' : 'en';
+      applyLang(currentLang);
+      const btn = document.getElementById('langToggle');
+      btn.textContent = currentLang === 'en' ? 'ID' : 'EN';
+      btn.classList.toggle('active-id', currentLang === 'id');
+      // update typewriter phrases
+      phrases = currentLang === 'id'
+        ? ['terukur.', 'berdampak.', 'berulang.']
+        : ['measurable.', 'impactful.', 'repeatable.'];
+    }
+
+    function applyLang(lang) {
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (translations[lang][key] !== undefined) {
+          el.innerHTML = translations[lang][key];
+        }
+      });
+    }
+
+    // ============ NAVBAR SCROLL ============
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 30) navbar.classList.add('scrolled');
+      else navbar.classList.remove('scrolled');
+    });
+
+    // ============ MOBILE MENU ============
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('navMenu');
+    hamburger.addEventListener('click', () => {
+      navMenu.classList.toggle('open');
+      const icon = navMenu.classList.contains('open') ? 'x' : 'menu';
+      hamburger.innerHTML = `<i data-lucide="${icon}"></i>`;
+      lucide.createIcons();
+    });
+    document.querySelectorAll('[data-link]').forEach(a => {
+      a.addEventListener('click', () => {
+        navMenu.classList.remove('open');
+        hamburger.innerHTML = `<i data-lucide="menu"></i>`;
+        lucide.createIcons();
+      });
+    });
+
+    // ============ ACTIVE NAV ON SCROLL ============
+    const sections = ['hero', 'about', 'skills', 'work', 'services', 'contact'];
+    const navLinks = document.querySelectorAll('.nav-menu a');
+    window.addEventListener('scroll', () => {
+      let current = 'hero';
+      sections.forEach(id => {
+        const el = document.getElementById(id);
+        if (el && window.scrollY >= el.offsetTop - 200) current = id;
+      });
+      navLinks.forEach(link => {
+        link.classList.toggle('active', link.getAttribute('href') === `#${current}`);
+      });
+    });
+
+    // ============ TYPEWRITER ============
+    const typewriterEl = document.getElementById('typewriter');
+    let phrases = ['measurable.', 'impactful.', 'repeatable.'];
+    let phraseIdx = 0, charIdx = 0, deleting = false;
+
+    function typeLoop() {
+      const current = phrases[phraseIdx];
+      if (!deleting) {
+        typewriterEl.textContent = current.slice(0, ++charIdx);
+        if (charIdx === current.length) {
+          deleting = true;
+          setTimeout(typeLoop, 1800);
+          return;
+        }
+      } else {
+        typewriterEl.textContent = current.slice(0, --charIdx);
+        if (charIdx === 0) {
+          deleting = false;
+          phraseIdx = (phraseIdx + 1) % phrases.length;
+        }
+      }
+      setTimeout(typeLoop, deleting ? 40 : 75);
+    }
+    typeLoop();
+
+    // ============ SCROLL REVEAL ============
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          observer.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+    reveals.forEach(el => observer.observe(el));
+
+    // ============ COUNTER ANIMATION ============
+    const counters = document.querySelectorAll('[data-count]');
+    const counterObserver = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          const el = e.target;
+          const target = parseInt(el.dataset.count);
+          const suffix = el.dataset.suffix || '';
+          const duration = 1600;
+          const start = performance.now();
+          function frame(now) {
+            const p = Math.min((now - start) / duration, 1);
+            const eased = 1 - Math.pow(1 - p, 3);
+            el.textContent = Math.floor(eased * target).toLocaleString('id-ID') + suffix;
+            if (p < 1) requestAnimationFrame(frame);
+            else el.textContent = target.toLocaleString('id-ID') + suffix;
+          }
+          requestAnimationFrame(frame);
+          counterObserver.unobserve(el);
+        }
+      });
+    }, { threshold: 0.4 });
+    counters.forEach(c => counterObserver.observe(c));
+  </script>
+</body>
+</html>
