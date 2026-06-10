@@ -23,6 +23,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@500;600;700;800&family=DM+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
 
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <script async src="https://www.tiktok.com/embed.js"></script>
 
   <style>
     :root {
@@ -710,6 +711,65 @@
       opacity: 0.85;
     }
 
+    /* ============ VIDEOS ============ */
+    .videos-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      align-items: start;
+    }
+
+    .video-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+      transition: all 0.3s var(--ease);
+    }
+
+    .video-card:hover {
+      border-color: var(--accent);
+      transform: translateY(-4px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    }
+
+    .video-card-label {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 18px 0;
+    }
+
+    .video-client {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--accent);
+    }
+
+    .video-platform {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      color: var(--text-dim);
+      letter-spacing: 0.06em;
+    }
+
+    .video-embed {
+      padding: 12px;
+    }
+
+    /* Override TikTok embed default styles */
+    .video-embed .tiktok-embed {
+      margin: 0 !important;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    @media (max-width: 900px) {
+      .videos-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
     /* ============ SERVICES ============ */
     .services-grid {
       display: grid;
@@ -839,6 +899,7 @@
       .about-grid { grid-template-columns: 1fr; gap: 50px; }
       .skill-groups { grid-template-columns: 1fr; gap: 32px; }
       .services-grid { grid-template-columns: 1fr; }
+      .videos-grid { grid-template-columns: 1fr; }
     }
 
     @media (max-width: 768px) {
@@ -902,6 +963,7 @@
         <li><a href="#about" data-link data-i18n="nav-about">About</a></li>
         <li><a href="#skills" data-link data-i18n="nav-skills">Skills</a></li>
         <li><a href="#work" data-link data-i18n="nav-work">Work</a></li>
+        <li><a href="#videos" data-link data-i18n="nav-videos">Videos</a></li>
         <li><a href="#services" data-link data-i18n="nav-services">Services</a></li>
         <li><a href="#contact" data-link data-i18n="nav-contact">Contact</a></li>
         <li><button class="lang-toggle" id="langToggle" onclick="toggleLang()">ID</button></li>
@@ -1173,11 +1235,71 @@
     </div>
   </section>
 
+  <!-- ============ VIDEOS ============ -->
+  <section id="videos">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="section-tag" data-i18n="tag-videos">// 04 · Video Work</span>
+        <h2 class="section-title" data-i18n="videos-title">Video Work</h2>
+        <p class="section-desc" data-i18n="videos-desc">Content I've created for clients.</p>
+      </div>
+
+      <div class="videos-grid">
+
+        <!-- Personal Branding Client -->
+        <div class="video-card reveal">
+          <div class="video-card-label">
+            <span class="video-client">Personal Branding</span>
+            <span class="video-platform">TikTok</span>
+          </div>
+          <div class="video-embed">
+            <blockquote class="tiktok-embed"
+              cite="https://www.tiktok.com/@ghovigha/video/7639772209040674068"
+              data-video-id="7639772209040674068">
+              <section></section>
+            </blockquote>
+          </div>
+        </div>
+
+        <!-- Research Synergy Foundation -->
+        <div class="video-card reveal">
+          <div class="video-card-label">
+            <span class="video-client">Research Synergy Foundation</span>
+            <span class="video-platform">TikTok</span>
+          </div>
+          <div class="video-embed">
+            <blockquote class="tiktok-embed"
+              cite="https://www.tiktok.com/@researchsynergy/video/7602474889550826753"
+              data-video-id="7602474889550826753">
+              <section></section>
+            </blockquote>
+          </div>
+        </div>
+
+        <!-- Want to Sayang -->
+        <div class="video-card reveal">
+          <div class="video-card-label">
+            <span class="video-client">Want to Sayang</span>
+            <span class="video-platform">TikTok</span>
+          </div>
+          <div class="video-embed">
+            <blockquote class="tiktok-embed"
+              cite="https://www.tiktok.com/@wanttosayang_/video/7612611539060673793"
+              data-video-id="7612611539060673793">
+              <section></section>
+            </blockquote>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
   <!-- ============ SERVICES ============ -->
   <section id="services">
     <div class="container">
       <div class="section-head reveal">
-        <span class="section-tag" data-i18n="tag-services">// 04 · Services</span>
+        <span class="section-tag" data-i18n="tag-services">// 05 · Services</span>
         <h2 class="section-title" data-i18n="svc-title">Services</h2>
         <p class="section-desc" data-i18n="svc-desc">How I can help.</p>
       </div>
@@ -1285,7 +1407,9 @@
         'dur-wts': '2024',
         'desc-wts': 'Developed a video content strategy for a blind date event organizer and relationship consultancy. After noticing static romance-quote posts underperformed, I pivoted to a casual, conversational format featuring 2 to 3 people discussing relatable romance topics. The format consistently drove 1,000+ views on Instagram and peaked at 29,000+ views on TikTok.',
         'desc-port': 'This site itself, built with vanilla HTML/CSS/JS and AI-assisted development as a showcase of vibe coding skills.',
-        'tag-services': '// 04 · Services', 'svc-title': 'Services', 'svc-desc': 'How I can help.',
+        'nav-videos': 'Videos',
+        'tag-videos': '// 04 · Video Work', 'videos-title': 'Video Work', 'videos-desc': "Content I've created for clients.",
+        'tag-services': '// 05 · Services', 'svc-title': 'Services', 'svc-desc': 'How I can help.',
         'svc1-title': 'Content Strategy & Creation',
         'svc1-desc': 'From audience research and editorial calendars to producing the content itself: copy, carousels, and short-form video. For brands that want content with a clear direction, ready to ship.',
         'svc2-title': 'Meta Ads Management',
@@ -1323,7 +1447,9 @@
         'dur-wts': '2024',
         'desc-wts': 'Mengembangkan strategi konten video untuk penyelenggara blind date dan konsultasi hubungan. Setelah memperhatikan postingan quote romansa tidak performa, saya pivot ke format percakapan santai menampilkan 2 sampai 3 orang membahas topik romansa yang relatable. Format ini secara konsisten meraih 1.000+ tayangan di Instagram dan puncaknya 29.000+ tayangan di TikTok.',
         'desc-port': 'Website ini sendiri, dibangun dengan HTML/CSS/JS murni menggunakan AI-assisted development sebagai showcase kemampuan vibe coding.',
-        'tag-services': '// 04 · Layanan', 'svc-title': 'Layanan', 'svc-desc': 'Apa yang bisa saya bantu.',
+        'nav-videos': 'Video',
+        'tag-videos': '// 04 · Karya Video', 'videos-title': 'Karya Video', 'videos-desc': 'Konten yang saya buat untuk klien.',
+        'tag-services': '// 05 · Layanan', 'svc-title': 'Layanan', 'svc-desc': 'Apa yang bisa saya bantu.',
         'svc1-title': 'Strategi & Pembuatan Konten',
         'svc1-desc': 'Dari riset audiens dan editorial calendar sampai eksekusi kontennya langsung: copywriting, carousel, dan video pendek. Untuk brand yang mau konten dengan arah yang jelas dan siap tayang.',
         'svc2-title': 'Manajemen Meta Ads',
@@ -1384,7 +1510,7 @@
     });
 
     // ============ ACTIVE NAV ON SCROLL ============
-    const sections = ['hero', 'about', 'skills', 'work', 'services', 'contact'];
+    const sections = ['hero', 'about', 'skills', 'work', 'videos', 'services', 'contact'];
     const navLinks = document.querySelectorAll('.nav-menu a');
     window.addEventListener('scroll', () => {
       let current = 'hero';
