@@ -711,13 +711,54 @@
     }
 
     /* ============ VIDEOS ============ */
-    .videos-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-      align-items: start;
+    .video-group {
+      margin-bottom: 48px;
+    }
+    .video-group:last-child { margin-bottom: 0; }
+
+    .video-group-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 22px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--border);
+    }
+    .platform-pill {
+      display: inline-flex;
+      align-items: center;
+      padding: 5px 14px;
+      border-radius: 999px;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+    .platform-pill.tiktok {
+      background: rgba(255, 45, 85, 0.1);
+      color: #ff2d55;
+      border: 1px solid rgba(255, 45, 85, 0.25);
+    }
+    .platform-pill.instagram {
+      background: rgba(200,241,53,0.08);
+      color: var(--accent);
+      border: 1px solid rgba(200,241,53,0.2);
+    }
+    .video-group-count {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--text-dim);
+      letter-spacing: 0.06em;
     }
 
+    /* TikTok: 4-column vertical card grid */
+    .videos-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      align-items: start;
+    }
     .video-card {
       background: var(--surface);
       border: 1px solid var(--border);
@@ -725,94 +766,104 @@
       overflow: hidden;
       transition: all 0.3s var(--ease);
     }
-
     .video-card:hover {
       border-color: var(--accent);
       transform: translateY(-4px);
       box-shadow: 0 20px 40px rgba(0,0,0,0.3);
     }
-
     .video-card-label {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 16px 18px 0;
+      padding: 14px 16px 0;
     }
-
     .video-client {
       font-family: var(--font-mono);
-      font-size: 11px;
+      font-size: 10px;
       text-transform: uppercase;
       letter-spacing: 0.1em;
       color: var(--accent);
     }
-
     .video-platform {
       font-family: var(--font-mono);
       font-size: 10px;
       color: var(--text-dim);
       letter-spacing: 0.06em;
     }
-
     .video-embed {
-      padding: 12px;
+      padding: 10px;
     }
-
-    /* Override TikTok embed default styles */
     .video-embed .tiktok-embed {
       margin: 0 !important;
       border-radius: 10px;
       overflow: hidden;
     }
 
-    /* Instagram embed */
-    .video-embed .instagram-media {
-      margin: 0 !important;
-      min-width: unset !important;
-      width: 100% !important;
-      border-radius: 10px !important;
-      overflow: hidden;
-    }
-
-    /* Fallback link shown when embed fails to load */
-    .embed-fallback {
+    /* Instagram: single horizontal link row */
+    .ig-links-row {
       display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 100%;
-      min-height: 200px;
-      color: var(--accent);
-      font-family: var(--font-mono);
-      font-size: 0.85rem;
-      text-decoration: none;
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      background: var(--surface-2);
-      transition: background 0.2s;
+      flex-wrap: nowrap;
+      gap: 12px;
+      overflow-x: auto;
+      padding-bottom: 6px;
+      scrollbar-width: thin;
+      scrollbar-color: var(--border) transparent;
     }
-    .embed-fallback:hover {
+    .ig-links-row::-webkit-scrollbar {
+      height: 4px;
+    }
+    .ig-links-row::-webkit-scrollbar-track { background: transparent; }
+    .ig-links-row::-webkit-scrollbar-thumb {
+      background: var(--border);
+      border-radius: 4px;
+    }
+    .ig-link-card {
+      flex: 1 1 0;
+      min-width: 155px;
       background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 18px 20px;
+      text-decoration: none;
+      color: var(--text);
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      transition: all 0.25s var(--ease);
     }
-
-    /* Google Drive / iframe embed */
-    .gdrive-embed {
-      position: relative;
-      width: 100%;
-      aspect-ratio: 9 / 16;
-      border-radius: 10px;
-      overflow: hidden;
+    .ig-link-card:hover {
+      border-color: var(--accent);
       background: var(--surface-2);
+      transform: translateY(-2px);
     }
-    .gdrive-embed iframe {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      border: none;
+    .ig-link-client {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--accent);
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .ig-link-type {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text);
+    }
+    .ig-link-cta {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      color: var(--text-dim);
+      margin-top: 8px;
     }
 
     @media (max-width: 900px) {
       .videos-grid { grid-template-columns: repeat(2, 1fr); }
+      .ig-link-card { flex: 0 0 auto; min-width: 155px; }
+    }
+    @media (max-width: 768px) {
+      .videos-grid { grid-template-columns: 1fr 1fr; }
     }
 
     /* ============ SERVICES ============ */
@@ -1289,163 +1340,120 @@
         <p class="section-desc" data-i18n="videos-desc">Content I've created for clients.</p>
       </div>
 
-      <div class="videos-grid">
-
-        <!-- TikTok: Personal Branding #1 -->
-        <div class="video-card reveal">
-          <div class="video-card-label">
-            <span class="video-client">Personal Branding</span>
-            <span class="video-platform">TikTok</span>
-          </div>
-          <div class="video-embed">
-            <blockquote class="tiktok-embed"
-              cite="https://www.tiktok.com/@ghovigha/video/7639772209040674068"
-              data-video-id="7639772209040674068">
-              <section><a href="https://www.tiktok.com/@ghovigha/video/7639772209040674068">Watch on TikTok</a></section>
-            </blockquote>
-          </div>
+      <!-- TikTok Group -->
+      <div class="video-group reveal">
+        <div class="video-group-header">
+          <span class="platform-pill tiktok">TikTok</span>
+          <span class="video-group-count">4 videos</span>
         </div>
+        <div class="videos-grid">
 
-        <!-- TikTok: Personal Branding #2 -->
-        <div class="video-card reveal">
-          <div class="video-card-label">
-            <span class="video-client">Personal Branding</span>
-            <span class="video-platform">TikTok</span>
+          <!-- Personal Branding #1 -->
+          <div class="video-card">
+            <div class="video-card-label">
+              <span class="video-client">Personal Branding</span>
+            </div>
+            <div class="video-embed">
+              <blockquote class="tiktok-embed"
+                cite="https://www.tiktok.com/@ghovigha/video/7639772209040674068"
+                data-video-id="7639772209040674068">
+                <section><a href="https://www.tiktok.com/@ghovigha/video/7639772209040674068">Watch on TikTok</a></section>
+              </blockquote>
+            </div>
           </div>
-          <div class="video-embed">
-            <blockquote class="tiktok-embed"
-              cite="https://www.tiktok.com/@ghovigha/video/7646865084580498705"
-              data-video-id="7646865084580498705">
-              <section><a href="https://www.tiktok.com/@ghovigha/video/7646865084580498705">Watch on TikTok</a></section>
-            </blockquote>
-          </div>
-        </div>
 
-        <!-- TikTok: Want to Sayang -->
-        <div class="video-card reveal">
-          <div class="video-card-label">
-            <span class="video-client">Want to Sayang</span>
-            <span class="video-platform">TikTok</span>
+          <!-- Personal Branding #2 -->
+          <div class="video-card">
+            <div class="video-card-label">
+              <span class="video-client">Personal Branding</span>
+            </div>
+            <div class="video-embed">
+              <blockquote class="tiktok-embed"
+                cite="https://www.tiktok.com/@ghovigha/video/7646865084580498705"
+                data-video-id="7646865084580498705">
+                <section><a href="https://www.tiktok.com/@ghovigha/video/7646865084580498705">Watch on TikTok</a></section>
+              </blockquote>
+            </div>
           </div>
-          <div class="video-embed">
-            <blockquote class="tiktok-embed"
-              cite="https://www.tiktok.com/@wanttosayang_/video/7612611539060673793"
-              data-video-id="7612611539060673793">
-              <section><a href="https://www.tiktok.com/@wanttosayang_/video/7612611539060673793">Watch on TikTok</a></section>
-            </blockquote>
-          </div>
-        </div>
 
-        <!-- TikTok: Research Synergy Foundation -->
-        <div class="video-card reveal">
-          <div class="video-card-label">
-            <span class="video-client">Research Synergy Foundation</span>
-            <span class="video-platform">TikTok</span>
+          <!-- Want to Sayang -->
+          <div class="video-card">
+            <div class="video-card-label">
+              <span class="video-client">Want to Sayang</span>
+            </div>
+            <div class="video-embed">
+              <blockquote class="tiktok-embed"
+                cite="https://www.tiktok.com/@wanttosayang_/video/7612611539060673793"
+                data-video-id="7612611539060673793">
+                <section><a href="https://www.tiktok.com/@wanttosayang_/video/7612611539060673793">Watch on TikTok</a></section>
+              </blockquote>
+            </div>
           </div>
-          <div class="video-embed">
-            <blockquote class="tiktok-embed"
-              cite="https://www.tiktok.com/@researchsynergy/video/7623324039607487752"
-              data-video-id="7623324039607487752">
-              <section><a href="https://www.tiktok.com/@researchsynergy/video/7623324039607487752">Watch on TikTok</a></section>
-            </blockquote>
-          </div>
-        </div>
 
-        <!-- Instagram: Research Synergy Reel DViKbZfAT62 -->
-        <div class="video-card reveal">
-          <div class="video-card-label">
-            <span class="video-client">Research Synergy Foundation</span>
-            <span class="video-platform">Instagram</span>
+          <!-- Research Synergy Foundation -->
+          <div class="video-card">
+            <div class="video-card-label">
+              <span class="video-client">Research Synergy Fdn</span>
+            </div>
+            <div class="video-embed">
+              <blockquote class="tiktok-embed"
+                cite="https://www.tiktok.com/@researchsynergy/video/7623324039607487752"
+                data-video-id="7623324039607487752">
+                <section><a href="https://www.tiktok.com/@researchsynergy/video/7623324039607487752">Watch on TikTok</a></section>
+              </blockquote>
+            </div>
           </div>
-          <div class="video-embed">
-            <blockquote class="instagram-media"
-              data-instgrm-permalink="https://www.instagram.com/reels/DViKbZfAT62/"
-              data-instgrm-version="14"
-              style="margin:0;width:100%;min-width:unset;max-width:100%;border:none;background:transparent;">
-              <a href="https://www.instagram.com/reels/DViKbZfAT62/" class="embed-fallback">Watch on Instagram ↗</a>
-            </blockquote>
-          </div>
-        </div>
 
-        <!-- Instagram: Reel DIqnSavSxww -->
-        <div class="video-card reveal">
-          <div class="video-card-label">
-            <span class="video-client">Instagram</span>
-            <span class="video-platform">Instagram</span>
-          </div>
-          <div class="video-embed">
-            <blockquote class="instagram-media"
-              data-instgrm-permalink="https://www.instagram.com/reels/DIqnSavSxww/"
-              data-instgrm-version="14"
-              style="margin:0;width:100%;min-width:unset;max-width:100%;border:none;background:transparent;">
-              <a href="https://www.instagram.com/reels/DIqnSavSxww/" class="embed-fallback">Watch on Instagram ↗</a>
-            </blockquote>
-          </div>
         </div>
+      </div>
 
-        <!-- Instagram: Post DLPi5tAvpNV -->
-        <div class="video-card reveal">
-          <div class="video-card-label">
-            <span class="video-client">Instagram</span>
-            <span class="video-platform">Instagram</span>
-          </div>
-          <div class="video-embed">
-            <blockquote class="instagram-media"
-              data-instgrm-permalink="https://www.instagram.com/p/DLPi5tAvpNV/"
-              data-instgrm-version="14"
-              style="margin:0;width:100%;min-width:unset;max-width:100%;border:none;background:transparent;">
-              <a href="https://www.instagram.com/p/DLPi5tAvpNV/" class="embed-fallback">Watch on Instagram ↗</a>
-            </blockquote>
-          </div>
+      <!-- Instagram Group -->
+      <div class="video-group reveal">
+        <div class="video-group-header">
+          <span class="platform-pill instagram">Instagram</span>
+          <span class="video-group-count">6 reels</span>
         </div>
+        <div class="ig-links-row">
 
-        <!-- Instagram: Post DWCVP5pjLKW -->
-        <div class="video-card reveal">
-          <div class="video-card-label">
-            <span class="video-client">Instagram</span>
-            <span class="video-platform">Instagram</span>
-          </div>
-          <div class="video-embed">
-            <blockquote class="instagram-media"
-              data-instgrm-permalink="https://www.instagram.com/p/DWCVP5pjLKW/"
-              data-instgrm-version="14"
-              style="margin:0;width:100%;min-width:unset;max-width:100%;border:none;background:transparent;">
-              <a href="https://www.instagram.com/p/DWCVP5pjLKW/" class="embed-fallback">Watch on Instagram ↗</a>
-            </blockquote>
-          </div>
-        </div>
+          <a class="ig-link-card" href="https://www.instagram.com/reels/DViKbZfAT62/" target="_blank" rel="noopener">
+            <span class="ig-link-client">Research Synergy Fdn</span>
+            <span class="ig-link-type">Reel</span>
+            <span class="ig-link-cta">Open on Instagram ↗</span>
+          </a>
 
-        <!-- Instagram: Post DWCVhQdjMgT -->
-        <div class="video-card reveal">
-          <div class="video-card-label">
-            <span class="video-client">Instagram</span>
-            <span class="video-platform">Instagram</span>
-          </div>
-          <div class="video-embed">
-            <blockquote class="instagram-media"
-              data-instgrm-permalink="https://www.instagram.com/p/DWCVhQdjMgT/"
-              data-instgrm-version="14"
-              style="margin:0;width:100%;min-width:unset;max-width:100%;border:none;background:transparent;">
-              <a href="https://www.instagram.com/p/DWCVhQdjMgT/" class="embed-fallback">Watch on Instagram ↗</a>
-            </blockquote>
-          </div>
-        </div>
+          <a class="ig-link-card" href="https://www.instagram.com/reels/DV8GoulgWGW/" target="_blank" rel="noopener">
+            <span class="ig-link-client">Research Synergy Fdn</span>
+            <span class="ig-link-type">Reel</span>
+            <span class="ig-link-cta">Open on Instagram ↗</span>
+          </a>
 
-        <!-- Instagram: Reel DV8GoulgWGW -->
-        <div class="video-card reveal">
-          <div class="video-card-label">
-            <span class="video-client">Instagram</span>
-            <span class="video-platform">Instagram</span>
-          </div>
-          <div class="video-embed">
-            <blockquote class="instagram-media"
-              data-instgrm-permalink="https://www.instagram.com/reels/DV8GoulgWGW/"
-              data-instgrm-version="14"
-              style="margin:0;width:100%;min-width:unset;max-width:100%;border:none;background:transparent;">
-              <a href="https://www.instagram.com/reels/DV8GoulgWGW/" class="embed-fallback">Watch on Instagram ↗</a>
-            </blockquote>
-          </div>
+          <a class="ig-link-card" href="https://www.instagram.com/reels/DIqnSavSxww/" target="_blank" rel="noopener">
+            <span class="ig-link-client">Want to Sayang</span>
+            <span class="ig-link-type">Reel</span>
+            <span class="ig-link-cta">Open on Instagram ↗</span>
+          </a>
+
+          <a class="ig-link-card" href="https://www.instagram.com/p/DLPi5tAvpNV/" target="_blank" rel="noopener">
+            <span class="ig-link-client">Personal Branding</span>
+            <span class="ig-link-type">Post</span>
+            <span class="ig-link-cta">Open on Instagram ↗</span>
+          </a>
+
+          <a class="ig-link-card" href="https://www.instagram.com/p/DWCVP5pjLKW/" target="_blank" rel="noopener">
+            <span class="ig-link-client">Personal Branding</span>
+            <span class="ig-link-type">Post</span>
+            <span class="ig-link-cta">Open on Instagram ↗</span>
+          </a>
+
+          <a class="ig-link-card" href="https://www.instagram.com/p/DWCVhQdjMgT/" target="_blank" rel="noopener">
+            <span class="ig-link-client">Personal Branding</span>
+            <span class="ig-link-type">Post</span>
+            <span class="ig-link-cta">Open on Instagram ↗</span>
+          </a>
+
         </div>
+      </div>
+
 
       </div>
     </div>
@@ -1740,16 +1748,9 @@
     }, { threshold: 0.4 });
     counters.forEach(c => counterObserver.observe(c));
 
-    // ============ INSTAGRAM EMBED PROCESS ============
-    window.addEventListener('load', function () {
-      if (window.instgrm && window.instgrm.Embeds) {
-        window.instgrm.Embeds.process();
-      }
-    });
   </script>
 
-  <!-- Embed scripts loaded at end of body so DOM is ready -->
+  <!-- TikTok embed script at end of body so DOM is ready -->
   <script async src="https://www.tiktok.com/embed.js"></script>
-  <script async src="https://www.instagram.com/embed.js"></script>
 </body>
 </html>
