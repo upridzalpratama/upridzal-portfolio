@@ -766,6 +766,23 @@
       overflow: hidden;
     }
 
+    /* Google Drive / iframe embed */
+    .gdrive-embed {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 9 / 16;
+      border-radius: 10px;
+      overflow: hidden;
+      background: var(--surface-2);
+    }
+    .gdrive-embed iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
     @media (max-width: 900px) {
       .videos-grid { grid-template-columns: repeat(2, 1fr); }
     }
@@ -1288,6 +1305,53 @@
               data-video-id="7612611539060673793">
               <section></section>
             </blockquote>
+          </div>
+        </div>
+
+        <!-- Personal Branding #2 -->
+        <div class="video-card reveal">
+          <div class="video-card-label">
+            <span class="video-client">Personal Branding</span>
+            <span class="video-platform">TikTok</span>
+          </div>
+          <div class="video-embed">
+            <blockquote class="tiktok-embed"
+              cite="https://www.tiktok.com/@ghovigha/video/7646865084580498705"
+              data-video-id="7646865084580498705">
+              <section></section>
+            </blockquote>
+          </div>
+        </div>
+
+        <!-- Research Synergy Foundation #2 -->
+        <div class="video-card reveal">
+          <div class="video-card-label">
+            <span class="video-client">Research Synergy Foundation</span>
+            <span class="video-platform">TikTok</span>
+          </div>
+          <div class="video-embed">
+            <blockquote class="tiktok-embed"
+              cite="https://www.tiktok.com/@researchsynergy/video/7623324039607487752"
+              data-video-id="7623324039607487752">
+              <section></section>
+            </blockquote>
+          </div>
+        </div>
+
+        <!-- Google Drive Video -->
+        <div class="video-card reveal">
+          <div class="video-card-label">
+            <span class="video-client">Content Creation</span>
+            <span class="video-platform">Video</span>
+          </div>
+          <div class="video-embed">
+            <div class="gdrive-embed">
+              <iframe
+                src="https://drive.google.com/file/d/108082rIxRJko5XSy1vfnahpnbcsdYyWb/preview"
+                allow="autoplay"
+                allowfullscreen>
+              </iframe>
+            </div>
           </div>
         </div>
 
