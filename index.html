@@ -420,6 +420,31 @@
     .work-arrow { color: var(--ink-soft); transition: transform 0.3s var(--ease), color 0.3s; }
     .work:hover .work-arrow { color: var(--accent); transform: translate(4px,-4px); }
 
+    /* ============ EXPERIENCE ============ */
+    #experience { background: var(--paper-2); }
+    .timeline { display: flex; flex-direction: column; border-top: 2.5px solid var(--ink); }
+    .exp {
+      display: grid; grid-template-columns: 260px 1fr; gap: 44px;
+      padding: 46px 24px;
+      border-bottom: 2.5px solid var(--ink);
+    }
+    .exp-side { display: flex; flex-direction: column; align-items: flex-start; gap: 12px; }
+    .exp-date { align-self: flex-start; }
+    .exp-now { background: var(--accent); }
+    .exp-now .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--ink); animation: pulse 2s infinite; }
+    .exp-co { font-family: var(--font-display); font-weight: 800; font-size: 1.5rem; line-height: 1.05; font-variation-settings: 'opsz' 60; }
+    .exp-loc { font-size: 12px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-soft); }
+    .exp-body h3 { font-size: clamp(1.6rem, 3vw, 2.3rem); margin-bottom: 22px; font-variation-settings: 'opsz' 60; }
+    .exp-list { list-style: none; display: flex; flex-direction: column; gap: 13px; }
+    .exp-list li {
+      position: relative; padding-left: 30px;
+      font-size: 1.03rem; font-weight: 500; line-height: 1.5;
+    }
+    .exp-list li::before {
+      content: ''; position: absolute; left: 0; top: 0.55em;
+      width: 13px; height: 3px; background: var(--accent);
+    }
+
     /* ============ VIDEOS ============ */
     #videos { background: var(--paper-2); }
     .video-group { margin-bottom: 60px; }
@@ -574,6 +599,7 @@
       </button>
       <ul class="nav-menu" id="navMenu">
         <li><a href="#about" data-link data-i18n="nav-about">About</a></li>
+        <li><a href="#experience" data-link data-i18n="nav-exp">Experience</a></li>
         <li><a href="#skills" data-link data-i18n="nav-skills">Skills</a></li>
         <li><a href="#work" data-link data-i18n="nav-work">Work</a></li>
         <li><a href="#videos" data-link data-i18n="nav-videos">Videos</a></li>
@@ -635,7 +661,6 @@
       <div class="section-head reveal">
         <div class="eyebrow">
           <span class="tag" style="background:var(--accent)"><span data-i18n="tag-about">Introduction</span></span>
-          <span class="no">Nº 01</span>
         </div>
         <h2 class="section-title" data-i18n="about-title">About Me</h2>
       </div>
@@ -653,8 +678,8 @@
             <div class="stat-label" data-i18n="stat1">Years of Experience</div>
           </div>
           <div class="stat">
-            <div class="stat-num" data-count="2033">0</div>
-            <div class="stat-label" data-i18n="stat2">TikTok Followers</div>
+            <div class="stat-num">1M+</div>
+            <div class="stat-label" data-i18n="stat2">Impressions</div>
           </div>
           <div class="stat">
             <div class="stat-num">∞</div>
@@ -665,13 +690,102 @@
     </div>
   </section>
 
+  <!-- ============ EXPERIENCE ============ -->
+  <section id="experience">
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="eyebrow">
+          <span class="tag tag-accent"><span data-i18n="tag-exp">Career</span></span>
+        </div>
+        <h2 class="section-title" data-i18n="exp-title">Work Experience</h2>
+        <p class="section-desc" data-i18n="exp-desc">Roles I've held across agencies, startups, and foundations.</p>
+      </div>
+
+      <div class="timeline">
+
+        <article class="exp reveal">
+          <div class="exp-side">
+            <span class="tag tag-accent exp-now"><span class="dot"></span><span data-i18n="exp1-date">Feb 2025 – Present</span></span>
+            <div class="exp-co">Research Synergy Foundation</div>
+            <div class="exp-loc" data-i18n="exp1-loc">Bandung</div>
+          </div>
+          <div class="exp-body">
+            <h3 data-i18n="exp1-role">Digital Marketing Manager</h3>
+            <ul class="exp-list">
+              <li data-i18n="exp1-b1">Led a 2-person internal team executing digital marketing initiatives, overseeing end-to-end workflows from strategy and content production to performance reporting.</li>
+              <li data-i18n="exp1-b2">Designed and managed targeted Meta Ads campaigns, achieving up to 7x ROAS through audience segmentation and continuous A/B testing.</li>
+              <li data-i18n="exp1-b3">Produced around 30 content pieces per month across formats, from scripting and filming to post-production, while maintaining publishing cadence and quality.</li>
+              <li data-i18n="exp1-b4">Ran email marketing campaigns with a 21% open rate, outperforming the ~18% B2B industry benchmark.</li>
+              <li data-i18n="exp1-b5">Collaborated with four internal business units to align marketing with revenue targets, contributing to consistent month-over-month revenue growth.</li>
+              <li data-i18n="exp1-b6">Spearheaded digital content strategy that boosted brand awareness and engagement across multiple platforms.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="exp reveal">
+          <div class="exp-side">
+            <span class="tag exp-date"><span data-i18n="exp2-date">Oct 2024 – Jan 2025</span></span>
+            <div class="exp-co">Tazwise</div>
+            <div class="exp-loc" data-i18n="exp2-loc">Bandung</div>
+          </div>
+          <div class="exp-body">
+            <h3 data-i18n="exp2-role">Marketing Officer (Freelance)</h3>
+            <ul class="exp-list">
+              <li data-i18n="exp2-b1">Acquired 2 new clients by developing and delivering persuasive marketing proposals and data-backed presentations.</li>
+              <li data-i18n="exp2-b2">Built and executed social media content strategies for footwear and fashion brand clients, improving online visibility and audience engagement.</li>
+              <li data-i18n="exp2-b3">Developed comprehensive digital marketing roadmaps for F&amp;B and fashion brands, integrating brand awareness and customer acquisition into a cohesive multi-channel plan.</li>
+              <li data-i18n="exp2-b4">Advised clients on content pillars, posting cadence, and platform-specific strategies tailored to their target audience demographics.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="exp reveal">
+          <div class="exp-side">
+            <span class="tag exp-date"><span data-i18n="exp3-date">Apr 2024 – Aug 2024</span></span>
+            <div class="exp-co">I-Dac Indonesia</div>
+            <div class="exp-loc" data-i18n="exp3-loc">Jakarta</div>
+          </div>
+          <div class="exp-body">
+            <h3 data-i18n="exp3-role">Media Planner Intern</h3>
+            <ul class="exp-list">
+              <li data-i18n="exp3-b1">Researched and identified 100+ relevant Key Opinion Leaders (KOLs) in the F&amp;B sector for Supermi and Mi Telur Cap 3 Ayam, supporting influencer campaign planning.</li>
+              <li data-i18n="exp3-b2">Coordinated content alignment with 15 KOLs to ensure all deliverables adhered to brand guidelines and campaign messaging.</li>
+              <li data-i18n="exp3-b3">Analyzed monthly ad spend across Meta, Google, and TikTok to track KPI alignment, identify top-performing creatives, and surface optimization opportunities.</li>
+              <li data-i18n="exp3-b4">Monitored and reported weekly competitor activity on social media, generating insights that informed monthly strategy decisions.</li>
+              <li data-i18n="exp3-b5">Synthesized competitor strategies and historical campaign data into actionable strategic planning documents for stakeholders.</li>
+              <li data-i18n="exp3-b6">Contributed to three creative campaign concepts for the AION brand, targeting increased visibility and engagement across online and offline channels.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="exp reveal">
+          <div class="exp-side">
+            <span class="tag exp-date"><span data-i18n="exp4-date">Nov 2023 – Mar 2024</span></span>
+            <div class="exp-co">Mulai Agency</div>
+            <div class="exp-loc" data-i18n="exp4-loc">Bandung</div>
+          </div>
+          <div class="exp-body">
+            <h3 data-i18n="exp4-role">Social Media Specialist</h3>
+            <ul class="exp-list">
+              <li data-i18n="exp4-b1">Grew Dewasa.id Instagram reach by 2,677 accounts and achieved 466% MoM growth through a targeted content and engagement strategy.</li>
+              <li data-i18n="exp4-b2">Generated 15,000+ total impressions for Dewasa.id, a 40.9% increase from the prior month, via optimized posting frequency and formats.</li>
+              <li data-i18n="exp4-b3">Produced 30+ content pieces per month for Dewasa.id plus daily content for Meneer Koffie's Instagram, maintaining brand consistency.</li>
+              <li data-i18n="exp4-b4">Designed and implemented Brand Guidelines using Adobe Creative Suite, ensuring visual and tonal consistency across materials.</li>
+              <li data-i18n="exp4-b5">Conducted competitor analysis across 25+ industry-relevant entities in the Bandung market, shaping content positioning and competitive strategy.</li>
+            </ul>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
   <!-- ============ SKILLS ============ -->
   <section id="skills">
     <div class="container">
       <div class="section-head reveal">
         <div class="eyebrow">
           <span class="tag tag-accent"><span data-i18n="tag-skills">Capabilities</span></span>
-          <span class="no">Nº 02</span>
         </div>
         <h2 class="section-title" data-i18n="skills-title">Skill Stack</h2>
         <p class="section-desc" data-i18n="skills-desc">What I bring to every project.</p>
@@ -727,7 +841,6 @@
       <div class="section-head reveal">
         <div class="eyebrow">
           <span class="tag tag-accent"><span data-i18n="tag-works">The Work</span></span>
-          <span class="no">Nº 03</span>
         </div>
         <h2 class="section-title" data-i18n="works-title">Selected Works</h2>
         <p class="section-desc" data-i18n="works-desc">A few projects I've worked on.</p>
@@ -742,16 +855,16 @@
               <span class="work-duration" data-i18n="dur-pb">May 2025 to Present</span>
             </div>
             <span class="work-tag">Content Strategy · Content Creation</span>
-            <p class="work-desc" data-i18n="desc-pb">Helped an F&amp;B entrepreneur build their personal brand on TikTok from scratch. In just one month, the account hit 355K+ total views and grew to 500+ followers, driven by a content strategy built around authentic storytelling and niche positioning.</p>
+            <p class="work-desc" data-i18n="desc-pb">Helped an F&amp;B entrepreneur build their personal brand on TikTok from scratch. In under two months, the account hit 700K+ total views and grew to 2,100+ followers, driven by a content strategy built around authentic storytelling and niche positioning.</p>
             <div class="work-stats">
-              <div class="work-stat"><div class="work-stat-num">500+</div><div class="work-stat-label">Followers</div></div>
-              <div class="work-stat"><div class="work-stat-num">355K</div><div class="work-stat-label">Total Views</div></div>
+              <div class="work-stat"><div class="work-stat-num">2100+</div><div class="work-stat-label">Followers</div></div>
+              <div class="work-stat"><div class="work-stat-num">700K+</div><div class="work-stat-label">Total Views</div></div>
             </div>
             <div class="work-proofs">
               <a class="proof" href="assets/proof/fnb-tiktok-analytics.jpg" target="_blank" rel="noopener">
-                <img src="assets/proof/fnb-tiktok-analytics.jpg" alt="TikTok analytics 355K views in one month" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+                <img src="assets/proof/fnb-tiktok-analytics.jpg" alt="Analytics showing 700K+ post views in under two months" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
                 <div class="placeholder" style="display:none"><i data-lucide="image"></i>Add proof</div>
-                <div class="proof-metric">355K<span>Views / 1 Month</span></div>
+                <div class="proof-metric">700K+<span>Post Views / &lt;2 Months</span></div>
               </a>
             </div>
           </div>
@@ -770,7 +883,7 @@
             <div class="work-stats">
               <div class="work-stat"><div class="work-stat-num">400+</div><div class="work-stat-label">Emails Sent</div></div>
               <div class="work-stat"><div class="work-stat-num">60+</div><div class="work-stat-label">Content Created</div></div>
-              <div class="work-stat"><div class="work-stat-num">1B</div><div class="work-stat-label">Yearly Revenue (IDR)</div></div>
+              <div class="work-stat"><div class="work-stat-num">9%</div><div class="work-stat-label">Profit Increase / Yearly</div></div>
             </div>
             <div class="work-proofs">
               <a class="proof" href="assets/proof/rsf-social.jpg" target="_blank" rel="noopener">
@@ -795,7 +908,7 @@
             <div class="work-stats">
               <div class="work-stat"><div class="work-stat-num">100+</div><div class="work-stat-label">Content Created</div></div>
               <div class="work-stat"><div class="work-stat-num">1M+</div><div class="work-stat-label">Organic Reach</div></div>
-              <div class="work-stat"><div class="work-stat-num">100M+</div><div class="work-stat-label">Revenue (IDR)</div></div>
+              <div class="work-stat"><div class="work-stat-num">7x</div><div class="work-stat-label">ROAS Peak</div></div>
             </div>
             <div class="work-proofs">
               <a class="proof" href="assets/proof/teman-ads-roas.jpg" target="_blank" rel="noopener">
@@ -894,10 +1007,9 @@
       <div class="section-head reveal">
         <div class="eyebrow">
           <span class="tag tag-accent"><span data-i18n="tag-videos">Motion</span></span>
-          <span class="no">Nº 04</span>
         </div>
         <h2 class="section-title" data-i18n="videos-title">Video Work</h2>
-        <p class="section-desc" data-i18n="videos-desc">Content I've created for clients.</p>
+        <p class="section-desc" data-i18n="videos-desc">I produce content end-to-end, far more than what's shown here. These are simply the ones I'm personally most proud of.</p>
       </div>
 
       <!-- TikTok Group -->
@@ -1022,7 +1134,6 @@
       <div class="section-head reveal">
         <div class="eyebrow">
           <span class="tag tag-accent"><span data-i18n="tag-services">What I Offer</span></span>
-          <span class="no">Nº 05</span>
         </div>
         <h2 class="section-title" data-i18n="svc-title">Services</h2>
         <p class="section-desc" data-i18n="svc-desc">How I can help.</p>
@@ -1116,13 +1227,41 @@
         'about-p1': 'Three years deep in digital marketing: from audience research and content creation, to managing Meta Ads from setup to optimization.',
         'about-p2': "I believe good strategy isn't just about ideas. It's about <strong>systems that can be repeated</strong>, measured, and constantly improved.",
         'about-p3': 'These days I also use AI to work faster, and I teach others how to do the same on TikTok.',
-        'stat1': 'Years of Experience', 'stat2': 'TikTok Followers', 'stat3': 'Cups of Coffee',
+        'stat1': 'Years of Experience', 'stat2': 'Impressions', 'stat3': 'Cups of Coffee',
+        'nav-exp': 'Experience',
+        'tag-exp': 'Career', 'exp-title': 'Work Experience',
+        'exp-desc': "Roles I've held across agencies, startups, and foundations.",
+        'exp1-role': 'Digital Marketing Manager', 'exp1-date': 'Feb 2025 – Present', 'exp1-loc': 'Bandung',
+        'exp1-b1': 'Led a 2-person internal team executing digital marketing initiatives, overseeing end-to-end workflows from strategy and content production to performance reporting.',
+        'exp1-b2': 'Designed and managed targeted Meta Ads campaigns, achieving up to 7x ROAS through audience segmentation and continuous A/B testing.',
+        'exp1-b3': 'Produced around 30 content pieces per month across formats, from scripting and filming to post-production, while maintaining publishing cadence and quality.',
+        'exp1-b4': 'Ran email marketing campaigns with a 21% open rate, outperforming the ~18% B2B industry benchmark.',
+        'exp1-b5': 'Collaborated with four internal business units to align marketing with revenue targets, contributing to consistent month-over-month revenue growth.',
+        'exp1-b6': 'Spearheaded digital content strategy that boosted brand awareness and engagement across multiple platforms.',
+        'exp2-role': 'Marketing Officer (Freelance)', 'exp2-date': 'Oct 2024 – Jan 2025', 'exp2-loc': 'Bandung',
+        'exp2-b1': 'Acquired 2 new clients by developing and delivering persuasive marketing proposals and data-backed presentations.',
+        'exp2-b2': 'Built and executed social media content strategies for footwear and fashion brand clients, improving online visibility and audience engagement.',
+        'exp2-b3': 'Developed comprehensive digital marketing roadmaps for F&B and fashion brands, integrating brand awareness and customer acquisition into a cohesive multi-channel plan.',
+        'exp2-b4': 'Advised clients on content pillars, posting cadence, and platform-specific strategies tailored to their target audience demographics.',
+        'exp3-role': 'Media Planner Intern', 'exp3-date': 'Apr 2024 – Aug 2024', 'exp3-loc': 'Jakarta',
+        'exp3-b1': 'Researched and identified 100+ relevant Key Opinion Leaders (KOLs) in the F&B sector for Supermi and Mi Telur Cap 3 Ayam, supporting influencer campaign planning.',
+        'exp3-b2': 'Coordinated content alignment with 15 KOLs to ensure all deliverables adhered to brand guidelines and campaign messaging.',
+        'exp3-b3': 'Analyzed monthly ad spend across Meta, Google, and TikTok to track KPI alignment, identify top-performing creatives, and surface optimization opportunities.',
+        'exp3-b4': 'Monitored and reported weekly competitor activity on social media, generating insights that informed monthly strategy decisions.',
+        'exp3-b5': 'Synthesized competitor strategies and historical campaign data into actionable strategic planning documents for stakeholders.',
+        'exp3-b6': 'Contributed to three creative campaign concepts for the AION brand, targeting increased visibility and engagement across online and offline channels.',
+        'exp4-role': 'Social Media Specialist', 'exp4-date': 'Nov 2023 – Mar 2024', 'exp4-loc': 'Bandung',
+        'exp4-b1': 'Grew Dewasa.id Instagram reach by 2,677 accounts and achieved 466% MoM growth through a targeted content and engagement strategy.',
+        'exp4-b2': 'Generated 15,000+ total impressions for Dewasa.id, a 40.9% increase from the prior month, via optimized posting frequency and formats.',
+        'exp4-b3': "Produced 30+ content pieces per month for Dewasa.id plus daily content for Meneer Koffie's Instagram, maintaining brand consistency.",
+        'exp4-b4': 'Designed and implemented Brand Guidelines using Adobe Creative Suite, ensuring visual and tonal consistency across materials.',
+        'exp4-b5': 'Conducted competitor analysis across 25+ industry-relevant entities in the Bandung market, shaping content positioning and competitive strategy.',
         'tag-skills': 'Capabilities', 'skills-title': 'Skill Stack',
         'skills-desc': 'What I bring to every project.',
         'tag-works': 'The Work', 'works-title': 'Selected Works',
         'works-desc': "A few projects I've worked on.",
         'dur-pb': 'May 2025 to Present',
-        'desc-pb': "Helped an F&B entrepreneur build their personal brand on TikTok from scratch. In just one month, the account hit 355K+ total views and grew to 500+ followers, driven by a content strategy built around authentic storytelling and niche positioning.",
+        'desc-pb': "Helped an F&B entrepreneur build their personal brand on TikTok from scratch. In under two months, the account hit 700K+ total views and grew to 2,100+ followers, driven by a content strategy built around authentic storytelling and niche positioning.",
         'dur-rsf': 'January 2025 to Present',
         'desc-rsf': 'Drove targeted email marketing campaigns with a 21% open rate to boost event conversions. Also led marketing planning and management, contributing to a 9% year-over-year profit growth.',
         'dur-tp': 'October 2025 to Present',
@@ -1133,7 +1272,7 @@
         'desc-wts': 'Developed a video content strategy for a blind date event organizer and relationship consultancy. After noticing static romance-quote posts underperformed, I pivoted to a casual, conversational format featuring 2 to 3 people discussing relatable romance topics. The format consistently drove 1,000+ views on Instagram and peaked at 29,000+ views on TikTok.',
         'desc-port': 'This site itself, built with vanilla HTML/CSS/JS and AI-assisted development as a showcase of vibe coding skills.',
         'nav-videos': 'Videos',
-        'tag-videos': 'Motion', 'videos-title': 'Video Work', 'videos-desc': "Content I've created for clients.",
+        'tag-videos': 'Motion', 'videos-title': 'Video Work', 'videos-desc': "I produce content end-to-end, far more than what's shown here. These are simply the ones I'm personally most proud of.",
         'vc-tiktok': 'Four videos', 'vc-ig': 'Six reels',
         'ig-reel': 'Reel', 'ig-post': 'Post', 'ig-open': 'Open on Instagram ↗',
         'tag-services': 'What I Offer', 'svc-title': 'Services', 'svc-desc': 'How I can help.',
@@ -1159,13 +1298,41 @@
         'about-p1': 'Tiga tahun berkutat di digital marketing: dari riset audiens dan pembuatan konten, hingga mengelola Meta Ads dari setup sampai optimasi.',
         'about-p2': 'Strategi yang bagus bukan cuma soal ide. Ini soal <strong>sistem yang bisa dijalankan berulang</strong>, diukur hasilnya, dan terus diperbaiki.',
         'about-p3': 'Sekarang saya juga aktif pakai AI untuk kerja lebih cepat, dan berbagi caranya ke orang lain lewat TikTok.',
-        'stat1': 'Tahun Pengalaman', 'stat2': 'Followers TikTok', 'stat3': 'Kopi yang Habis',
+        'stat1': 'Tahun Pengalaman', 'stat2': 'Impresi', 'stat3': 'Kopi yang Habis',
+        'nav-exp': 'Pengalaman',
+        'tag-exp': 'Karier', 'exp-title': 'Pengalaman Kerja',
+        'exp-desc': 'Peran yang pernah saya jalani di agensi, startup, dan yayasan.',
+        'exp1-role': 'Digital Marketing Manager', 'exp1-date': 'Feb 2025 – Sekarang', 'exp1-loc': 'Bandung',
+        'exp1-b1': 'Memimpin tim internal beranggotakan 2 orang dalam menjalankan inisiatif digital marketing, mengelola alur kerja end-to-end dari strategi dan produksi konten hingga pelaporan performa.',
+        'exp1-b2': 'Merancang dan mengelola kampanye Meta Ads bertarget, mencapai ROAS hingga 7x lewat segmentasi audiens dan A/B testing berkelanjutan.',
+        'exp1-b3': 'Memproduksi sekitar 30 konten per bulan dalam berbagai format, dari penulisan naskah dan syuting hingga pasca-produksi, sambil menjaga konsistensi jadwal dan kualitas.',
+        'exp1-b4': 'Menjalankan kampanye email marketing dengan open rate 21%, melampaui benchmark industri B2B yang sekitar 18%.',
+        'exp1-b5': 'Berkolaborasi dengan empat unit bisnis internal untuk menyelaraskan marketing dengan target revenue, berkontribusi pada pertumbuhan revenue yang konsisten dari bulan ke bulan.',
+        'exp1-b6': 'Menginisiasi strategi konten digital yang meningkatkan brand awareness dan engagement di berbagai platform.',
+        'exp2-role': 'Marketing Officer (Freelance)', 'exp2-date': 'Okt 2024 – Jan 2025', 'exp2-loc': 'Bandung',
+        'exp2-b1': 'Mendapatkan 2 klien baru dengan menyusun dan menyampaikan proposal marketing yang persuasif serta presentasi berbasis data.',
+        'exp2-b2': 'Membangun dan menjalankan strategi konten media sosial untuk klien brand sepatu dan fashion, meningkatkan visibilitas online dan engagement audiens.',
+        'exp2-b3': 'Menyusun roadmap digital marketing menyeluruh untuk brand F&B dan fashion, menyatukan tujuan brand awareness dan akuisisi pelanggan ke dalam rencana multi-channel yang kohesif.',
+        'exp2-b4': 'Memberi rekomendasi kepada klien soal content pillar, jadwal posting, dan strategi spesifik per platform yang disesuaikan dengan demografi target audiens.',
+        'exp3-role': 'Media Planner Intern', 'exp3-date': 'Apr 2024 – Agu 2024', 'exp3-loc': 'Jakarta',
+        'exp3-b1': 'Meneliti dan mengidentifikasi 100+ Key Opinion Leader (KOL) relevan di sektor F&B untuk Supermi dan Mi Telur Cap 3 Ayam, mendukung perencanaan kampanye influencer.',
+        'exp3-b2': 'Mengoordinasikan keselarasan konten dengan 15 KOL agar seluruh deliverable sesuai brand guidelines dan pesan kampanye.',
+        'exp3-b3': 'Menganalisis ad spend bulanan di Meta, Google, dan TikTok untuk memantau keselarasan KPI, mengidentifikasi kreatif berperforma terbaik, dan menemukan peluang optimasi.',
+        'exp3-b4': 'Memantau dan melaporkan aktivitas kompetitor mingguan di media sosial, menghasilkan insight yang menjadi dasar keputusan strategi bulanan.',
+        'exp3-b5': 'Merangkum strategi kompetitor dan data kampanye historis menjadi dokumen perencanaan strategis yang actionable untuk stakeholder.',
+        'exp3-b6': 'Berkontribusi pada tiga konsep kampanye kreatif untuk brand AION, menargetkan peningkatan visibilitas dan engagement di kanal online maupun offline.',
+        'exp4-role': 'Social Media Specialist', 'exp4-date': 'Nov 2023 – Mar 2024', 'exp4-loc': 'Bandung',
+        'exp4-b1': 'Menumbuhkan reach Instagram Dewasa.id sebanyak 2.677 akun dan mencapai pertumbuhan 466% MoM lewat strategi konten dan engagement bertarget.',
+        'exp4-b2': 'Menghasilkan 15.000+ total impression untuk Dewasa.id, naik 40,9% dari bulan sebelumnya, melalui optimasi frekuensi posting dan format konten.',
+        'exp4-b3': "Memproduksi 30+ konten per bulan untuk Dewasa.id plus konten harian untuk Instagram Meneer Koffie, menjaga konsistensi brand.",
+        'exp4-b4': 'Merancang dan menerapkan Brand Guidelines menggunakan Adobe Creative Suite, memastikan konsistensi visual dan tonal di seluruh materi.',
+        'exp4-b5': 'Melakukan analisis kompetitor terhadap 25+ entitas relevan di pasar Bandung, membentuk positioning konten dan strategi kompetitif.',
         'tag-skills': 'Kapabilitas', 'skills-title': 'Skill Stack',
         'skills-desc': 'Yang saya bawa ke setiap project.',
         'tag-works': 'Karya', 'works-title': 'Portofolio',
         'works-desc': 'Beberapa project yang pernah saya kerjakan.',
         'dur-pb': 'Mei 2025 sampai Sekarang',
-        'desc-pb': 'Membantu seorang entrepreneur F&B membangun personal brand di TikTok dari nol. Hanya dalam satu bulan, akun berhasil meraih 355K+ total tayangan dan tumbuh ke 500+ followers, berkat strategi konten berbasis storytelling autentik dan niche yang tepat.',
+        'desc-pb': 'Membantu seorang entrepreneur F&B membangun personal brand di TikTok dari nol. Dalam kurang dari dua bulan, akun berhasil meraih 700K+ total tayangan dan tumbuh ke 2.100+ followers, berkat strategi konten berbasis storytelling autentik dan niche yang tepat.',
         'dur-rsf': 'Januari 2025 sampai Sekarang',
         'desc-rsf': 'Menjalankan kampanye email marketing bertarget dengan open rate 21% untuk mendorong konversi event. Sekaligus memimpin perencanaan dan manajemen marketing yang berkontribusi pada pertumbuhan profit 9% secara tahunan.',
         'dur-tp': 'Oktober 2025 sampai Sekarang',
@@ -1176,7 +1343,7 @@
         'desc-wts': 'Mengembangkan strategi konten video untuk penyelenggara blind date dan konsultasi hubungan. Setelah memperhatikan postingan quote romansa tidak performa, saya pivot ke format percakapan santai menampilkan 2 sampai 3 orang membahas topik romansa yang relatable. Format ini secara konsisten meraih 1.000+ tayangan di Instagram dan puncaknya 29.000+ tayangan di TikTok.',
         'desc-port': 'Website ini sendiri, dibangun dengan HTML/CSS/JS murni menggunakan AI-assisted development sebagai showcase kemampuan vibe coding.',
         'nav-videos': 'Video',
-        'tag-videos': 'Video', 'videos-title': 'Karya Video', 'videos-desc': 'Konten yang saya buat untuk klien.',
+        'tag-videos': 'Video', 'videos-title': 'Karya Video', 'videos-desc': 'Saya memproduksi konten end-to-end, jauh lebih banyak dari yang ditampilkan di sini. Ini sekadar yang paling saya suka secara personal.',
         'vc-tiktok': 'Empat video', 'vc-ig': 'Enam reel',
         'ig-reel': 'Reel', 'ig-post': 'Post', 'ig-open': 'Buka di Instagram ↗',
         'tag-services': 'Yang Saya Tawarkan', 'svc-title': 'Layanan', 'svc-desc': 'Apa yang bisa saya bantu.',
@@ -1239,7 +1406,7 @@
     });
 
     // ============ ACTIVE NAV ON SCROLL ============
-    const sections = ['hero', 'about', 'skills', 'work', 'videos', 'services', 'contact'];
+    const sections = ['hero', 'about', 'experience', 'skills', 'work', 'videos', 'services', 'contact'];
     const navLinks = document.querySelectorAll('.nav-menu a');
     window.addEventListener('scroll', () => {
       let current = 'hero';
