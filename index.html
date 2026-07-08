@@ -3,24 +3,24 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Upridzal — Digital Strategist</title>
-  <meta name="description" content="Digital Strategist specializing in Meta Ads, Content Strategy, and AI Tools. 3 years of helping brands and SMEs grow in digital." />
+  <title>Upridzal — Social Media Manager</title>
+  <meta name="description" content="Social Media Manager who runs it end to end: strategy, content creation, community, Meta &amp; TikTok ads, and analytics. 3 years growing brands and SMEs." />
   <meta name="author" content="Upridzal" />
 
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Upridzal" />
   <meta property="og:url" content="https://upridzal-portfolio.vercel.app/" />
-  <meta property="og:title" content="Upridzal — Digital Strategist" />
-  <meta property="og:description" content="Meta Ads · Content Strategy · AI Tools" />
+  <meta property="og:title" content="Upridzal — Social Media Manager" />
+  <meta property="og:description" content="End-to-end social media: strategy, content, community, ads &amp; analytics" />
   <meta property="og:image" content="https://upridzal-portfolio.vercel.app/assets/og-image.png" />
   <meta property="og:image:type" content="image/png" />
   <meta property="og:image:width" content="1920" />
   <meta property="og:image:height" content="1080" />
-  <meta property="og:image:alt" content="Upridzal — Digital Strategist portfolio" />
+  <meta property="og:image:alt" content="Upridzal — Social Media Manager portfolio" />
 
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Upridzal — Digital Strategist" />
-  <meta name="twitter:description" content="Meta Ads · Content Strategy · AI Tools" />
+  <meta name="twitter:title" content="Upridzal — Social Media Manager" />
+  <meta name="twitter:description" content="End-to-end social media: strategy, content, community, ads &amp; analytics" />
   <meta name="twitter:image" content="https://upridzal-portfolio.vercel.app/assets/og-image.png" />
 
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='16' fill='%23141210'/%3E%3Crect x='8' y='8' width='84' height='84' rx='10' fill='%23FF4A1C'/%3E%3Ctext x='50' y='71' font-family='Arial Black,sans-serif' font-size='62' font-weight='900' text-anchor='middle' fill='%23141210'%3EU%3C/text%3E%3C/svg%3E" />
@@ -458,6 +458,18 @@
     .proof-metric span { font-family: var(--font-body); font-size: 10.5px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-soft); margin-top: 5px; }
     .work-arrow { color: var(--ink-soft); transition: transform 0.3s var(--ease), color 0.3s; }
     .work:hover .work-arrow { color: var(--accent); transform: translate(4px,-4px); }
+    .work-links { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; }
+    .work-link {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 12.5px; font-weight: 700; letter-spacing: 0.02em;
+      padding: 8px 15px;
+      border: 2px solid var(--ink); border-radius: 999px;
+      background: var(--paper); color: var(--ink);
+      text-decoration: none;
+      box-shadow: 3px 3px 0 var(--ink);
+      transition: transform 0.15s var(--ease), box-shadow 0.15s var(--ease), background 0.2s, color 0.2s;
+    }
+    .work-link:hover { transform: translate(-2px,-2px); box-shadow: 4px 4px 0 var(--accent); background: var(--accent); color: var(--ink); }
 
     /* ============ VIDEOS ============ */
     #videos { background: var(--paper-2); }
@@ -616,8 +628,6 @@
         <li><a href="#about" data-link data-i18n="nav-about">About</a></li>
         <li><a href="#skills" data-link data-i18n="nav-skills">Skills</a></li>
         <li><a href="#work" data-link data-i18n="nav-work">Work</a></li>
-        <li><a href="#videos" data-link data-i18n="nav-videos">Videos</a></li>
-        <li><a href="#design" data-link data-i18n="nav-design">Design</a></li>
         <li><a href="#services" data-link data-i18n="nav-services">Services</a></li>
         <li><a href="#contact" data-link data-i18n="nav-contact">Contact</a></li>
         <li><button class="lang-toggle" id="langToggle" onclick="toggleLang()">ID</button></li>
@@ -630,15 +640,15 @@
     <div class="container hero-inner">
       <div class="hero-main">
         <div class="hero-tagrow">
-          <span class="tag tag-accent" data-i18n="hero-label">Digital Strategist</span>
+          <span class="tag tag-accent" data-i18n="hero-label">Social Media Manager</span>
           <span class="tag tag-live"><span class="dot"></span><span data-i18n="hero-avail">Available for projects</span></span>
         </div>
         <h1 class="hero-title">
-          <span class="hl"><span data-i18n="hero-h1a">I help brands</span> <span class="mark" data-i18n="hero-h1b">grow</span></span>
-          <span class="hl" data-i18n="hero-h1c">through strategy that's</span>
+          <span class="hl"><span data-i18n="hero-h1a">I manage</span> <span class="mark" data-i18n="hero-h1b">social media</span></span>
+          <span class="hl" data-i18n="hero-h1c">from strategy to</span>
           <span class="hl"><span class="typewriter" id="typewriter"></span><span class="caret"></span></span>
         </h1>
-        <p class="hero-sub">Meta Ads &middot; Content Strategy &middot; AI Tools.</p>
+        <p class="hero-sub">End-to-end social media: strategy, content, community, ads &amp; analytics.</p>
         <div class="hero-ctas">
           <a href="#work" class="btn btn-primary">
             <span data-i18n="hero-cta1">See My Work</span>
@@ -653,7 +663,7 @@
           <defs>
             <path id="badgeCircle" d="M90,90 m-66,0 a66,66 0 1,1 132,0 a66,66 0 1,1 -132,0" />
           </defs>
-          <text><textPath href="#badgeCircle" startOffset="0">OPEN FOR WORK &#183; STRATEGY &amp; CONTENT &#183; </textPath></text>
+          <text><textPath href="#badgeCircle" startOffset="0">OPEN FOR WORK &#183; SOCIAL MEDIA MANAGER &#183; </textPath></text>
         </svg>
         <div class="badge-core"><i data-lucide="asterisk"></i></div>
       </div>
@@ -663,42 +673,12 @@
   <!-- ============ MARQUEE ============ -->
   <div class="marquee" aria-hidden="true">
     <div class="marquee-track">
-      <span>Meta Ads</span><span>Content Strategy</span><span>AI Tools</span><span>ROAS-Driven</span><span>Brand Growth</span><span>TikTok</span>
+      <span>Social Strategy</span><span>Content Creation</span><span>Community</span><span>Meta &amp; TikTok Ads</span><span>Analytics</span><span>Copywriting</span>
     </div>
     <div class="marquee-track">
-      <span>Meta Ads</span><span>Content Strategy</span><span>AI Tools</span><span>ROAS-Driven</span><span>Brand Growth</span><span>TikTok</span>
+      <span>Social Strategy</span><span>Content Creation</span><span>Community</span><span>Meta &amp; TikTok Ads</span><span>Analytics</span><span>Copywriting</span>
     </div>
   </div>
-
-  <!-- ============ BRANDS ============ -->
-  <section id="brands">
-    <div class="container">
-      <p class="brands-label" data-i18n="brands-label">Brands I've worked with &amp; helped grow</p>
-      <div class="brands-row">
-        <div class="brand-logo">
-          <img src="assets/logos/indomie.png" alt="Indomie" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-flex';" />
-          <span class="brand-fallback" style="display:none">Indomie</span>
-        </div>
-        <div class="brand-logo">
-          <img src="assets/logos/3ayam.jpg" alt="Mi Telur Cap 3 Ayam" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-flex';" />
-          <span class="brand-fallback" style="display:none">Cap 3 Ayam</span>
-        </div>
-        <div class="brand-logo">
-          <img src="assets/logos/research-synergy.png" alt="Research Synergy" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-flex';" />
-          <span class="brand-fallback" style="display:none">Research Synergy</span>
-        </div>
-        <div class="brand-logo">
-          <img src="assets/logos/slamet-motor.png" alt="Slamet Motor Bandung" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-flex';" />
-          <span class="brand-fallback" style="display:none">Slamet Motor</span>
-        </div>
-        <div class="brand-logo">
-          <img src="assets/logos/dewasa-id.png" alt="Dewasa.id" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-flex';" />
-          <span class="brand-fallback" style="display:none">Dewasa.id</span>
-        </div>
-        <span class="brands-more" data-i18n="brands-more">&amp; many more</span>
-      </div>
-    </div>
-  </section>
 
   <!-- ============ ABOUT ============ -->
   <section id="about">
@@ -723,8 +703,8 @@
             <div class="stat-label" data-i18n="stat1">Years of Experience</div>
           </div>
           <div class="stat">
-            <div class="stat-num">1M+</div>
-            <div class="stat-label" data-i18n="stat2">Impressions</div>
+            <div class="stat-num">100+</div>
+            <div class="stat-label" data-i18n="stat2">Content Created</div>
           </div>
           <div class="stat">
             <div class="stat-num">∞</div>
@@ -750,40 +730,42 @@
         <div class="skill-group reveal">
           <h3>Strategy</h3>
           <div class="pills">
-            <span class="pill">Content Strategy</span>
-            <span class="pill">Campaign Planning</span>
+            <span class="pill">Social Media Strategy</span>
+            <span class="pill">Content Planning</span>
             <span class="pill">Audience Research</span>
             <span class="pill">Brand Positioning</span>
           </div>
         </div>
 
         <div class="skill-group reveal">
-          <h3>Execution</h3>
+          <h3>Content &amp; Creative</h3>
           <div class="pills">
-            <span class="pill">Meta Ads</span>
             <span class="pill">Content Creation</span>
             <span class="pill">Copywriting</span>
+            <span class="pill">Short-form Video</span>
+            <span class="pill">Carousel Design</span>
+          </div>
+        </div>
+
+        <div class="skill-group reveal">
+          <h3>Community &amp; Ads</h3>
+          <div class="pills">
+            <span class="pill">Community Management</span>
+            <span class="pill">Engagement</span>
+            <span class="pill">Meta Ads</span>
             <span class="pill">TikTok Ads</span>
           </div>
         </div>
 
         <div class="skill-group reveal">
-          <h3>Tools &amp; AI</h3>
+          <h3>Analytics &amp; Tools</h3>
           <div class="pills">
+            <span class="pill">Performance Reporting</span>
+            <span class="pill">Meta Ads Manager</span>
+            <span class="pill">Canva</span>
+            <span class="pill">CapCut</span>
             <span class="pill">Claude</span>
             <span class="pill">ChatGPT</span>
-            <span class="pill">Gemini</span>
-            <span class="pill">Canva</span>
-            <span class="pill">Meta Ads Manager</span>
-            <span class="pill">CapCut</span>
-          </div>
-        </div>
-
-        <div class="skill-group reveal">
-          <h3>Vibe Coding</h3>
-          <div class="pills">
-            <span class="pill">Claude Code</span>
-            <span class="pill">Cursor</span>
           </div>
         </div>
       </div>
@@ -822,6 +804,10 @@
                 <div class="proof-metric">700K+<span>Post Views / &lt;2 Months</span></div>
               </a>
             </div>
+            <div class="work-links">
+              <a class="work-link" href="https://www.tiktok.com/@ghovigha/video/7651623389844540688" target="_blank" rel="noopener">TikTok 1 ↗</a>
+              <a class="work-link" href="https://www.tiktok.com/@ghovigha/video/7646865084580498705" target="_blank" rel="noopener">TikTok 2 ↗</a>
+            </div>
           </div>
           <div class="work-arrow"><i data-lucide="arrow-up-right" style="width:20px;height:20px"></i></div>
         </article>
@@ -834,7 +820,7 @@
               <span class="work-duration" data-i18n="dur-rsf">January 2025 to Present</span>
             </div>
             <span class="work-tag">Email Marketing · Marketing Management</span>
-            <p class="work-desc" data-i18n="desc-rsf">Drove targeted email marketing campaigns with a 21% open rate to boost event conversions. Also led marketing planning and management, contributing to a 9% year-over-year profit growth.</p>
+            <p class="work-desc" data-i18n="desc-rsf">Drove targeted email marketing campaigns with a 21% open rate to boost event conversions. Also led marketing planning and management, contributing to a 9% year-over-year profit growth. A key lesson from here: good design is not about looking good, design that fits the target market is what actually works.</p>
             <div class="work-stats">
               <div class="work-stat"><div class="work-stat-num">400+</div><div class="work-stat-label">Emails Sent</div></div>
               <div class="work-stat"><div class="work-stat-num">60+</div><div class="work-stat-label">Content Created</div></div>
@@ -846,6 +832,10 @@
                 <div class="placeholder" style="display:none"><i data-lucide="image"></i>Add proof</div>
                 <div class="proof-metric">IG<span>Social Media</span></div>
               </a>
+            </div>
+            <div class="work-links">
+              <a class="work-link" href="https://www.instagram.com/reels/DViKbZfAT62/" target="_blank" rel="noopener">Reel 1 ↗</a>
+              <a class="work-link" href="https://www.instagram.com/reels/DV8GoulgWGW/" target="_blank" rel="noopener">Reel 2 ↗</a>
             </div>
           </div>
           <div class="work-arrow"><i data-lucide="arrow-up-right" style="width:20px;height:20px"></i></div>
@@ -877,6 +867,16 @@
                 <div class="proof-metric">↗<span>Feed Redesign</span></div>
               </a>
             </div>
+            <div class="work-links">
+              <a class="work-link" href="https://www.instagram.com/reel/DSWYGV1gfZP/" target="_blank" rel="noopener">Reel 1 ↗</a>
+              <a class="work-link" href="https://www.instagram.com/reel/DVJ5BTpEjLB/" target="_blank" rel="noopener">Reel 2 ↗</a>
+              <a class="work-link" href="https://www.instagram.com/p/DWCVP5pjLKW/" target="_blank" rel="noopener">Ad 1 ↗</a>
+              <a class="work-link" href="https://www.instagram.com/p/DWCVhQdjMgT/" target="_blank" rel="noopener">Ad 2 ↗</a>
+              <a class="work-link" href="https://www.instagram.com/p/DXbf_gOlO78/" target="_blank" rel="noopener">Carousel 1 ↗</a>
+              <a class="work-link" href="https://www.instagram.com/p/DWlarX9lNtl/" target="_blank" rel="noopener">Carousel 2 ↗</a>
+              <a class="work-link" href="https://www.instagram.com/p/DWV-d1UlHuj/" target="_blank" rel="noopener">Carousel 3 ↗</a>
+              <a class="work-link" href="https://www.instagram.com/p/DTsEMPmgSJu/" target="_blank" rel="noopener">Carousel 4 ↗</a>
+            </div>
           </div>
           <div class="work-arrow"><i data-lucide="arrow-up-right" style="width:20px;height:20px"></i></div>
         </article>
@@ -907,6 +907,9 @@
                 <div class="proof-metric">500+<span>Followers / 2mo</span></div>
               </a>
             </div>
+            <div class="work-links">
+              <a class="work-link" href="https://www.instagram.com/reels/DIqnSavSxww/" target="_blank" rel="noopener">Video Ad ↗</a>
+            </div>
           </div>
           <div class="work-arrow"><i data-lucide="arrow-up-right" style="width:20px;height:20px"></i></div>
         </article>
@@ -936,12 +939,49 @@
                 <div class="proof-metric">1K+<span>IG / Video</span></div>
               </a>
             </div>
+            <div class="work-links">
+              <a class="work-link" href="https://www.tiktok.com/@wanttosayang_/video/7612611539060673793" target="_blank" rel="noopener">TikTok ↗</a>
+            </div>
           </div>
           <div class="work-arrow"><i data-lucide="arrow-up-right" style="width:20px;height:20px"></i></div>
         </article>
 
         <article class="work reveal">
           <div class="work-num">06</div>
+          <div class="work-body">
+            <div class="work-head">
+              <h3>Y&amp;Clar</h3>
+              <span class="work-duration">2024</span>
+            </div>
+            <span class="work-tag">Content Creation · Short-form Video</span>
+            <p class="work-desc">Short-form video content produced end to end for the Y&amp;Clar account, from concept and scripting to filming and editing.</p>
+            <div class="work-links">
+              <a class="work-link" href="https://www.tiktok.com/@ynclar/video/7441456397000199479" target="_blank" rel="noopener">TikTok 1 ↗</a>
+              <a class="work-link" href="https://www.tiktok.com/@ynclar/video/7442928118605581624" target="_blank" rel="noopener">TikTok 2 ↗</a>
+              <a class="work-link" href="https://www.tiktok.com/@ynclar/video/7444911826183261495" target="_blank" rel="noopener">TikTok 3 ↗</a>
+            </div>
+          </div>
+          <div class="work-arrow"><i data-lucide="arrow-up-right" style="width:20px;height:20px"></i></div>
+        </article>
+
+        <article class="work reveal">
+          <div class="work-num">07</div>
+          <div class="work-body">
+            <div class="work-head">
+              <h3>Startiq Digital</h3>
+              <span class="work-duration">2025</span>
+            </div>
+            <span class="work-tag">Meta Ads · Video Ads</span>
+            <p class="work-desc">Produced and managed video ad creative for Startiq Digital, built to drive reach and conversions on Meta.</p>
+            <div class="work-links">
+              <a class="work-link" href="https://www.instagram.com/p/DLPi5tAvpNV/" target="_blank" rel="noopener">Video Ad ↗</a>
+            </div>
+          </div>
+          <div class="work-arrow"><i data-lucide="arrow-up-right" style="width:20px;height:20px"></i></div>
+        </article>
+
+        <article class="work reveal">
+          <div class="work-num">08</div>
           <div class="work-body">
             <div class="work-head">
               <h3>Portfolio Website</h3>
@@ -952,225 +992,6 @@
           </div>
           <div class="work-arrow"><i data-lucide="arrow-up-right" style="width:20px;height:20px"></i></div>
         </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ VIDEOS ============ -->
-  <section id="videos">
-    <div class="container">
-      <div class="section-head reveal">
-        <div class="eyebrow">
-          <span class="tag tag-accent"><span data-i18n="tag-videos">Motion</span></span>
-        </div>
-        <h2 class="section-title" data-i18n="videos-title">Video Work</h2>
-        <p class="section-desc" data-i18n="videos-desc">I produce content end-to-end, far more than what's shown here. These are simply the ones I'm personally most proud of.</p>
-      </div>
-
-      <!-- TikTok Group -->
-      <div class="video-group reveal">
-        <div class="video-group-header">
-          <span class="platform-pill tiktok">TikTok</span>
-          <span class="video-group-count" data-i18n="vc-tiktok">Six videos</span>
-        </div>
-        <div class="videos-grid">
-
-          <!-- Personal Branding #1 -->
-          <div class="video-card">
-            <div class="video-card-label">
-              <span class="video-client">Personal Branding</span>
-            </div>
-            <div class="video-embed">
-              <blockquote class="tiktok-embed"
-                cite="https://www.tiktok.com/@ghovigha/video/7651623389844540688"
-                data-video-id="7651623389844540688">
-                <section><a href="https://www.tiktok.com/@ghovigha/video/7651623389844540688">Watch on TikTok</a></section>
-              </blockquote>
-            </div>
-          </div>
-
-          <!-- Personal Branding #2 -->
-          <div class="video-card">
-            <div class="video-card-label">
-              <span class="video-client">Personal Branding</span>
-            </div>
-            <div class="video-embed">
-              <blockquote class="tiktok-embed"
-                cite="https://www.tiktok.com/@ghovigha/video/7646865084580498705"
-                data-video-id="7646865084580498705">
-                <section><a href="https://www.tiktok.com/@ghovigha/video/7646865084580498705">Watch on TikTok</a></section>
-              </blockquote>
-            </div>
-          </div>
-
-          <!-- Want to Sayang -->
-          <div class="video-card">
-            <div class="video-card-label">
-              <span class="video-client">Want to Sayang</span>
-            </div>
-            <div class="video-embed">
-              <blockquote class="tiktok-embed"
-                cite="https://www.tiktok.com/@wanttosayang_/video/7612611539060673793"
-                data-video-id="7612611539060673793">
-                <section><a href="https://www.tiktok.com/@wanttosayang_/video/7612611539060673793">Watch on TikTok</a></section>
-              </blockquote>
-            </div>
-          </div>
-
-          <!-- Research Synergy Foundation -->
-          <div class="video-card">
-            <div class="video-card-label">
-              <span class="video-client">Y&amp;Clar</span>
-            </div>
-            <div class="video-embed">
-              <blockquote class="tiktok-embed"
-                cite="https://www.tiktok.com/@ynclar/video/7441456397000199479"
-                data-video-id="7441456397000199479">
-                <section><a href="https://www.tiktok.com/@ynclar/video/7441456397000199479">Watch on TikTok</a></section>
-              </blockquote>
-            </div>
-          </div>
-
-          <!-- Research Synergy Foundation #2 -->
-          <div class="video-card">
-            <div class="video-card-label">
-              <span class="video-client">Y&amp;Clar</span>
-            </div>
-            <div class="video-embed">
-              <blockquote class="tiktok-embed"
-                cite="https://www.tiktok.com/@ynclar/video/7442928118605581624"
-                data-video-id="7442928118605581624">
-                <section><a href="https://www.tiktok.com/@ynclar/video/7442928118605581624">Watch on TikTok</a></section>
-              </blockquote>
-            </div>
-          </div>
-
-          <!-- Research Synergy Foundation #3 -->
-          <div class="video-card">
-            <div class="video-card-label">
-              <span class="video-client">Y&amp;Clar</span>
-            </div>
-            <div class="video-embed">
-              <blockquote class="tiktok-embed"
-                cite="https://www.tiktok.com/@ynclar/video/7444911826183261495"
-                data-video-id="7444911826183261495">
-                <section><a href="https://www.tiktok.com/@ynclar/video/7444911826183261495">Watch on TikTok</a></section>
-              </blockquote>
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-      <!-- Instagram Group -->
-      <div class="video-group reveal">
-        <div class="video-group-header">
-          <span class="platform-pill instagram">Instagram</span>
-          <span class="video-group-count" data-i18n="vc-ig">Four reels</span>
-        </div>
-        <div class="ig-links-row">
-
-          <a class="ig-link-card" href="https://www.instagram.com/reels/DViKbZfAT62/" target="_blank" rel="noopener">
-            <span class="ig-link-client">Research Synergy Fdn</span>
-            <span class="ig-link-type" data-i18n="ig-reel">Reel</span>
-            <span class="ig-link-cta" data-i18n="ig-open">Open on Instagram ↗</span>
-          </a>
-
-          <a class="ig-link-card" href="https://www.instagram.com/reels/DV8GoulgWGW/" target="_blank" rel="noopener">
-            <span class="ig-link-client">Research Synergy Fdn</span>
-            <span class="ig-link-type" data-i18n="ig-reel">Reel</span>
-            <span class="ig-link-cta" data-i18n="ig-open">Open on Instagram ↗</span>
-          </a>
-
-          <a class="ig-link-card" href="https://www.instagram.com/reel/DSWYGV1gfZP/" target="_blank" rel="noopener">
-            <span class="ig-link-client">Teman Publikasi</span>
-            <span class="ig-link-type" data-i18n="ig-reel">Reel</span>
-            <span class="ig-link-cta" data-i18n="ig-open">Open on Instagram ↗</span>
-          </a>
-
-          <a class="ig-link-card" href="https://www.instagram.com/reel/DVJ5BTpEjLB/" target="_blank" rel="noopener">
-            <span class="ig-link-client">Teman Publikasi</span>
-            <span class="ig-link-type" data-i18n="ig-reel">Reel</span>
-            <span class="ig-link-cta" data-i18n="ig-open">Open on Instagram ↗</span>
-          </a>
-
-        </div>
-      </div>
-
-      <!-- Video Ads Group -->
-      <div class="video-group reveal">
-        <div class="video-group-header">
-          <span class="platform-pill ads" data-i18n="vp-ads">Video Ads</span>
-          <span class="video-group-count" data-i18n="vc-ads">Four videos</span>
-        </div>
-        <div class="ig-links-row">
-
-          <a class="ig-link-card" href="https://www.instagram.com/p/DWCVP5pjLKW/" target="_blank" rel="noopener">
-            <span class="ig-link-client">Teman Publikasi</span>
-            <span class="ig-link-type" data-i18n="ig-ad">Video Ad</span>
-            <span class="ig-link-cta" data-i18n="ig-open">Open on Instagram ↗</span>
-          </a>
-
-          <a class="ig-link-card" href="https://www.instagram.com/p/DLPi5tAvpNV/" target="_blank" rel="noopener">
-            <span class="ig-link-client">Startiq Digital</span>
-            <span class="ig-link-type" data-i18n="ig-ad">Video Ad</span>
-            <span class="ig-link-cta" data-i18n="ig-open">Open on Instagram ↗</span>
-          </a>
-
-          <a class="ig-link-card" href="https://www.instagram.com/p/DWCVhQdjMgT/" target="_blank" rel="noopener">
-            <span class="ig-link-client">Teman Publikasi</span>
-            <span class="ig-link-type" data-i18n="ig-ad">Video Ad</span>
-            <span class="ig-link-cta" data-i18n="ig-open">Open on Instagram ↗</span>
-          </a>
-
-          <a class="ig-link-card" href="https://www.instagram.com/reels/DIqnSavSxww/" target="_blank" rel="noopener">
-            <span class="ig-link-client">Slamet Motor Bandung</span>
-            <span class="ig-link-type" data-i18n="ig-ad">Video Ad</span>
-            <span class="ig-link-cta" data-i18n="ig-open">Open on Instagram ↗</span>
-          </a>
-
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ DESIGN WORK ============ -->
-  <section id="design">
-    <div class="container">
-      <div class="section-head reveal">
-        <div class="eyebrow">
-          <span class="tag tag-accent"><span data-i18n="tag-design">Visuals</span></span>
-        </div>
-        <h2 class="section-title" data-i18n="design-title">Design Work</h2>
-        <p class="section-desc" data-i18n="design-desc">Carousels, graphics, and visual content I've designed.</p>
-      </div>
-
-      <div class="ig-links-row">
-
-        <a class="ig-link-card" href="https://www.instagram.com/p/DXbf_gOlO78/" target="_blank" rel="noopener">
-          <span class="ig-link-client">Instagram</span>
-          <span class="ig-link-type" data-i18n="design-type">Carousel</span>
-          <span class="ig-link-cta" data-i18n="ig-open">Open on Instagram ↗</span>
-        </a>
-
-        <a class="ig-link-card" href="https://www.instagram.com/p/DWlarX9lNtl/" target="_blank" rel="noopener">
-          <span class="ig-link-client">Instagram</span>
-          <span class="ig-link-type" data-i18n="design-type">Carousel</span>
-          <span class="ig-link-cta" data-i18n="ig-open">Open on Instagram ↗</span>
-        </a>
-
-        <a class="ig-link-card" href="https://www.instagram.com/p/DWV-d1UlHuj/" target="_blank" rel="noopener">
-          <span class="ig-link-client">Instagram</span>
-          <span class="ig-link-type" data-i18n="design-type">Carousel</span>
-          <span class="ig-link-cta" data-i18n="ig-open">Open on Instagram ↗</span>
-        </a>
-
-        <a class="ig-link-card" href="https://www.instagram.com/p/DTsEMPmgSJu/" target="_blank" rel="noopener">
-          <span class="ig-link-client">Instagram</span>
-          <span class="ig-link-type" data-i18n="design-type">Carousel</span>
-          <span class="ig-link-cta" data-i18n="ig-open">Open on Instagram ↗</span>
-        </a>
-
       </div>
     </div>
   </section>
@@ -1189,20 +1010,20 @@
       <div class="services-grid">
         <div class="service reveal">
           <div class="service-icon"><i data-lucide="layout-grid"></i></div>
-          <h3 data-i18n="svc1-title">Content Strategy &amp; Creation</h3>
-          <p data-i18n="svc1-desc">From audience research and editorial calendars to producing the content itself: copy, carousels, and short-form video. For brands that want content with a clear direction, ready to ship.</p>
+          <h3 data-i18n="svc1-title">Social Media Management</h3>
+          <p data-i18n="svc1-desc">End-to-end handling of your accounts: strategy, content calendar, posting, community management, and monthly reporting. A social presence that runs consistently.</p>
         </div>
 
         <div class="service reveal">
-          <div class="service-icon"><i data-lucide="target"></i></div>
-          <h3 data-i18n="svc2-title">Meta Ads Management</h3>
-          <p data-i18n="svc2-desc">Setup, optimization, and reporting for Meta Ads. ROAS-focused, not just vanity metrics.</p>
+          <div class="service-icon"><i data-lucide="clapperboard"></i></div>
+          <h3 data-i18n="svc2-title">Content Creation</h3>
+          <p data-i18n="svc2-desc">From concept to finished asset: copywriting, carousels, and short-form video. On-brand content with a clear direction, ready to publish.</p>
         </div>
 
         <div class="service reveal">
-          <div class="service-icon"><i data-lucide="sparkles"></i></div>
-          <h3 data-i18n="svc3-title">Digital Strategy</h3>
-          <p data-i18n="svc3-desc">End-to-end digital strategy tailored to your goals: growth, awareness, or conversions. Powered by data and sharpened by AI to move faster and hit harder.</p>
+          <div class="service-icon"><i data-lucide="trending-up"></i></div>
+          <h3 data-i18n="svc3-title">Paid Ads &amp; Growth</h3>
+          <p data-i18n="svc3-desc">Meta and TikTok ads managed for real results: setup, optimization, and reporting. ROAS-focused, not vanity metrics.</p>
         </div>
       </div>
     </div>
@@ -1265,17 +1086,17 @@
       en: {
         'nav-about': 'About', 'nav-skills': 'Skills', 'nav-work': 'Work',
         'nav-services': 'Services', 'nav-contact': 'Contact',
-        'hero-label': 'Digital Strategist',
+        'hero-label': 'Social Media Manager',
         'hero-avail': 'Available for projects',
         'brands-label': "Brands I've worked with & helped grow", 'brands-more': '& many more',
-        'hero-h1a': 'I help brands', 'hero-h1b': 'grow',
-        'hero-h1c': "through strategy that's",
+        'hero-h1a': 'I manage', 'hero-h1b': 'social media',
+        'hero-h1c': 'from strategy to',
         'hero-cta1': 'See My Work', 'hero-cta2': 'Get in Touch',
         'tag-about': 'Introduction', 'about-title': 'About Me',
-        'about-p1': 'Three years deep in digital marketing: from audience research and content creation, to managing Meta Ads from setup to optimization.',
-        'about-p2': "I believe good strategy isn't just about ideas. It's about <strong>systems that can be repeated</strong>, measured, and constantly improved.",
-        'about-p3': 'These days I also use AI to work faster, and I teach others how to do the same on TikTok.',
-        'stat1': 'Years of Experience', 'stat2': 'Impressions', 'stat3': 'Cups of Coffee',
+        'about-p1': 'Three years managing social media end to end: from strategy and content creation to community management, paid ads, and performance reporting.',
+        'about-p2': "Good social media isn't just posting. It's about <strong>a system you can repeat</strong>, measure, and keep improving week after week.",
+        'about-p3': 'I also lean on AI to move faster, and I share how I work with others on TikTok.',
+        'stat1': 'Years of Experience', 'stat2': 'Content Created', 'stat3': 'Cups of Coffee',
         'tag-skills': 'Capabilities', 'skills-title': 'Skill Stack',
         'skills-desc': 'What I bring to every project.',
         'tag-works': 'The Work', 'works-title': 'Selected Works',
@@ -1283,7 +1104,7 @@
         'dur-pb': 'May 2025 to Present',
         'desc-pb': "Helped an F&B entrepreneur build their personal brand on TikTok from scratch. In under two months, the account hit 700K+ total views and grew to 2,100+ followers, driven by a content strategy built around authentic storytelling and niche positioning.",
         'dur-rsf': 'January 2025 to Present',
-        'desc-rsf': 'Drove targeted email marketing campaigns with a 21% open rate to boost event conversions. Also led marketing planning and management, contributing to a 9% year-over-year profit growth.',
+        'desc-rsf': 'Drove targeted email marketing campaigns with a 21% open rate to boost event conversions. Also led marketing planning and management, contributing to a 9% year-over-year profit growth. A key lesson from here: good design is not about looking good, design that fits the target market is what actually works.',
         'dur-tp': 'October 2025 to Present',
         'desc-tp': 'Ran Meta Ads campaigns targeting researchers and academics, consistently achieving ROAS above 3x and peaking at 7x. Also initiated a full Instagram feed redesign to elevate the brand\'s visual identity, resulting in a more cohesive look that improved content engagement.',
         'dur-sm': 'March 2025 to May 2025',
@@ -1299,12 +1120,12 @@
         'nav-design': 'Design',
         'tag-design': 'Visuals', 'design-title': 'Design Work', 'design-desc': "Carousels, graphics, and visual content I've designed.", 'design-type': 'Carousel',
         'tag-services': 'What I Offer', 'svc-title': 'Services', 'svc-desc': 'How I can help.',
-        'svc1-title': 'Content Strategy & Creation',
-        'svc1-desc': 'From audience research and editorial calendars to producing the content itself: copy, carousels, and short-form video. For brands that want content with a clear direction, ready to ship.',
-        'svc2-title': 'Meta Ads Management',
-        'svc2-desc': 'Setup, optimization, and reporting for Meta Ads. ROAS-focused, not just vanity metrics.',
-        'svc3-title': 'Digital Strategy',
-        'svc3-desc': 'End-to-end digital strategy tailored to your goals: growth, awareness, or conversions. Powered by data and sharpened by AI to move faster and hit harder.',
+        'svc1-title': 'Social Media Management',
+        'svc1-desc': 'End-to-end handling of your accounts: strategy, content calendar, posting, community management, and monthly reporting. A social presence that runs consistently.',
+        'svc2-title': 'Content Creation',
+        'svc2-desc': 'From concept to finished asset: copywriting, carousels, and short-form video. On-brand content with a clear direction, ready to publish.',
+        'svc3-title': 'Paid Ads & Growth',
+        'svc3-desc': 'Meta and TikTok ads managed for real results: setup, optimization, and reporting. ROAS-focused, not vanity metrics.',
         'cta-h1': 'Got a project?', 'cta-h2': "Let's talk.",
         'cta-desc': 'Open for freelance projects, collaborations, and quick consultations.',
         'cta-wa': 'Chat on WhatsApp', 'cta-email': 'Send an Email',
@@ -1312,17 +1133,17 @@
       id: {
         'nav-about': 'Tentang', 'nav-skills': 'Keahlian', 'nav-work': 'Portofolio',
         'nav-services': 'Layanan', 'nav-contact': 'Kontak',
-        'hero-label': 'Digital Strategist',
+        'hero-label': 'Social Media Manager',
         'hero-avail': 'Tersedia untuk project',
         'brands-label': 'Brand yang pernah saya bantu & ajak kerja sama', 'brands-more': '& banyak lagi',
-        'hero-h1a': 'Saya bantu brand', 'hero-h1b': 'tumbuh',
-        'hero-h1c': 'lewat strategi yang',
+        'hero-h1a': 'Saya kelola', 'hero-h1b': 'social media',
+        'hero-h1c': 'dari strategi sampai',
         'hero-cta1': 'Lihat Karya', 'hero-cta2': 'Hubungi Saya',
         'tag-about': 'Perkenalan', 'about-title': 'Tentang Saya',
-        'about-p1': 'Tiga tahun berkutat di digital marketing: dari riset audiens dan pembuatan konten, hingga mengelola Meta Ads dari setup sampai optimasi.',
-        'about-p2': 'Strategi yang bagus bukan cuma soal ide. Ini soal <strong>sistem yang bisa dijalankan berulang</strong>, diukur hasilnya, dan terus diperbaiki.',
-        'about-p3': 'Sekarang saya juga aktif pakai AI untuk kerja lebih cepat, dan berbagi caranya ke orang lain lewat TikTok.',
-        'stat1': 'Tahun Pengalaman', 'stat2': 'Impresi', 'stat3': 'Kopi yang Habis',
+        'about-p1': 'Tiga tahun mengelola social media secara end to end: dari strategi dan pembuatan konten hingga community management, iklan berbayar, dan pelaporan performa.',
+        'about-p2': 'Social media yang bagus bukan cuma soal posting. Ini soal <strong>sistem yang bisa diulang</strong>, diukur, dan terus diperbaiki minggu demi minggu.',
+        'about-p3': 'Saya juga memanfaatkan AI biar kerja lebih cepat, dan berbagi caranya ke orang lain lewat TikTok.',
+        'stat1': 'Tahun Pengalaman', 'stat2': 'Konten Dibuat', 'stat3': 'Kopi yang Habis',
         'tag-skills': 'Kapabilitas', 'skills-title': 'Skill Stack',
         'skills-desc': 'Yang saya bawa ke setiap project.',
         'tag-works': 'Karya', 'works-title': 'Portofolio',
@@ -1330,7 +1151,7 @@
         'dur-pb': 'Mei 2025 sampai Sekarang',
         'desc-pb': 'Membantu seorang entrepreneur F&B membangun personal brand di TikTok dari nol. Dalam kurang dari dua bulan, akun berhasil meraih 700K+ total tayangan dan tumbuh ke 2.100+ followers, berkat strategi konten berbasis storytelling autentik dan niche yang tepat.',
         'dur-rsf': 'Januari 2025 sampai Sekarang',
-        'desc-rsf': 'Menjalankan kampanye email marketing bertarget dengan open rate 21% untuk mendorong konversi event. Sekaligus memimpin perencanaan dan manajemen marketing yang berkontribusi pada pertumbuhan profit 9% secara tahunan.',
+        'desc-rsf': 'Menjalankan kampanye email marketing bertarget dengan open rate 21% untuk mendorong konversi event. Sekaligus memimpin perencanaan dan manajemen marketing yang berkontribusi pada pertumbuhan profit 9% secara tahunan. Pelajaran penting dari sini: desain yang bagus bukan soal terlihat keren, tapi desain yang sesuai target market itulah yang benar-benar berhasil.',
         'dur-tp': 'Oktober 2025 sampai Sekarang',
         'desc-tp': 'Mengelola kampanye Meta Ads untuk audiens peneliti dan akademisi, dengan ROAS konsisten di atas 3x dan puncaknya 7x. Juga menginisiasi redesign feed Instagram untuk memperkuat identitas visual brand sehingga konten lebih kohesif dan meningkatkan engagement.',
         'dur-sm': 'Maret 2025 sampai Mei 2025',
@@ -1346,12 +1167,12 @@
         'nav-design': 'Desain',
         'tag-design': 'Visual', 'design-title': 'Karya Desain', 'design-desc': 'Carousel, grafis, dan konten visual yang saya desain.', 'design-type': 'Carousel',
         'tag-services': 'Yang Saya Tawarkan', 'svc-title': 'Layanan', 'svc-desc': 'Apa yang bisa saya bantu.',
-        'svc1-title': 'Strategi & Pembuatan Konten',
-        'svc1-desc': 'Dari riset audiens dan editorial calendar sampai eksekusi kontennya langsung: copywriting, carousel, dan video pendek. Untuk brand yang mau konten dengan arah yang jelas dan siap tayang.',
-        'svc2-title': 'Manajemen Meta Ads',
-        'svc2-desc': 'Setup, optimasi, dan pelaporan iklan Meta. Fokus pada ROAS, bukan sekadar angka vanity.',
-        'svc3-title': 'Strategi Digital',
-        'svc3-desc': 'Strategi digital end-to-end yang disesuaikan dengan target kamu: pertumbuhan, awareness, atau konversi. Didukung data dan dipertajam dengan AI untuk bergerak lebih cepat dan lebih efektif.',
+        'svc1-title': 'Manajemen Social Media',
+        'svc1-desc': 'Pengelolaan akun secara end-to-end: strategi, content calendar, posting, community management, dan laporan bulanan. Social media kamu jalan konsisten.',
+        'svc2-title': 'Pembuatan Konten',
+        'svc2-desc': 'Dari konsep sampai aset jadi: copywriting, carousel, dan video pendek. Konten sesuai brand dengan arah yang jelas dan siap tayang.',
+        'svc3-title': 'Iklan & Pertumbuhan',
+        'svc3-desc': 'Iklan Meta dan TikTok yang dikelola untuk hasil nyata: setup, optimasi, dan pelaporan. Fokus ROAS, bukan angka vanity.',
         'cta-h1': 'Punya project?', 'cta-h2': 'Mari ngobrol.',
         'cta-desc': 'Terbuka untuk project freelance, kolaborasi, dan konsultasi singkat.',
         'cta-wa': 'Chat via WhatsApp', 'cta-email': 'Kirim Email',
@@ -1367,8 +1188,8 @@
       btn.textContent = currentLang === 'en' ? 'ID' : 'EN';
       btn.classList.toggle('active-id', currentLang === 'id');
       phrases = currentLang === 'id'
-        ? ['terukur.', 'berdampak.', 'berulang.']
-        : ['measurable.', 'impactful.', 'repeatable.'];
+        ? ['konten.', 'komunitas.', 'iklan.', 'laporan.']
+        : ['content.', 'community.', 'ads.', 'reporting.'];
     }
 
     function applyLang(lang) {
@@ -1405,7 +1226,7 @@
     });
 
     // ============ ACTIVE NAV ON SCROLL ============
-    const sections = ['hero', 'about', 'skills', 'work', 'videos', 'design', 'services', 'contact'];
+    const sections = ['hero', 'about', 'skills', 'work', 'services', 'contact'];
     const navLinks = document.querySelectorAll('.nav-menu a');
     window.addEventListener('scroll', () => {
       let current = 'hero';
@@ -1420,7 +1241,7 @@
 
     // ============ TYPEWRITER ============
     const typewriterEl = document.getElementById('typewriter');
-    let phrases = ['measurable.', 'impactful.', 'repeatable.'];
+    let phrases = ['content.', 'community.', 'ads.', 'reporting.'];
     let phraseIdx = 0, charIdx = 0, deleting = false;
 
     function typeLoop() {
@@ -1481,7 +1302,5 @@
 
   </script>
 
-  <!-- TikTok embed script at end of body so DOM is ready -->
-  <script async src="https://www.tiktok.com/embed.js"></script>
 </body>
 </html>
