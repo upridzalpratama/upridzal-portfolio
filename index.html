@@ -3,23 +3,23 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Upridzal — Social Media Manager</title>
+  <title>Upridzal — Social Media Manager &amp; Content Creator</title>
   <meta name="description" content="Social Media Manager who runs it end to end: strategy, content creation, community, Meta &amp; TikTok ads, and analytics. 3 years growing brands and SMEs." />
   <meta name="author" content="Upridzal" />
 
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Upridzal" />
   <meta property="og:url" content="https://upridzal-portfolio.vercel.app/" />
-  <meta property="og:title" content="Upridzal — Social Media Manager" />
+  <meta property="og:title" content="Upridzal — Social Media Manager &amp; Content Creator" />
   <meta property="og:description" content="End-to-end social media: strategy, content, community, ads &amp; analytics" />
   <meta property="og:image" content="https://upridzal-portfolio.vercel.app/assets/og-image.png" />
   <meta property="og:image:type" content="image/png" />
   <meta property="og:image:width" content="1920" />
   <meta property="og:image:height" content="1080" />
-  <meta property="og:image:alt" content="Upridzal — Social Media Manager portfolio" />
+  <meta property="og:image:alt" content="Upridzal — Social Media Manager &amp; Content Creator portfolio" />
 
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Upridzal — Social Media Manager" />
+  <meta name="twitter:title" content="Upridzal — Social Media Manager &amp; Content Creator" />
   <meta name="twitter:description" content="End-to-end social media: strategy, content, community, ads &amp; analytics" />
   <meta name="twitter:image" content="https://upridzal-portfolio.vercel.app/assets/og-image.png" />
 
@@ -352,7 +352,24 @@
     @keyframes rise { from { opacity: 0; transform: translateY(26px); } to { opacity: 1; transform: none; } }
 
     /* ============ ABOUT ============ */
-    .about-grid { display: grid; grid-template-columns: 1.45fr 1fr; gap: 64px; align-items: start; }
+    .about-grid { display: grid; grid-template-columns: 1fr 380px; gap: 64px; align-items: start; }
+    .about-side { display: flex; flex-direction: column; }
+    .photo-frame {
+      width: 100%; aspect-ratio: 1 / 1;
+      border: 3px solid var(--ink); border-radius: 18px;
+      overflow: hidden; position: relative;
+      background: var(--paper-2);
+      box-shadow: 6px 6px 0 var(--ink);
+    }
+    .photo-frame img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .photo-fallback {
+      position: absolute; inset: 0;
+      display: none; align-items: center; justify-content: center;
+      font-family: var(--font-display); font-weight: 800; font-size: 1.4rem; color: var(--ink-soft);
+    }
+    .photo-caption { margin: 18px 0 26px; }
+    .photo-caption strong { display: block; font-family: var(--font-display); font-weight: 800; font-size: 1.5rem; line-height: 1.1; }
+    .photo-caption span { display: block; margin-top: 5px; font-size: 12.5px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent-deep); }
     .about-text p { font-size: 1.3rem; font-weight: 500; margin-bottom: 24px; }
     .about-text p:last-child { margin-bottom: 0; }
     .about-text strong { font-weight: 700; background: linear-gradient(transparent 60%, rgba(255,74,28,0.35) 60%); }
@@ -641,6 +658,7 @@
       <div class="hero-main">
         <div class="hero-tagrow">
           <span class="tag tag-accent" data-i18n="hero-label">Social Media Manager</span>
+          <span class="tag" data-i18n="hero-label2">Content Creator</span>
           <span class="tag tag-live"><span class="dot"></span><span data-i18n="hero-avail">Available for projects</span></span>
         </div>
         <h1 class="hero-title">
@@ -692,23 +710,33 @@
 
       <div class="about-grid">
         <div class="about-text reveal">
-          <p data-i18n="about-p1">Three years deep in digital marketing: from audience research and content creation, to managing Meta Ads from setup to optimization.</p>
-          <p data-i18n="about-p2">I believe good strategy isn't just about ideas. It's about <strong>systems that can be repeated</strong>, measured, and constantly improved.</p>
-          <p data-i18n="about-p3">These days I also use AI to work faster, and I teach others how to do the same on TikTok.</p>
+          <p data-i18n="about-p1">Three years managing social media end to end: from strategy and content creation to community management, paid ads, and performance reporting.</p>
+          <p data-i18n="about-p2">Good social media isn't just posting. It's about <strong>a system you can repeat</strong>, measure, and keep improving week after week.</p>
+          <p data-i18n="about-p3">I also lean on AI to move faster, and I share how I work with others on TikTok.</p>
         </div>
 
-        <div class="stats reveal">
-          <div class="stat">
-            <div class="stat-num" data-count="3" data-suffix="+">0</div>
-            <div class="stat-label" data-i18n="stat1">Years of Experience</div>
+        <div class="about-side reveal">
+          <div class="photo-frame">
+            <img src="assets/profile.jpg" alt="Upridzal — Social Media Manager and Content Creator" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+            <div class="photo-fallback" style="display:none">Add photo</div>
           </div>
-          <div class="stat">
-            <div class="stat-num">100+</div>
-            <div class="stat-label" data-i18n="stat2">Content Created</div>
+          <div class="photo-caption">
+            <strong>Upridzal</strong>
+            <span data-i18n="about-role">Social Media Manager &amp; Content Creator</span>
           </div>
-          <div class="stat">
-            <div class="stat-num">∞</div>
-            <div class="stat-label" data-i18n="stat3">Cups of Coffee</div>
+          <div class="stats">
+            <div class="stat">
+              <div class="stat-num" data-count="3" data-suffix="+">0</div>
+              <div class="stat-label" data-i18n="stat1">Years of Experience</div>
+            </div>
+            <div class="stat">
+              <div class="stat-num">100+</div>
+              <div class="stat-label" data-i18n="stat2">Content Created</div>
+            </div>
+            <div class="stat">
+              <div class="stat-num">∞</div>
+              <div class="stat-label" data-i18n="stat3">Cups of Coffee</div>
+            </div>
           </div>
         </div>
       </div>
@@ -1088,6 +1116,7 @@
         'nav-services': 'Services', 'nav-contact': 'Contact',
         'hero-label': 'Social Media Manager',
         'hero-avail': 'Available for projects',
+        'hero-label2': 'Content Creator', 'about-role': 'Social Media Manager & Content Creator',
         'brands-label': "Brands I've worked with & helped grow", 'brands-more': '& many more',
         'hero-h1a': 'I manage', 'hero-h1b': 'social media',
         'hero-h1c': 'from strategy to',
@@ -1135,6 +1164,7 @@
         'nav-services': 'Layanan', 'nav-contact': 'Kontak',
         'hero-label': 'Social Media Manager',
         'hero-avail': 'Tersedia untuk project',
+        'hero-label2': 'Content Creator', 'about-role': 'Social Media Manager & Content Creator',
         'brands-label': 'Brand yang pernah saya bantu & ajak kerja sama', 'brands-more': '& banyak lagi',
         'hero-h1a': 'Saya kelola', 'hero-h1b': 'social media',
         'hero-h1c': 'dari strategi sampai',
