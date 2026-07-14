@@ -355,7 +355,7 @@
     .about-grid { display: grid; grid-template-columns: 1fr 380px; gap: 64px; align-items: start; }
     .about-side { display: flex; flex-direction: column; }
     .photo-frame {
-      width: 100%; aspect-ratio: 1 / 1;
+      width: 100%; max-width: 380px; aspect-ratio: 1 / 1;
       border: 3px solid var(--ink); border-radius: 18px;
       overflow: hidden; position: relative;
       background: var(--paper-2);
@@ -370,6 +370,12 @@
     .photo-caption { margin: 18px 0 26px; }
     .photo-caption strong { display: block; font-family: var(--font-display); font-weight: 800; font-size: 1.5rem; line-height: 1.1; }
     .photo-caption span { display: block; margin-top: 5px; font-size: 12.5px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent-deep); }
+    .about-focus { margin-top: 36px; padding-top: 32px; border-top: 2px solid var(--line); }
+    .about-focus-label { display: block; font-size: 12px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-soft); margin-bottom: 16px; }
+    .about-tags { display: flex; flex-wrap: wrap; gap: 10px; }
+    .about-tag { font-size: 14px; font-weight: 600; padding: 9px 16px; border: 2px solid var(--ink); border-radius: 999px; background: var(--paper); color: var(--ink); transition: all 0.2s var(--ease); }
+    .about-tag:hover { background: var(--accent); border-color: var(--accent); transform: translateY(-2px); }
+    .stats-strip { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-top: 44px; }
     .about-text p { font-size: 1.3rem; font-weight: 500; margin-bottom: 24px; }
     .about-text p:last-child { margin-bottom: 0; }
     .about-text strong { font-weight: 700; background: linear-gradient(transparent 60%, rgba(255,74,28,0.35) 60%); }
@@ -713,6 +719,17 @@
           <p data-i18n="about-p1">Three years managing social media end to end: from strategy and content creation to community management, paid ads, and performance reporting.</p>
           <p data-i18n="about-p2">Good social media isn't just posting. It's about <strong>a system you can repeat</strong>, measure, and keep improving week after week.</p>
           <p data-i18n="about-p3">I also lean on AI to move faster, and I share how I work with others on TikTok.</p>
+          <div class="about-focus">
+            <span class="about-focus-label" data-i18n="about-focus">What I do</span>
+            <div class="about-tags">
+              <span class="about-tag">Social Media Management</span>
+              <span class="about-tag">Content Creation</span>
+              <span class="about-tag">Meta &amp; TikTok Ads</span>
+              <span class="about-tag">Community Management</span>
+              <span class="about-tag">Copywriting</span>
+              <span class="about-tag">Analytics &amp; Reporting</span>
+            </div>
+          </div>
         </div>
 
         <div class="about-side reveal">
@@ -724,20 +741,21 @@
             <strong>Upridzal</strong>
             <span data-i18n="about-role">Social Media Manager &amp; Content Creator</span>
           </div>
-          <div class="stats">
-            <div class="stat">
-              <div class="stat-num" data-count="3" data-suffix="+">0</div>
-              <div class="stat-label" data-i18n="stat1">Years of Experience</div>
-            </div>
-            <div class="stat">
-              <div class="stat-num">100+</div>
-              <div class="stat-label" data-i18n="stat2">Content Created</div>
-            </div>
-            <div class="stat">
-              <div class="stat-num">∞</div>
-              <div class="stat-label" data-i18n="stat3">Cups of Coffee</div>
-            </div>
-          </div>
+        </div>
+      </div>
+
+      <div class="stats-strip reveal">
+        <div class="stat">
+          <div class="stat-num" data-count="3" data-suffix="+">0</div>
+          <div class="stat-label" data-i18n="stat1">Years of Experience</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">100+</div>
+          <div class="stat-label" data-i18n="stat2">Content Created</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">∞</div>
+          <div class="stat-label" data-i18n="stat3">Cups of Coffee</div>
         </div>
       </div>
     </div>
@@ -1116,7 +1134,7 @@
         'nav-services': 'Services', 'nav-contact': 'Contact',
         'hero-label': 'Social Media Manager',
         'hero-avail': 'Available for projects',
-        'hero-label2': 'Content Creator', 'about-role': 'Social Media Manager & Content Creator',
+        'hero-label2': 'Content Creator', 'about-role': 'Social Media Manager & Content Creator', 'about-focus': 'Yang saya kerjakan', 'about-focus': 'What I do',
         'brands-label': "Brands I've worked with & helped grow", 'brands-more': '& many more',
         'hero-h1a': 'I manage', 'hero-h1b': 'social media',
         'hero-h1c': 'from strategy to',
