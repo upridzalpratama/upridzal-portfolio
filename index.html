@@ -6,6 +6,7 @@
   <title>Upridzal — Social Media Manager &amp; Content Creator</title>
   <meta name="description" content="Social Media Manager who runs it end to end: strategy, content creation, community, Meta &amp; TikTok ads, and analytics. 3 years growing brands and SMEs." />
   <meta name="author" content="Upridzal" />
+  <meta name="theme-color" content="#0B0C0E" />
 
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Upridzal" />
@@ -23,215 +24,386 @@
   <meta name="twitter:description" content="End-to-end social media: strategy, content, community, ads &amp; analytics" />
   <meta name="twitter:image" content="https://upridzal-portfolio.vercel.app/assets/og-image.png" />
 
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='18' fill='%23F6F5F1'/%3E%3Ctext x='50' y='74' font-family='Georgia,serif' font-size='72' text-anchor='middle' fill='%230E6E62'%3EU%3C/text%3E%3C/svg%3E" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%230B0C0E'/%3E%3Ctext x='50' y='73' font-family='Georgia,serif' font-size='70' font-style='italic' text-anchor='middle' fill='%234FB8A9'%3EU%3C/text%3E%3C/svg%3E" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
 
-  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <script>
+    // Animation states are only hidden when JS runs and the user allows motion.
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      document.documentElement.classList.add('js');
+    }
+  </script>
 
   <style>
-
     :root {
-      --bg: #F6F5F1;
-      --surface: #FFFFFF;
-      --ink: #17181A;
-      --ink-2: #35363A;
-      --muted: #6C6D72;
-      --line: rgba(23,24,26,0.12);
-      --line-soft: rgba(23,24,26,0.06);
-      --accent: #0E6E62;
-      --accent-deep: #0A5349;
-      --accent-wash: rgba(14,110,98,0.08);
-      --accent-on-dark: #63C3B6;
+      --bg: #0B0C0E;
+      --bg-2: #101215;
+      --surface: #14161A;
+      --surface-2: #1A1D22;
+      --ink: #EDEBE6;
+      --ink-2: #C4C2BC;
+      --muted: #85858B;
+      --line: rgba(237,235,230,0.10);
+      --line-2: rgba(237,235,230,0.18);
+      --accent: #4FB8A9;
+      --accent-deep: #2E8C7F;
+      --accent-wash: rgba(79,184,169,0.10);
       --serif: 'Instrument Serif', Georgia, 'Times New Roman', serif;
       --sans: 'Inter', system-ui, -apple-system, sans-serif;
-      --container: 1120px;
+      --container: 1180px;
       --ease: cubic-bezier(0.22, 1, 0.36, 1);
+      --ease-io: cubic-bezier(0.76, 0, 0.24, 1);
     }
+
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; scroll-padding-top: 88px; }
-    body { font-family: var(--sans); background: var(--bg); color: var(--ink); font-size: 17px; line-height: 1.65; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; overflow-x: hidden; }
-    ::selection { background: var(--accent); color: #fff; }
-    .container { max-width: var(--container); margin: 0 auto; padding: 0 32px; }
-    section { padding: 128px 0; position: relative; }
+    html { scroll-padding-top: 90px; }
+    html:not(.lenis) { scroll-behavior: smooth; }
+    body {
+      font-family: var(--sans);
+      background: var(--bg);
+      color: var(--ink);
+      font-size: 17px;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      overflow-x: hidden;
+    }
+    ::selection { background: var(--accent); color: var(--bg); }
     a { color: inherit; }
     img { max-width: 100%; display: block; }
+    .container { max-width: var(--container); margin: 0 auto; padding: 0 32px; }
+    section { padding: 140px 0; position: relative; }
 
-    h1,h2,h3 { font-family: var(--serif); font-weight: 400; line-height: 1.05; letter-spacing: -0.01em; }
+    h1, h2, h3 { font-family: var(--serif); font-weight: 400; line-height: 1.02; letter-spacing: -0.015em; }
     .mark { font-style: italic; color: var(--accent); }
 
-    .btn { display: inline-flex; align-items: center; gap: 9px; font-family: var(--sans); font-size: 15px; font-weight: 500; padding: 13px 24px; border-radius: 100px; border: 1px solid var(--ink); background: transparent; color: var(--ink); text-decoration: none; cursor: pointer; transition: all 0.25s var(--ease); }
-    .btn:hover { background: var(--ink); color: var(--bg); }
-    .btn-primary { background: var(--ink); color: var(--bg); border-color: var(--ink); }
-    .btn-primary:hover { background: var(--accent); border-color: var(--accent); color: #fff; }
-    .btn-paper { background: var(--bg); color: var(--ink); border-color: var(--bg); }
+    /* Grain overlay */
+    .grain {
+      position: fixed; inset: -50%; z-index: 9998; pointer-events: none; opacity: 0.045;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      animation: grain 1.2s steps(6) infinite;
+    }
+    @keyframes grain {
+      0%, 100% { transform: translate(0, 0); }
+      20% { transform: translate(-3%, 2%); }
+      40% { transform: translate(2%, -3%); }
+      60% { transform: translate(-2%, -1%); }
+      80% { transform: translate(3%, 3%); }
+    }
 
-    .tag { display: inline-flex; align-items: center; gap: 8px; font-size: 12px; font-weight: 500; letter-spacing: 0.04em; padding: 7px 14px; border: 1px solid var(--line); border-radius: 100px; color: var(--ink-2); background: transparent; }
-    .tag-accent { color: var(--accent-deep); border-color: rgba(14,110,98,0.3); background: var(--accent-wash); }
-    .tag-live .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--accent); }
+    /* ============ PRELOADER ============ */
+    .preloader { display: none; }
+    .js .preloader {
+      position: fixed; inset: 0; z-index: 10000; background: var(--bg);
+      display: flex; align-items: flex-end; justify-content: space-between;
+      padding: 40px 48px;
+    }
+    .preloader-name { font-family: var(--serif); font-size: clamp(2rem, 5vw, 3.6rem); font-style: italic; color: var(--ink); overflow: hidden; }
+    .preloader-name span { display: inline-block; }
+    .preloader-count { font-family: var(--serif); font-size: clamp(4rem, 14vw, 11rem); line-height: 0.85; color: var(--ink); font-variant-numeric: tabular-nums; }
+    .preloader-count small { font-size: 0.3em; color: var(--accent); }
+    .preloader-bar { position: absolute; left: 0; bottom: 0; height: 2px; width: 0; background: var(--accent); }
 
-    .section-head { margin-bottom: 68px; max-width: 760px; }
-    .eyebrow { margin-bottom: 22px; }
-    .eyebrow .tag { border: none; background: none !important; padding: 0; color: var(--accent); font-size: 12.5px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; }
-    .section-title { font-size: clamp(2.4rem, 5.5vw, 4rem); letter-spacing: -0.02em; }
-    .section-desc { margin-top: 22px; font-size: 1.2rem; color: var(--muted); max-width: 560px; }
+    /* ============ CURSOR + PROGRESS ============ */
+    .cursor { display: none; }
+    @media (hover: hover) and (pointer: fine) {
+      .js .cursor {
+        display: block; position: fixed; top: 0; left: 0; z-index: 9999; pointer-events: none;
+        width: 36px; height: 36px; margin: -18px 0 0 -18px; border-radius: 50%;
+        border: 1px solid var(--line-2);
+        transition: width .35s var(--ease), height .35s var(--ease), margin .35s var(--ease), background .35s var(--ease), border-color .35s var(--ease);
+      }
+      .js .cursor.is-hover { width: 64px; height: 64px; margin: -32px 0 0 -32px; background: var(--accent-wash); border-color: var(--accent); }
+    }
+    .progress { position: fixed; top: 0; left: 0; height: 2px; width: 100%; z-index: 1001; background: var(--accent); transform-origin: 0 50%; transform: scaleX(0); }
 
-    .navbar { position: fixed; inset: 0 0 auto 0; z-index: 1000; padding: 22px 0; transition: all 0.35s var(--ease); border-bottom: 1px solid transparent; }
-    .navbar.scrolled { padding: 14px 0; background: rgba(246,245,241,0.82); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-bottom: 1px solid var(--line); }
+    /* ============ NAV ============ */
+    .navbar { position: fixed; inset: 0 0 auto 0; z-index: 1000; padding: 24px 0; transition: padding .4s var(--ease), background .4s var(--ease), border-color .4s var(--ease), transform .5s var(--ease); border-bottom: 1px solid transparent; }
+    .navbar.scrolled { padding: 14px 0; background: rgba(11,12,14,0.72); backdrop-filter: blur(16px) saturate(140%); -webkit-backdrop-filter: blur(16px) saturate(140%); border-bottom-color: var(--line); }
+    .navbar.hidden { transform: translateY(-110%); }
     .nav-inner { display: flex; align-items: center; justify-content: space-between; }
-    .logo { font-family: var(--serif); font-size: 1.7rem; text-decoration: none; letter-spacing: -0.01em; color: var(--ink); }
-    .logo .box { background: none; border: none; padding: 0; color: var(--accent); }
-    .nav-menu { display: flex; align-items: center; gap: 34px; list-style: none; }
-    .nav-menu a { text-decoration: none; font-size: 14px; font-weight: 500; color: var(--ink-2); position: relative; padding: 4px 0; transition: color 0.2s; }
-    .nav-menu a::after { content:''; position:absolute; left:0; bottom:0; width:0; height:1px; background: var(--accent); transition: width 0.3s var(--ease); }
+    .logo { font-family: var(--serif); font-size: 1.75rem; text-decoration: none; color: var(--ink); letter-spacing: -0.01em; }
+    .logo .box { font-style: italic; color: var(--accent); }
+    .nav-menu { display: flex; align-items: center; gap: 36px; list-style: none; }
+    .nav-menu a { text-decoration: none; font-size: 14px; font-weight: 500; color: var(--ink-2); position: relative; padding: 4px 0; transition: color .25s; display: inline-block; overflow: hidden; }
+    .nav-menu a::after { content: ''; position: absolute; left: 0; bottom: 0; width: 100%; height: 1px; background: var(--accent); transform: scaleX(0); transform-origin: right; transition: transform .45s var(--ease); }
     .nav-menu a:hover, .nav-menu a.active { color: var(--ink); }
-    .nav-menu a:hover::after, .nav-menu a.active::after { width: 100%; }
-    .lang-toggle { font-family: var(--sans); font-size: 12.5px; font-weight: 600; letter-spacing: 0.04em; color: var(--ink); background: transparent; border: 1px solid var(--line); border-radius: 100px; padding: 7px 14px; cursor: pointer; transition: all 0.2s; }
+    .nav-menu a:hover::after, .nav-menu a.active::after { transform: scaleX(1); transform-origin: left; }
+    .lang-toggle { font-family: var(--sans); font-size: 12.5px; font-weight: 600; letter-spacing: 0.05em; color: var(--ink); background: transparent; border: 1px solid var(--line-2); border-radius: 100px; padding: 7px 15px; cursor: pointer; transition: all .25s var(--ease); }
     .lang-toggle:hover { border-color: var(--ink); }
     .lang-toggle.active-id { border-color: var(--accent); color: var(--accent); }
     .hamburger { display: none; background: none; border: none; color: var(--ink); cursor: pointer; }
 
-    .hero { min-height: 94vh; display: flex; align-items: center; padding: 150px 0 90px; }
-    .hero-main { max-width: 960px; }
-    .hero-tagrow { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 40px; }
-    .hero-title { font-size: clamp(3rem, 8.5vw, 7rem); line-height: 1.03; letter-spacing: -0.025em; margin-bottom: 36px; }
-    .hero-title .hl { display: block; }
+    /* ============ BUTTONS ============ */
+    .btn { position: relative; display: inline-flex; align-items: center; gap: 10px; font-family: var(--sans); font-size: 15px; font-weight: 500; padding: 15px 28px; border-radius: 100px; border: 1px solid var(--line-2); color: var(--ink); text-decoration: none; cursor: pointer; overflow: hidden; isolation: isolate; transition: color .45s var(--ease), border-color .45s var(--ease); }
+    .btn::before { content: ''; position: absolute; inset: 0; z-index: -1; background: var(--ink); border-radius: inherit; transform: translateY(101%); transition: transform .5s var(--ease-io); }
+    .btn:hover { color: var(--bg); border-color: var(--ink); }
+    .btn:hover::before { transform: translateY(0); }
+    .btn-primary { background: var(--accent); border-color: var(--accent); color: var(--bg); }
+    .btn-primary::before { background: var(--ink); }
+    .btn i, .btn svg { transition: transform .45s var(--ease); }
+    .btn:hover i, .btn:hover svg { transform: translateX(3px); }
+    .magnetic { will-change: transform; }
+
+    /* ============ TAGS / HEADINGS ============ */
+    .tag { display: inline-flex; align-items: center; gap: 8px; font-size: 12.5px; font-weight: 500; letter-spacing: 0.03em; padding: 7px 15px; border: 1px solid var(--line-2); border-radius: 100px; color: var(--ink-2); }
+    .tag-accent { color: var(--accent); border-color: rgba(79,184,169,0.35); background: var(--accent-wash); }
+    .tag-live .dot { position: relative; width: 7px; height: 7px; border-radius: 50%; background: var(--accent); }
+    .tag-live .dot::after { content: ''; position: absolute; inset: 0; border-radius: 50%; background: var(--accent); animation: ping 2s var(--ease) infinite; }
+    @keyframes ping { 0% { transform: scale(1); opacity: .7; } 100% { transform: scale(3); opacity: 0; } }
+
+    .section-head { margin-bottom: 76px; max-width: 820px; }
+    .eyebrow { display: flex; align-items: center; gap: 14px; margin-bottom: 26px; }
+    .eyebrow .idx { font-family: var(--serif); font-style: italic; font-size: 1.05rem; color: var(--accent); }
+    .eyebrow .rule { width: 48px; height: 1px; background: var(--line-2); }
+    .eyebrow .tag { border: none; background: none !important; padding: 0; color: var(--ink-2); font-size: 12.5px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; }
+    .section-title { font-size: clamp(2.8rem, 7vw, 5.6rem); letter-spacing: -0.025em; }
+    .section-desc { margin-top: 24px; font-size: 1.2rem; color: var(--muted); max-width: 560px; }
+
+    /* Split-word reveal (built by JS) */
+    .w { display: inline-block; overflow: hidden; vertical-align: top; padding-bottom: 0.08em; margin-bottom: -0.08em; }
+    .w > span { display: inline-block; will-change: transform; }
+
+    /* ============ HERO ============ */
+    .hero { min-height: 100vh; display: flex; align-items: center; padding: 160px 0 110px; overflow: hidden; }
+    .hero-glow {
+      position: absolute; top: 0; left: 0; width: 720px; height: 720px; margin: -360px 0 0 -360px;
+      border-radius: 50%; pointer-events: none; z-index: 0;
+      background: radial-gradient(circle, rgba(79,184,169,0.16) 0%, rgba(79,184,169,0.05) 38%, transparent 68%);
+      transform: translate(70vw, 30vh); filter: blur(10px);
+    }
+    .hero-grid-lines { position: absolute; inset: 0; z-index: 0; pointer-events: none; background-image: linear-gradient(var(--line) 1px, transparent 1px), linear-gradient(90deg, var(--line) 1px, transparent 1px); background-size: 96px 96px; opacity: .35; -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, #000 20%, transparent 75%); mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, #000 20%, transparent 75%); }
+    .hero .container { position: relative; z-index: 1; width: 100%; }
+    .hero-tagrow { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 44px; }
+    .hero-title { font-size: clamp(3.2rem, 9.6vw, 8.6rem); line-height: 0.98; letter-spacing: -0.035em; margin-bottom: 44px; }
+    .hero-title .hl { display: block; overflow: hidden; padding-bottom: 0.06em; }
+    .hero-title .hl-in { display: inline-block; }
     .typewriter { font-style: italic; color: var(--accent); }
-    .caret { display: inline-block; width: 2px; height: 0.78em; background: var(--accent); margin-left: 4px; vertical-align: -0.02em; animation: blink 1.1s steps(1) infinite; }
+    .caret { display: inline-block; width: 3px; height: 0.78em; background: var(--accent); margin-left: 6px; vertical-align: -0.04em; animation: blink 1.1s steps(1) infinite; }
     @keyframes blink { 50% { opacity: 0; } }
-    .hero-sub { font-size: 1.3rem; color: var(--muted); max-width: 520px; margin-bottom: 42px; }
-    .hero-ctas { display: flex; flex-wrap: wrap; gap: 14px; }
-    .hero-tagrow, .hero-title .hl, .hero-sub, .hero-ctas { opacity: 0; animation: fadeUp 0.9s var(--ease) forwards; }
-    .hero-tagrow { animation-delay: 0.05s; }
-    .hero-title .hl:nth-child(1) { animation-delay: 0.15s; }
-    .hero-title .hl:nth-child(2) { animation-delay: 0.25s; }
-    .hero-title .hl:nth-child(3) { animation-delay: 0.35s; }
-    .hero-sub { animation-delay: 0.46s; }
-    .hero-ctas { animation-delay: 0.56s; }
-    @keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
+    .hero-bottom { display: flex; align-items: flex-end; justify-content: space-between; gap: 40px; flex-wrap: wrap; }
+    .hero-sub { font-size: 1.28rem; color: var(--ink-2); max-width: 470px; }
+    .hero-ctas { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 34px; }
+    .hero-meta { display: flex; gap: 44px; }
+    .hero-meta div { border-left: 1px solid var(--line-2); padding-left: 18px; }
+    .hero-meta strong { display: block; font-family: var(--serif); font-weight: 400; font-size: 2.4rem; line-height: 1; color: var(--ink); }
+    .hero-meta span { font-size: 12px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
+    .scroll-cue { position: absolute; left: 50%; bottom: 34px; z-index: 1; display: flex; flex-direction: column; align-items: center; gap: 10px; transform: translateX(-50%); font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); }
+    .scroll-cue i { display: block; width: 1px; height: 46px; background: var(--line-2); position: relative; overflow: hidden; }
+    .scroll-cue i::after { content: ''; position: absolute; left: 0; top: -100%; width: 100%; height: 100%; background: var(--accent); animation: cue 2s var(--ease-io) infinite; }
+    @keyframes cue { 0% { top: -100%; } 60%, 100% { top: 100%; } }
 
-    #about { border-top: 1px solid var(--line); }
-    .about-grid { display: grid; grid-template-columns: 1fr 380px; gap: 72px; align-items: start; }
-    .about-text p { font-size: 1.32rem; line-height: 1.6; color: var(--ink-2); margin-bottom: 24px; }
-    .about-text p:last-child { margin-bottom: 0; }
-    .about-text strong { font-weight: 600; color: var(--ink); background: linear-gradient(transparent 62%, var(--accent-wash) 62%); }
-    .about-side { display: flex; flex-direction: column; }
-    .photo-frame { width: 100%; max-width: 380px; aspect-ratio: 1/1; border-radius: 8px; overflow: hidden; position: relative; background: var(--surface); box-shadow: 0 30px 60px -30px rgba(23,24,26,0.35); }
-    .photo-frame img { width: 100%; height: 100%; object-fit: cover; }
+    /* Hero intro hidden state (JS only) */
+    .js .hero-title .hl-in { transform: translateY(110%); }
+    .js .hero-tagrow .tag, .js .hero-sub, .js .hero-ctas, .js .hero-meta, .js .scroll-cue { opacity: 0; }
+
+    /* ============ MARQUEE ============ */
+    .marquee { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); padding: 30px 0; overflow: hidden; background: var(--bg-2); }
+    .marquee-track { display: flex; width: max-content; will-change: transform; }
+    .marquee-item { display: flex; align-items: center; gap: 44px; padding-right: 44px; font-family: var(--serif); font-size: clamp(2.2rem, 5vw, 4rem); line-height: 1; white-space: nowrap; color: var(--ink); }
+    .marquee-item em { color: var(--muted); }
+    .marquee-item .star { width: 18px; height: 18px; color: var(--accent); flex-shrink: 0; }
+    .no-gsap .marquee-track { animation: marquee 30s linear infinite; }
+    @keyframes marquee { to { transform: translateX(-50%); } }
+
+    /* ============ GENERIC REVEAL ============ */
+    .js .reveal { opacity: 0; transform: translateY(36px); transition: opacity 1s var(--ease), transform 1s var(--ease); }
+    .js .reveal.visible { opacity: 1; transform: none; }
+
+    /* ============ ABOUT ============ */
+    .about-grid { display: grid; grid-template-columns: 1fr 400px; gap: 88px; align-items: start; }
+    .about-text p { font-size: 1.36rem; line-height: 1.6; color: var(--ink-2); margin-bottom: 26px; }
+    .about-text p:last-of-type { margin-bottom: 0; }
+    .about-text strong { font-weight: 500; color: var(--ink); background: linear-gradient(transparent 62%, rgba(79,184,169,0.28) 62%); }
+    .about-side { position: sticky; top: 120px; }
+    .photo-frame { position: relative; width: 100%; aspect-ratio: 4 / 5; border-radius: 6px; overflow: hidden; background: var(--surface); }
+    .photo-frame img { width: 100%; height: 118%; object-fit: cover; will-change: transform; filter: grayscale(0.25) contrast(1.04); transition: filter .8s var(--ease); }
+    .photo-frame:hover img { filter: grayscale(0) contrast(1.04); }
+    .photo-frame::after { content: ''; position: absolute; inset: 0; box-shadow: inset 0 0 0 1px var(--line); border-radius: inherit; pointer-events: none; }
+    .js .photo-frame { clip-path: inset(100% 0 0 0); }
     .photo-fallback { position: absolute; inset: 0; display: none; align-items: center; justify-content: center; font-family: var(--serif); font-size: 1.5rem; color: var(--muted); }
-    .photo-caption { margin: 22px 0 0; }
-    .photo-caption strong { display: block; font-family: var(--serif); font-weight: 400; font-size: 1.7rem; color: var(--ink); }
-    .photo-caption span { display: block; margin-top: 4px; font-size: 12.5px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); }
-    .about-focus { margin-top: 40px; padding-top: 34px; border-top: 1px solid var(--line); }
-    .about-focus-label { display: block; font-size: 12px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); margin-bottom: 18px; }
+    .photo-caption { margin-top: 22px; display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+    .photo-caption strong { font-family: var(--serif); font-weight: 400; font-size: 1.8rem; color: var(--ink); }
+    .photo-caption span { font-size: 11.5px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); text-align: right; }
+    .about-focus { margin-top: 48px; padding-top: 36px; border-top: 1px solid var(--line); }
+    .about-focus-label { display: block; font-size: 12px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); margin-bottom: 18px; }
     .about-tags { display: flex; flex-wrap: wrap; gap: 9px; }
-    .about-tag { font-size: 14px; font-weight: 500; padding: 8px 15px; border: 1px solid var(--line); border-radius: 100px; color: var(--ink-2); transition: all 0.2s var(--ease); }
-    .about-tag:hover { border-color: var(--accent); color: var(--accent); }
-    .stats-strip { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px,1fr)); gap: 40px; margin-top: 72px; padding-top: 48px; border-top: 1px solid var(--line); }
-    .stat-num { font-family: var(--serif); font-size: 3.4rem; line-height: 1; color: var(--ink); margin-bottom: 8px; }
-    .stat-label { font-size: 12.5px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
+    .about-tag { font-size: 14px; font-weight: 500; padding: 9px 16px; border: 1px solid var(--line-2); border-radius: 100px; color: var(--ink-2); transition: all .3s var(--ease); }
+    .about-tag:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-2px); }
+    .stats-strip { display: grid; grid-template-columns: repeat(3, 1fr); margin-top: 110px; border-top: 1px solid var(--line); }
+    .stat { padding: 40px 32px 0 0; }
+    .stat + .stat { padding-left: 32px; border-left: 1px solid var(--line); }
+    .stat-num { font-family: var(--serif); font-size: clamp(3.2rem, 6vw, 5rem); line-height: 1; color: var(--ink); margin-bottom: 12px; }
+    .stat-label { font-size: 12.5px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
 
-    #skills { border-top: 1px solid var(--line); }
-    .skill-groups { display: flex; flex-direction: column; border-top: 1px solid var(--line); }
-    .skill-group { display: grid; grid-template-columns: 260px 1fr; gap: 40px; align-items: baseline; padding: 34px 0; border-bottom: 1px solid var(--line); }
-    .skill-group h3 { font-size: 1.9rem; color: var(--ink); }
+    /* ============ SKILLS ============ */
+    #skills { background: var(--bg-2); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .skill-groups { border-top: 1px solid var(--line); }
+    .skill-group { position: relative; display: grid; grid-template-columns: 70px 300px 1fr; gap: 32px; align-items: center; padding: 38px 0; border-bottom: 1px solid var(--line); }
+    .skill-group::before { content: ''; position: absolute; inset: 0; background: var(--accent-wash); transform: scaleY(0); transform-origin: bottom; transition: transform .6s var(--ease-io); z-index: 0; }
+    .skill-group:hover::before { transform: scaleY(1); }
+    .skill-group > * { position: relative; z-index: 1; }
+    .skill-num { font-family: var(--serif); font-style: italic; font-size: 1.2rem; color: var(--muted); transition: color .3s; }
+    .skill-group h3 { font-size: clamp(1.8rem, 3vw, 2.4rem); color: var(--ink); transition: transform .6s var(--ease); }
+    .skill-group:hover h3 { transform: translateX(10px); }
+    .skill-group:hover .skill-num { color: var(--accent); }
     .pills { display: flex; flex-wrap: wrap; gap: 9px; }
-    .pill { font-size: 14px; font-weight: 500; padding: 8px 16px; border: 1px solid var(--line); border-radius: 100px; color: var(--ink-2); transition: all 0.2s var(--ease); }
+    .pill { font-size: 14px; font-weight: 500; padding: 8px 16px; border: 1px solid var(--line-2); border-radius: 100px; color: var(--ink-2); background: var(--bg); transition: all .3s var(--ease); }
     .pill:hover { border-color: var(--accent); color: var(--accent); }
 
-    #work { border-top: 1px solid var(--line); }
-    .works { display: flex; flex-direction: column; border-top: 1px solid var(--line); }
-    .work { display: grid; grid-template-columns: 64px 1fr 32px; gap: 32px; padding: 44px 0; border-bottom: 1px solid var(--line); transition: all 0.3s var(--ease); }
-    .work-num { font-family: var(--serif); font-size: 1.5rem; color: var(--muted); transition: color 0.25s; }
+    /* ============ WORK ============ */
+    .works { display: flex; flex-direction: column; gap: 22px; }
+    .work {
+      position: relative; display: grid; grid-template-columns: 76px 1fr 40px; gap: 32px;
+      padding: 48px 44px; border: 1px solid var(--line); border-radius: 14px; background: var(--surface);
+      overflow: hidden; isolation: isolate; transition: border-color .5s var(--ease), transform .6s var(--ease);
+    }
+    .work::before {
+      content: ''; position: absolute; inset: 0; z-index: -1; opacity: 0; transition: opacity .5s var(--ease);
+      background: radial-gradient(520px circle at var(--mx, 50%) var(--my, 50%), rgba(79,184,169,0.10), transparent 60%);
+    }
+    .work:hover { border-color: rgba(79,184,169,0.35); }
+    .work:hover::before { opacity: 1; }
+    .work-num { font-family: var(--serif); font-style: italic; font-size: 1.6rem; color: var(--muted); transition: color .3s; }
     .work:hover .work-num { color: var(--accent); }
-    .work-head { display: flex; align-items: baseline; justify-content: space-between; gap: 24px; flex-wrap: wrap; margin-bottom: 6px; }
-    .work h3 { font-size: clamp(1.7rem, 3.4vw, 2.7rem); color: var(--ink); transition: color 0.25s; }
-    .work:hover h3 { color: var(--accent); }
-    .work-duration { font-size: 12.5px; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); white-space: nowrap; }
-    .work-tag { display: inline-block; font-size: 12.5px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); margin-bottom: 18px; }
-    .work-desc { font-size: 1.1rem; color: var(--ink-2); max-width: 62ch; margin-bottom: 24px; }
-    .work-stats { display: flex; flex-wrap: wrap; gap: 40px; margin-bottom: 26px; }
-    .work-stat-num { font-family: var(--serif); font-size: 1.9rem; color: var(--ink); line-height: 1; margin-bottom: 5px; }
-    .work-stat-label { font-size: 11.5px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
-    .work-proofs { display: flex; flex-wrap: wrap; gap: 16px; margin-bottom: 26px; }
-    .proof { display: block; width: 150px; border: 1px solid var(--line); border-radius: 6px; overflow: hidden; text-decoration: none; color: var(--ink); background: var(--surface); transition: all 0.25s var(--ease); }
-    .proof:hover { border-color: var(--accent); transform: translateY(-3px); }
-    .proof img { width: 100%; }
+    .work-head { display: flex; align-items: baseline; justify-content: space-between; gap: 24px; flex-wrap: wrap; margin-bottom: 8px; }
+    .work h3 { font-size: clamp(2rem, 3.8vw, 3.1rem); color: var(--ink); }
+    .work-duration { font-size: 12.5px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); white-space: nowrap; }
+    .work-tag { display: inline-block; font-size: 12.5px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); margin-bottom: 20px; }
+    .work-desc { font-size: 1.1rem; color: var(--ink-2); max-width: 64ch; margin-bottom: 30px; }
+    .work-stats { display: flex; flex-wrap: wrap; gap: 48px; margin-bottom: 30px; }
+    .work-stat-num { font-family: var(--serif); font-size: 2.3rem; line-height: 1; color: var(--ink); margin-bottom: 6px; }
+    .work-stat-label { font-size: 11.5px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
+    .work-proofs { display: flex; flex-wrap: wrap; gap: 16px; margin-bottom: 28px; }
+    .proof { display: block; width: 156px; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; text-decoration: none; color: var(--ink); background: var(--bg); transition: border-color .4s var(--ease), transform .5s var(--ease); }
+    .proof:hover { border-color: var(--accent); transform: translateY(-5px) rotate(-1deg); }
+    .proof img { width: 100%; transition: transform .8s var(--ease); }
+    .proof:hover img { transform: scale(1.05); }
     .proof .placeholder { display: none; align-items: center; justify-content: center; height: 110px; font-size: 12px; color: var(--muted); }
-    .proof-metric { padding: 10px 13px; border-top: 1px solid var(--line); font-family: var(--serif); font-size: 1.3rem; color: var(--accent-deep); }
-    .proof-metric span { display: block; font-family: var(--sans); font-size: 10.5px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); margin-top: 4px; }
+    .proof-metric { padding: 11px 14px; border-top: 1px solid var(--line); font-family: var(--serif); font-size: 1.4rem; color: var(--accent); background: var(--surface); }
+    .proof-metric span { display: block; font-family: var(--sans); font-size: 10.5px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin-top: 3px; }
     .work-links { display: flex; flex-wrap: wrap; gap: 8px; }
-    .work-link { display: inline-flex; align-items: center; font-size: 13px; font-weight: 500; padding: 7px 14px; border: 1px solid var(--line); border-radius: 100px; text-decoration: none; color: var(--ink-2); transition: all 0.2s var(--ease); }
-    .work-link:hover { border-color: var(--accent); color: var(--accent); }
-    .work-arrow { color: var(--muted); transition: all 0.3s var(--ease); }
-    .work:hover .work-arrow { color: var(--accent); transform: translate(3px,-3px); }
+    .work-link { display: inline-flex; align-items: center; font-size: 13px; font-weight: 500; padding: 8px 15px; border: 1px solid var(--line-2); border-radius: 100px; text-decoration: none; color: var(--ink-2); background: var(--bg); transition: all .3s var(--ease); }
+    .work-link:hover { border-color: var(--accent); color: var(--bg); background: var(--accent); }
+    .work-arrow { width: 40px; height: 40px; border-radius: 50%; border: 1px solid var(--line-2); display: flex; align-items: center; justify-content: center; color: var(--muted); transition: all .5s var(--ease); }
+    .work:hover .work-arrow { background: var(--accent); border-color: var(--accent); color: var(--bg); transform: rotate(45deg); }
 
+    /* ============ SERVICES ============ */
     #services { border-top: 1px solid var(--line); }
-    .services-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; }
-    .service { padding: 38px 32px; border: 1px solid var(--line); border-radius: 12px; background: var(--surface); transition: all 0.3s var(--ease); }
-    .service:hover { border-color: var(--accent); transform: translateY(-4px); box-shadow: 0 24px 48px -28px rgba(23,24,26,0.25); }
-    .service-icon { width: 52px; height: 52px; border-radius: 50%; background: var(--accent-wash); color: var(--accent); display: flex; align-items: center; justify-content: center; margin-bottom: 26px; }
-    .service-icon i { width: 24px; height: 24px; }
-    .service h3 { font-size: 1.7rem; color: var(--ink); margin-bottom: 14px; }
+    .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+    .service {
+      position: relative; padding: 44px 36px 48px; border: 1px solid var(--line); border-radius: 14px; background: var(--surface);
+      overflow: hidden; isolation: isolate; transition: border-color .5s var(--ease), transform .2s linear;
+      transform-style: preserve-3d;
+    }
+    .service::before { content: ''; position: absolute; inset: 0; z-index: -1; opacity: 0; transition: opacity .5s var(--ease); background: radial-gradient(400px circle at var(--mx, 50%) var(--my, 50%), rgba(79,184,169,0.13), transparent 60%); }
+    .service:hover { border-color: rgba(79,184,169,0.35); }
+    .service:hover::before { opacity: 1; }
+    .service-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 64px; }
+    .service-icon { width: 54px; height: 54px; border-radius: 50%; border: 1px solid var(--line-2); color: var(--accent); display: flex; align-items: center; justify-content: center; transition: all .5s var(--ease); }
+    .service:hover .service-icon { background: var(--accent); color: var(--bg); border-color: var(--accent); transform: rotate(-12deg); }
+    .service-icon i { width: 22px; height: 22px; }
+    .service-idx { font-family: var(--serif); font-style: italic; font-size: 1.2rem; color: var(--muted); }
+    .service h3 { font-size: 2rem; color: var(--ink); margin-bottom: 16px; }
     .service p { font-size: 1.02rem; color: var(--muted); }
 
-    .cta { background: var(--ink); color: var(--bg); }
-    .cta-title { font-size: clamp(2.8rem, 7vw, 5.2rem); line-height: 1.03; letter-spacing: -0.02em; margin-bottom: 26px; color: var(--bg); }
-    .cta .mark { color: var(--accent-on-dark); font-style: italic; }
-    .cta-desc { font-size: 1.25rem; color: rgba(246,245,241,0.65); max-width: 500px; margin-bottom: 44px; }
-    .cta-ctas { display: flex; flex-wrap: wrap; gap: 14px; margin-bottom: 60px; }
-    .cta .btn { border-color: rgba(246,245,241,0.4); color: var(--bg); }
-    .cta .btn:hover { background: var(--bg); color: var(--ink); border-color: var(--bg); }
-    .cta .btn-primary { background: var(--bg); color: var(--ink); border-color: var(--bg); }
-    .cta .btn-primary:hover { background: var(--accent-on-dark); border-color: var(--accent-on-dark); color: var(--ink); }
-    .cta .btn-paper { background: var(--bg); color: var(--ink); border-color: var(--bg); }
-    .socials { display: flex; flex-wrap: wrap; gap: 28px; padding-top: 38px; border-top: 1px solid rgba(246,245,241,0.18); }
-    .socials a { display: inline-flex; align-items: center; gap: 9px; text-decoration: none; font-size: 14px; font-weight: 500; color: rgba(246,245,241,0.7); transition: color 0.2s; }
-    .socials a:hover { color: var(--accent-on-dark); }
+    /* ============ CTA ============ */
+    .cta { background: var(--accent); color: var(--bg); padding: 0; overflow: hidden; }
+    .cta-marquee { padding: 46px 0 10px; overflow: hidden; }
+    .cta-marquee .marquee-track { animation: marquee 22s linear infinite; }
+    .cta-marquee .marquee-item { font-size: clamp(4rem, 12vw, 10rem); color: var(--bg); gap: 50px; padding-right: 50px; }
+    .cta-marquee .marquee-item em { color: rgba(11,12,14,0.45); }
+    .cta-inner { padding: 60px 0 110px; display: grid; grid-template-columns: 1.2fr 1fr; gap: 60px; align-items: end; }
+    .cta-title { font-size: clamp(2.6rem, 6vw, 4.6rem); line-height: 1.02; letter-spacing: -0.025em; color: var(--bg); }
+    .cta .mark { color: var(--bg); opacity: .62; }
+    .cta-desc { font-size: 1.2rem; color: rgba(11,12,14,0.72); margin-bottom: 34px; }
+    .cta-ctas { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 44px; }
+    .cta .btn { border-color: rgba(11,12,14,0.3); color: var(--bg); }
+    .cta .btn::before { background: var(--bg); }
+    .cta .btn:hover { color: var(--ink); border-color: var(--bg); }
+    .cta .btn-primary { background: var(--bg); border-color: var(--bg); color: var(--ink); }
+    .cta .btn-primary::before { background: var(--ink); }
+    .cta .btn-primary:hover { color: var(--bg); }
+    .socials { display: flex; flex-wrap: wrap; gap: 26px; padding-top: 30px; border-top: 1px solid rgba(11,12,14,0.18); }
+    .socials a { display: inline-flex; align-items: center; gap: 8px; text-decoration: none; font-size: 14px; font-weight: 500; color: rgba(11,12,14,0.75); transition: color .25s; }
+    .socials a:hover { color: var(--bg); }
 
-    footer { padding: 48px 0; border-top: 1px solid var(--line); text-align: center; }
-    .tagline { font-family: var(--serif); font-size: 1.4rem; color: var(--muted); }
+    /* ============ FOOTER ============ */
+    footer { padding: 40px 0; }
+    .footer-inner { display: flex; justify-content: space-between; align-items: center; gap: 20px; flex-wrap: wrap; }
+    .tagline { font-family: var(--serif); font-size: 1.4rem; color: var(--ink-2); }
     .tagline .x { color: var(--accent); }
+    .to-top { font-size: 13px; font-weight: 500; color: var(--muted); text-decoration: none; display: inline-flex; align-items: center; gap: 8px; transition: color .25s; }
+    .to-top:hover { color: var(--accent); }
 
-    .reveal { opacity: 0; transform: translateY(18px); transition: opacity 0.8s var(--ease), transform 0.8s var(--ease); }
-    .reveal.visible { opacity: 1; transform: none; }
-
-    @media (max-width: 940px) {
-      .about-grid { grid-template-columns: 1fr; gap: 48px; }
+    /* ============ RESPONSIVE ============ */
+    @media (max-width: 980px) {
+      .about-grid { grid-template-columns: 1fr; gap: 56px; }
+      .about-side { position: static; max-width: 420px; }
       .services-grid { grid-template-columns: 1fr; }
-      .skill-group { grid-template-columns: 1fr; gap: 16px; padding: 28px 0; }
+      .skill-group { grid-template-columns: 50px 1fr; gap: 14px 20px; }
+      .skill-group .pills { grid-column: 2; }
+      .cta-inner { grid-template-columns: 1fr; gap: 30px; }
+      .hero-meta { gap: 28px; }
     }
     @media (max-width: 760px) {
       .container { padding: 0 22px; }
-      section { padding: 88px 0; }
+      section { padding: 96px 0; }
       .hamburger { display: block; z-index: 1001; }
-      .nav-menu { position: fixed; inset: 0 0 0 auto; width: 78%; max-width: 320px; height: 100vh; background: var(--bg); border-left: 1px solid var(--line); flex-direction: column; align-items: flex-start; justify-content: center; gap: 26px; padding: 0 36px; transform: translateX(100%); transition: transform 0.4s var(--ease); }
+      .nav-menu { position: fixed; inset: 0 0 0 auto; width: 80%; max-width: 330px; height: 100vh; background: var(--bg-2); border-left: 1px solid var(--line); flex-direction: column; align-items: flex-start; justify-content: center; gap: 26px; padding: 0 36px; transform: translateX(100%); transition: transform .5s var(--ease-io); }
       .nav-menu.open { transform: translateX(0); }
-      .nav-menu a { font-size: 17px; }
-      .work { grid-template-columns: 1fr; gap: 14px; padding: 36px 0; }
+      .nav-menu a { font-size: 18px; }
+      .work { grid-template-columns: 1fr; gap: 12px; padding: 34px 24px; }
       .work-arrow { display: none; }
-      .work-stats { gap: 28px; }
+      .work-stats { gap: 30px; }
+      .stats-strip { grid-template-columns: 1fr; }
+      .stat, .stat + .stat { padding: 30px 0; border-left: none; border-bottom: 1px solid var(--line); }
+      .hero-meta strong { font-size: 2rem; }
+      .scroll-cue { display: none; }
+      .js .preloader { padding: 28px 24px; }
     }
-  
+
+    /* Fallback: CDN animation libs failed to load, show everything */
+    .no-gsap .hero-title .hl-in { transform: none; }
+    .no-gsap .hero-tagrow .tag, .no-gsap .hero-sub, .no-gsap .hero-ctas, .no-gsap .hero-meta, .no-gsap .scroll-cue { opacity: 1; }
+    .no-gsap .photo-frame { clip-path: none; }
+    .service.visible { transition: border-color .5s var(--ease), transform .25s linear, opacity 1s var(--ease); }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+      .grain { display: none; }
+    }
   </style>
 </head>
 <body>
 
+  <div class="grain" aria-hidden="true"></div>
+  <div class="cursor" aria-hidden="true"></div>
+  <div class="progress" aria-hidden="true"></div>
+
+  <!-- ============ PRELOADER ============ -->
+  <div class="preloader" aria-hidden="true">
+    <div class="preloader-name"><span>Upridzal</span></div>
+    <div class="preloader-count"><span id="loadCount">0</span><small>%</small></div>
+    <div class="preloader-bar"></div>
+  </div>
+
   <!-- ============ NAVBAR ============ -->
   <nav class="navbar" id="navbar">
     <div class="container nav-inner">
-      <a href="#" class="logo"><span class="box">U</span>pridzal</a>
+      <a href="#hero" class="logo" data-scroll><span class="box">U</span>pridzal</a>
       <button class="hamburger" id="hamburger" aria-label="Menu">
         <i data-lucide="menu"></i>
       </button>
       <ul class="nav-menu" id="navMenu">
-        <li><a href="#about" data-link data-i18n="nav-about">About</a></li>
-        <li><a href="#skills" data-link data-i18n="nav-skills">Skills</a></li>
-        <li><a href="#work" data-link data-i18n="nav-work">Work</a></li>
-        <li><a href="#services" data-link data-i18n="nav-services">Services</a></li>
-        <li><a href="#contact" data-link data-i18n="nav-contact">Contact</a></li>
+        <li><a href="#about" data-link data-scroll data-i18n="nav-about">About</a></li>
+        <li><a href="#skills" data-link data-scroll data-i18n="nav-skills">Skills</a></li>
+        <li><a href="#work" data-link data-scroll data-i18n="nav-work">Work</a></li>
+        <li><a href="#services" data-link data-scroll data-i18n="nav-services">Services</a></li>
+        <li><a href="#contact" data-link data-scroll data-i18n="nav-contact">Contact</a></li>
         <li><button class="lang-toggle" id="langToggle" onclick="toggleLang()">ID</button></li>
       </ul>
     </div>
@@ -239,47 +411,79 @@
 
   <!-- ============ HERO ============ -->
   <section class="hero" id="hero">
-    <div class="container hero-inner">
-      <div class="hero-main">
-        <div class="hero-tagrow">
-          <span class="tag tag-accent" data-i18n="hero-label">Social Media Manager</span>
-          <span class="tag" data-i18n="hero-label2">Content Creator</span>
-          <span class="tag tag-live"><span class="dot"></span><span data-i18n="hero-avail">Available for projects</span></span>
+    <div class="hero-grid-lines" aria-hidden="true"></div>
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="container">
+      <div class="hero-tagrow">
+        <span class="tag tag-accent" data-i18n="hero-label">Social Media Manager</span>
+        <span class="tag" data-i18n="hero-label2">Content Creator</span>
+        <span class="tag tag-live"><span class="dot"></span><span data-i18n="hero-avail">Available for projects</span></span>
+      </div>
+      <h1 class="hero-title">
+        <span class="hl"><span class="hl-in"><span data-i18n="hero-h1a">I manage</span> <span class="mark" data-i18n="hero-h1b">social media</span></span></span>
+        <span class="hl"><span class="hl-in" data-i18n="hero-h1c">from strategy to</span></span>
+        <span class="hl"><span class="hl-in"><span class="typewriter" id="typewriter"></span><span class="caret"></span></span></span>
+      </h1>
+      <div class="hero-bottom">
+        <div>
+          <p class="hero-sub">End-to-end social media: strategy, content, community, ads &amp; analytics.</p>
+          <div class="hero-ctas">
+            <a href="#work" class="btn btn-primary magnetic" data-scroll>
+              <span data-i18n="hero-cta1">See My Work</span>
+              <i data-lucide="arrow-right" style="width:16px;height:16px"></i>
+            </a>
+            <a href="#contact" class="btn magnetic" data-scroll><span data-i18n="hero-cta2">Get in Touch</span></a>
+          </div>
         </div>
-        <h1 class="hero-title">
-          <span class="hl"><span data-i18n="hero-h1a">I manage</span> <span class="mark" data-i18n="hero-h1b">social media</span></span>
-          <span class="hl" data-i18n="hero-h1c">from strategy to</span>
-          <span class="hl"><span class="typewriter" id="typewriter"></span><span class="caret"></span></span>
-        </h1>
-        <p class="hero-sub">End-to-end social media: strategy, content, community, ads &amp; analytics.</p>
-        <div class="hero-ctas">
-          <a href="#work" class="btn btn-primary">
-            <span data-i18n="hero-cta1">See My Work</span>
-            <i data-lucide="arrow-right" style="width:16px;height:16px"></i>
-          </a>
-          <a href="#contact" class="btn" data-i18n="hero-cta2">Get in Touch</a>
+        <div class="hero-meta">
+          <div><strong>1.4M</strong><span data-i18n="meta-views">Views generated</span></div>
+          <div><strong>7x</strong><span data-i18n="meta-roas">Peak ROAS</span></div>
+          <div><strong>3+</strong><span data-i18n="meta-years">Years</span></div>
         </div>
       </div>
     </div>
+    <div class="scroll-cue" aria-hidden="true"><span>Scroll</span><i></i></div>
   </section>
 
+  <!-- ============ MARQUEE ============ -->
+  <div class="marquee" id="skillMarquee" aria-hidden="true">
+    <div class="marquee-track">
+      <div class="marquee-item">
+        <span>Social Strategy</span><svg class="star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0l2.6 9.4L24 12l-9.4 2.6L12 24l-2.6-9.4L0 12l9.4-2.6z"/></svg>
+        <em>Content Creation</em><svg class="star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0l2.6 9.4L24 12l-9.4 2.6L12 24l-2.6-9.4L0 12l9.4-2.6z"/></svg>
+        <span>Community</span><svg class="star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0l2.6 9.4L24 12l-9.4 2.6L12 24l-2.6-9.4L0 12l9.4-2.6z"/></svg>
+        <em>Meta &amp; TikTok Ads</em><svg class="star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0l2.6 9.4L24 12l-9.4 2.6L12 24l-2.6-9.4L0 12l9.4-2.6z"/></svg>
+        <span>Analytics</span><svg class="star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0l2.6 9.4L24 12l-9.4 2.6L12 24l-2.6-9.4L0 12l9.4-2.6z"/></svg>
+        <em>Copywriting</em><svg class="star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0l2.6 9.4L24 12l-9.4 2.6L12 24l-2.6-9.4L0 12l9.4-2.6z"/></svg>
+      </div>
+      <div class="marquee-item">
+        <span>Social Strategy</span><svg class="star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0l2.6 9.4L24 12l-9.4 2.6L12 24l-2.6-9.4L0 12l9.4-2.6z"/></svg>
+        <em>Content Creation</em><svg class="star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0l2.6 9.4L24 12l-9.4 2.6L12 24l-2.6-9.4L0 12l9.4-2.6z"/></svg>
+        <span>Community</span><svg class="star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0l2.6 9.4L24 12l-9.4 2.6L12 24l-2.6-9.4L0 12l9.4-2.6z"/></svg>
+        <em>Meta &amp; TikTok Ads</em><svg class="star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0l2.6 9.4L24 12l-9.4 2.6L12 24l-2.6-9.4L0 12l9.4-2.6z"/></svg>
+        <span>Analytics</span><svg class="star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0l2.6 9.4L24 12l-9.4 2.6L12 24l-2.6-9.4L0 12l9.4-2.6z"/></svg>
+        <em>Copywriting</em><svg class="star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0l2.6 9.4L24 12l-9.4 2.6L12 24l-2.6-9.4L0 12l9.4-2.6z"/></svg>
+      </div>
+    </div>
+  </div>
 
   <!-- ============ ABOUT ============ -->
   <section id="about">
     <div class="container">
-      <div class="section-head reveal">
-        <div class="eyebrow">
-          <span class="tag" style="background:var(--accent)"><span data-i18n="tag-about">Introduction</span></span>
+      <div class="section-head">
+        <div class="eyebrow reveal">
+          <span class="idx">01</span><span class="rule"></span>
+          <span class="tag"><span data-i18n="tag-about">Introduction</span></span>
         </div>
-        <h2 class="section-title" data-i18n="about-title">About Me</h2>
+        <h2 class="section-title split" data-i18n="about-title">About Me</h2>
       </div>
 
       <div class="about-grid">
-        <div class="about-text reveal">
-          <p data-i18n="about-p1">Three years managing social media end to end: from strategy and content creation to community management, paid ads, and performance reporting.</p>
-          <p data-i18n="about-p2">Good social media isn't just posting. It's about <strong>a system you can repeat</strong>, measure, and keep improving week after week.</p>
-          <p data-i18n="about-p3">I also lean on AI to move faster, and I share how I work with others on TikTok.</p>
-          <div class="about-focus">
+        <div class="about-text">
+          <p class="reveal" data-i18n="about-p1">Three years managing social media end to end: from strategy and content creation to community management, paid ads, and performance reporting.</p>
+          <p class="reveal" data-i18n="about-p2">Good social media isn't just posting. It's about <strong>a system you can repeat</strong>, measure, and keep improving week after week.</p>
+          <p class="reveal" data-i18n="about-p3">I also lean on AI to move faster, and I share how I work with others on TikTok.</p>
+          <div class="about-focus reveal">
             <span class="about-focus-label" data-i18n="about-focus">What I do</span>
             <div class="about-tags">
               <span class="about-tag">Social Media Management</span>
@@ -292,9 +496,9 @@
           </div>
         </div>
 
-        <div class="about-side reveal">
-          <div class="photo-frame">
-            <img src="assets/profile.jpg" alt="Upridzal — Social Media Manager and Content Creator" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+        <div class="about-side">
+          <div class="photo-frame" id="photoFrame">
+            <img src="assets/profile.jpg" alt="Upridzal, Social Media Manager and Content Creator" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
             <div class="photo-fallback" style="display:none">Add photo</div>
           </div>
           <div class="photo-caption">
@@ -304,16 +508,16 @@
         </div>
       </div>
 
-      <div class="stats-strip reveal">
-        <div class="stat">
-          <div class="stat-num" data-count="3" data-suffix="+">0</div>
+      <div class="stats-strip">
+        <div class="stat reveal">
+          <div class="stat-num" data-count="3" data-suffix="+">3+</div>
           <div class="stat-label" data-i18n="stat1">Years of Experience</div>
         </div>
-        <div class="stat">
-          <div class="stat-num">100+</div>
+        <div class="stat reveal">
+          <div class="stat-num" data-count="100" data-suffix="+">100+</div>
           <div class="stat-label" data-i18n="stat2">Content Created</div>
         </div>
-        <div class="stat">
+        <div class="stat reveal">
           <div class="stat-num">∞</div>
           <div class="stat-label" data-i18n="stat3">Cups of Coffee</div>
         </div>
@@ -324,16 +528,18 @@
   <!-- ============ SKILLS ============ -->
   <section id="skills">
     <div class="container">
-      <div class="section-head reveal">
-        <div class="eyebrow">
-          <span class="tag tag-accent"><span data-i18n="tag-skills">Capabilities</span></span>
+      <div class="section-head">
+        <div class="eyebrow reveal">
+          <span class="idx">02</span><span class="rule"></span>
+          <span class="tag"><span data-i18n="tag-skills">Capabilities</span></span>
         </div>
-        <h2 class="section-title" data-i18n="skills-title">Skill Stack</h2>
-        <p class="section-desc" data-i18n="skills-desc">What I bring to every project.</p>
+        <h2 class="section-title split" data-i18n="skills-title">Skill Stack</h2>
+        <p class="section-desc reveal" data-i18n="skills-desc">What I bring to every project.</p>
       </div>
 
       <div class="skill-groups">
         <div class="skill-group reveal">
+          <span class="skill-num">(01)</span>
           <h3>Strategy</h3>
           <div class="pills">
             <span class="pill">Social Media Strategy</span>
@@ -342,8 +548,8 @@
             <span class="pill">Brand Positioning</span>
           </div>
         </div>
-
         <div class="skill-group reveal">
+          <span class="skill-num">(02)</span>
           <h3>Content &amp; Creative</h3>
           <div class="pills">
             <span class="pill">Content Creation</span>
@@ -352,8 +558,8 @@
             <span class="pill">Carousel Design</span>
           </div>
         </div>
-
         <div class="skill-group reveal">
+          <span class="skill-num">(03)</span>
           <h3>Community &amp; Ads</h3>
           <div class="pills">
             <span class="pill">Community Management</span>
@@ -362,8 +568,8 @@
             <span class="pill">TikTok Ads</span>
           </div>
         </div>
-
         <div class="skill-group reveal">
+          <span class="skill-num">(04)</span>
           <h3>Analytics &amp; Tools</h3>
           <div class="pills">
             <span class="pill">Performance Reporting</span>
@@ -381,12 +587,13 @@
   <!-- ============ WORKS ============ -->
   <section id="work">
     <div class="container">
-      <div class="section-head reveal">
-        <div class="eyebrow">
-          <span class="tag tag-accent"><span data-i18n="tag-works">The Work</span></span>
+      <div class="section-head">
+        <div class="eyebrow reveal">
+          <span class="idx">03</span><span class="rule"></span>
+          <span class="tag"><span data-i18n="tag-works">The Work</span></span>
         </div>
-        <h2 class="section-title" data-i18n="works-title">Selected Works</h2>
-        <p class="section-desc" data-i18n="works-desc">A few projects I've worked on.</p>
+        <h2 class="section-title split" data-i18n="works-title">Selected Works</h2>
+        <p class="section-desc reveal" data-i18n="works-desc">A few projects I've worked on.</p>
       </div>
 
       <div class="works">
@@ -405,7 +612,7 @@
             </div>
             <div class="work-proofs">
               <a class="proof" href="assets/proof/fnb-tiktok-analytics.jpg" target="_blank" rel="noopener">
-                <img src="assets/proof/fnb-tiktok-analytics.jpg" alt="Analytics showing 1.4M post views in two months" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+                <img src="assets/proof/fnb-tiktok-analytics.jpg" alt="Analytics showing 1.4M post views in two months" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
                 <div class="placeholder" style="display:none"><i data-lucide="image"></i>Add proof</div>
                 <div class="proof-metric">1.4M<span>Post Views / 60 Days</span></div>
               </a>
@@ -415,7 +622,7 @@
               <a class="work-link" href="https://www.tiktok.com/@ghovigha/video/7650203214939196673" target="_blank" rel="noopener">TikTok 2 ↗</a>
             </div>
           </div>
-          <div class="work-arrow"><i data-lucide="arrow-up-right" style="width:20px;height:20px"></i></div>
+          <div class="work-arrow"><i data-lucide="arrow-up-right" style="width:18px;height:18px"></i></div>
         </article>
 
         <article class="work reveal">
@@ -434,7 +641,7 @@
             </div>
             <div class="work-proofs">
               <a class="proof" href="assets/proof/rsf-social.jpg" target="_blank" rel="noopener">
-                <img src="assets/proof/rsf-social.jpg" alt="Research Synergy Foundation Instagram" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+                <img src="assets/proof/rsf-social.jpg" alt="Research Synergy Foundation Instagram" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
                 <div class="placeholder" style="display:none"><i data-lucide="image"></i>Add proof</div>
                 <div class="proof-metric">IG<span>Social Media</span></div>
               </a>
@@ -444,7 +651,7 @@
               <a class="work-link" href="https://www.instagram.com/reels/DV8GoulgWGW/" target="_blank" rel="noopener">Reel 2 ↗</a>
             </div>
           </div>
-          <div class="work-arrow"><i data-lucide="arrow-up-right" style="width:20px;height:20px"></i></div>
+          <div class="work-arrow"><i data-lucide="arrow-up-right" style="width:18px;height:18px"></i></div>
         </article>
 
         <article class="work reveal">
@@ -463,12 +670,12 @@
             </div>
             <div class="work-proofs">
               <a class="proof" href="assets/proof/teman-ads-roas.jpg" target="_blank" rel="noopener">
-                <img src="assets/proof/teman-ads-roas.jpg" alt="Meta Ads ROAS dashboard" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+                <img src="assets/proof/teman-ads-roas.jpg" alt="Meta Ads ROAS dashboard" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
                 <div class="placeholder" style="display:none"><i data-lucide="image"></i>Add proof</div>
                 <div class="proof-metric">7x<span>ROAS Peak</span></div>
               </a>
               <a class="proof" href="assets/proof/teman-redesign.jpg" target="_blank" rel="noopener">
-                <img src="assets/proof/teman-redesign.jpg" alt="Instagram feed redesign before and after" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+                <img src="assets/proof/teman-redesign.jpg" alt="Instagram feed redesign before and after" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
                 <div class="placeholder" style="display:none"><i data-lucide="image"></i>Add proof</div>
                 <div class="proof-metric">↗<span>Feed Redesign</span></div>
               </a>
@@ -484,7 +691,7 @@
               <a class="work-link" href="https://www.instagram.com/p/DTsEMPmgSJu/" target="_blank" rel="noopener">Carousel 4 ↗</a>
             </div>
           </div>
-          <div class="work-arrow"><i data-lucide="arrow-up-right" style="width:20px;height:20px"></i></div>
+          <div class="work-arrow"><i data-lucide="arrow-up-right" style="width:18px;height:18px"></i></div>
         </article>
 
         <article class="work reveal">
@@ -503,12 +710,12 @@
             </div>
             <div class="work-proofs">
               <a class="proof" href="assets/proof/slamet-roas.jpg" target="_blank" rel="noopener">
-                <img src="assets/proof/slamet-roas.jpg" alt="Meta Ads ROAS dashboard" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+                <img src="assets/proof/slamet-roas.jpg" alt="Meta Ads ROAS dashboard" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
                 <div class="placeholder" style="display:none"><i data-lucide="image"></i>Add proof</div>
                 <div class="proof-metric">13<span>ROAS</span></div>
               </a>
               <a class="proof" href="assets/proof/slamet-followers.jpg" target="_blank" rel="noopener">
-                <img src="assets/proof/slamet-followers.jpg" alt="Followers growth" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+                <img src="assets/proof/slamet-followers.jpg" alt="Followers growth" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
                 <div class="placeholder" style="display:none"><i data-lucide="image"></i>Add proof</div>
                 <div class="proof-metric">500+<span>Followers / 2mo</span></div>
               </a>
@@ -517,7 +724,7 @@
               <a class="work-link" href="https://www.instagram.com/reels/DIqnSavSxww/" target="_blank" rel="noopener">Video Ad ↗</a>
             </div>
           </div>
-          <div class="work-arrow"><i data-lucide="arrow-up-right" style="width:20px;height:20px"></i></div>
+          <div class="work-arrow"><i data-lucide="arrow-up-right" style="width:18px;height:18px"></i></div>
         </article>
 
         <article class="work reveal">
@@ -535,12 +742,12 @@
             </div>
             <div class="work-proofs">
               <a class="proof" href="assets/proof/wts-tiktok.jpg" target="_blank" rel="noopener">
-                <img src="assets/proof/wts-tiktok.jpg" alt="TikTok analytics 54K post views in 90 days" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+                <img src="assets/proof/wts-tiktok.jpg" alt="TikTok analytics 54K post views in 90 days" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
                 <div class="placeholder" style="display:none"><i data-lucide="image"></i>Add proof</div>
                 <div class="proof-metric">54K<span>TikTok Views / 90d</span></div>
               </a>
               <a class="proof" href="assets/proof/wts-instagram.jpg" target="_blank" rel="noopener">
-                <img src="assets/proof/wts-instagram.jpg" alt="Instagram views" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+                <img src="assets/proof/wts-instagram.jpg" alt="Instagram views" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
                 <div class="placeholder" style="display:none"><i data-lucide="image"></i>Add proof</div>
                 <div class="proof-metric">1K+<span>IG / Video</span></div>
               </a>
@@ -549,7 +756,7 @@
               <a class="work-link" href="https://www.tiktok.com/@wanttosayang_/video/7612611539060673793" target="_blank" rel="noopener">TikTok ↗</a>
             </div>
           </div>
-          <div class="work-arrow"><i data-lucide="arrow-up-right" style="width:20px;height:20px"></i></div>
+          <div class="work-arrow"><i data-lucide="arrow-up-right" style="width:18px;height:18px"></i></div>
         </article>
 
         <article class="work reveal">
@@ -567,7 +774,7 @@
               <a class="work-link" href="https://www.tiktok.com/@ynclar/video/7444911826183261495" target="_blank" rel="noopener">TikTok 3 ↗</a>
             </div>
           </div>
-          <div class="work-arrow"><i data-lucide="arrow-up-right" style="width:20px;height:20px"></i></div>
+          <div class="work-arrow"><i data-lucide="arrow-up-right" style="width:18px;height:18px"></i></div>
         </article>
 
         <article class="work reveal">
@@ -583,7 +790,7 @@
               <a class="work-link" href="https://www.instagram.com/p/DLPi5tAvpNV/" target="_blank" rel="noopener">Video Ad ↗</a>
             </div>
           </div>
-          <div class="work-arrow"><i data-lucide="arrow-up-right" style="width:20px;height:20px"></i></div>
+          <div class="work-arrow"><i data-lucide="arrow-up-right" style="width:18px;height:18px"></i></div>
         </article>
 
         <article class="work reveal">
@@ -596,7 +803,7 @@
             <span class="work-tag">Vibe Coding</span>
             <p class="work-desc" data-i18n="desc-port">This site itself, built with vanilla HTML/CSS/JS and AI-assisted development as a showcase of vibe coding skills.</p>
           </div>
-          <div class="work-arrow"><i data-lucide="arrow-up-right" style="width:20px;height:20px"></i></div>
+          <div class="work-arrow"><i data-lucide="arrow-up-right" style="width:18px;height:18px"></i></div>
         </article>
       </div>
     </div>
@@ -605,29 +812,37 @@
   <!-- ============ SERVICES ============ -->
   <section id="services">
     <div class="container">
-      <div class="section-head reveal">
-        <div class="eyebrow">
-          <span class="tag tag-accent"><span data-i18n="tag-services">What I Offer</span></span>
+      <div class="section-head">
+        <div class="eyebrow reveal">
+          <span class="idx">04</span><span class="rule"></span>
+          <span class="tag"><span data-i18n="tag-services">What I Offer</span></span>
         </div>
-        <h2 class="section-title" data-i18n="svc-title">Services</h2>
-        <p class="section-desc" data-i18n="svc-desc">How I can help.</p>
+        <h2 class="section-title split" data-i18n="svc-title">Services</h2>
+        <p class="section-desc reveal" data-i18n="svc-desc">How I can help.</p>
       </div>
 
       <div class="services-grid">
         <div class="service reveal">
-          <div class="service-icon"><i data-lucide="layout-grid"></i></div>
+          <div class="service-top">
+            <div class="service-icon"><i data-lucide="layout-grid"></i></div>
+            <span class="service-idx">(01)</span>
+          </div>
           <h3 data-i18n="svc1-title">Social Media Management</h3>
           <p data-i18n="svc1-desc">End-to-end handling of your accounts: strategy, content calendar, posting, community management, and monthly reporting. A social presence that runs consistently.</p>
         </div>
-
         <div class="service reveal">
-          <div class="service-icon"><i data-lucide="clapperboard"></i></div>
+          <div class="service-top">
+            <div class="service-icon"><i data-lucide="clapperboard"></i></div>
+            <span class="service-idx">(02)</span>
+          </div>
           <h3 data-i18n="svc2-title">Content Creation</h3>
           <p data-i18n="svc2-desc">From concept to finished asset: copywriting, carousels, and short-form video. On-brand content with a clear direction, ready to publish.</p>
         </div>
-
         <div class="service reveal">
-          <div class="service-icon"><i data-lucide="trending-up"></i></div>
+          <div class="service-top">
+            <div class="service-icon"><i data-lucide="trending-up"></i></div>
+            <span class="service-idx">(03)</span>
+          </div>
           <h3 data-i18n="svc3-title">Paid Ads &amp; Growth</h3>
           <p data-i18n="svc3-desc">Meta and TikTok ads managed for real results: setup, optimization, and reporting. ROAS-focused, not vanity metrics.</p>
         </div>
@@ -637,27 +852,29 @@
 
   <!-- ============ CTA ============ -->
   <section class="cta" id="contact">
-    <div class="container">
+    <div class="cta-marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <div class="marquee-item"><span>Let's talk</span><em>—</em><span>Let's create</span><em>—</em></div>
+        <div class="marquee-item"><span>Let's talk</span><em>—</em><span>Let's create</span><em>—</em></div>
+      </div>
+    </div>
+    <div class="container cta-inner">
+      <h2 class="cta-title reveal">
+        <span data-i18n="cta-h1">Got a project?</span><br>
+        <span class="mark" data-i18n="cta-h2">Let's talk.</span>
+      </h2>
       <div class="reveal">
-        <h2 class="cta-title">
-          <span data-i18n="cta-h1">Got a project?</span><br>
-          <span class="mark" data-i18n="cta-h2">Let's talk.</span>
-        </h2>
-        <p class="cta-desc" data-i18n="cta-desc">
-          Open for freelance projects, collaborations, and quick consultations.
-        </p>
-
+        <p class="cta-desc" data-i18n="cta-desc">Open for freelance projects, collaborations, and quick consultations.</p>
         <div class="cta-ctas">
-          <a href="http://wa.me/6281220694447" target="_blank" rel="noopener" class="btn btn-primary">
+          <a href="http://wa.me/6281220694447" target="_blank" rel="noopener" class="btn btn-primary magnetic">
             <i data-lucide="message-circle" style="width:16px;height:16px"></i>
             <span data-i18n="cta-wa">Chat on WhatsApp</span>
           </a>
-          <a href="mailto:upridzalpratama@gmail.com" class="btn btn-paper">
+          <a href="mailto:upridzalpratama@gmail.com" class="btn magnetic">
             <i data-lucide="mail" style="width:16px;height:16px"></i>
             <span data-i18n="cta-email">Send an Email</span>
           </a>
         </div>
-
         <div class="socials">
           <a href="https://tiktok.com/@upridzal" target="_blank" rel="noopener">
             <i data-lucide="music-2" style="width:15px;height:15px"></i>
@@ -678,31 +895,36 @@
 
   <!-- ============ FOOTER ============ -->
   <footer>
-    <div class="container">
+    <div class="container footer-inner">
       <p class="tagline">Built with vibe. Driven by strategy<span class="x">.</span></p>
+      <a href="#hero" class="to-top" data-scroll><span data-i18n="to-top">Back to top</span> ↑</a>
     </div>
   </footer>
 
+  <script src="https://unpkg.com/lucide@0.441.0/dist/umd/lucide.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+
   <script>
-    // Initialize Lucide icons
-    lucide.createIcons();
+    if (window.lucide) lucide.createIcons();
 
     // ============ i18n TRANSLATIONS ============
     const translations = {
       en: {
         'nav-about': 'About', 'nav-skills': 'Skills', 'nav-work': 'Work',
         'nav-services': 'Services', 'nav-contact': 'Contact',
-        'hero-label': 'Social Media Manager',
+        'hero-label': 'Social Media Manager', 'hero-label2': 'Content Creator',
         'hero-avail': 'Available for projects',
-        'hero-label2': 'Content Creator', 'about-role': 'Social Media Manager & Content Creator', 'about-focus': 'Yang saya kerjakan', 'about-focus': 'What I do',
-        'brands-label': "Brands I've worked with & helped grow", 'brands-more': '& many more',
         'hero-h1a': 'I manage', 'hero-h1b': 'social media',
         'hero-h1c': 'from strategy to',
         'hero-cta1': 'See My Work', 'hero-cta2': 'Get in Touch',
+        'meta-views': 'Views generated', 'meta-roas': 'Peak ROAS', 'meta-years': 'Years',
         'tag-about': 'Introduction', 'about-title': 'About Me',
         'about-p1': 'Three years managing social media end to end: from strategy and content creation to community management, paid ads, and performance reporting.',
         'about-p2': "Good social media isn't just posting. It's about <strong>a system you can repeat</strong>, measure, and keep improving week after week.",
         'about-p3': 'I also lean on AI to move faster, and I share how I work with others on TikTok.',
+        'about-focus': 'What I do', 'about-role': 'Social Media Manager & Content Creator',
         'stat1': 'Years of Experience', 'stat2': 'Content Created', 'stat3': 'Cups of Coffee',
         'tag-skills': 'Capabilities', 'skills-title': 'Skill Stack',
         'skills-desc': 'What I bring to every project.',
@@ -713,19 +935,12 @@
         'dur-rsf': 'January 2025 to Present',
         'desc-rsf': 'Drove targeted email marketing campaigns with a 21% open rate to boost event conversions. Also led marketing planning and management, contributing to a 9% year-over-year profit growth. A key lesson from here: good design is not about looking good, design that fits the target market is what actually works.',
         'dur-tp': 'October 2025 to Present',
-        'desc-tp': 'Ran Meta Ads campaigns targeting researchers and academics, consistently achieving ROAS above 3x and peaking at 7x. Also initiated a full Instagram feed redesign to elevate the brand\'s visual identity, resulting in a more cohesive look that improved content engagement.',
+        'desc-tp': "Ran Meta Ads campaigns targeting researchers and academics, consistently achieving ROAS above 3x and peaking at 7x. Also initiated a full Instagram feed redesign to elevate the brand's visual identity, resulting in a more cohesive look that improved content engagement.",
         'dur-sm': 'March 2025 to May 2025',
         'desc-sm': 'Built a new social media account from zero to 500+ followers in two months, generating hundreds of leads with a ROAS of 13.',
         'dur-wts': '2024',
         'desc-wts': 'Developed a video content strategy for a blind date event organizer and relationship consultancy. After noticing static romance-quote posts underperformed, I pivoted to a casual, conversational format featuring 2 to 3 people discussing relatable romance topics. The format consistently drove 1,000+ views on Instagram and peaked at 29,000+ views on TikTok.',
         'desc-port': 'This site itself, built with vanilla HTML/CSS/JS and AI-assisted development as a showcase of vibe coding skills.',
-        'nav-videos': 'Videos',
-        'tag-videos': 'Motion', 'videos-title': 'Video Work', 'videos-desc': "I produce content end-to-end, far more than what's shown here. These are simply the ones I'm personally most proud of.",
-        'vc-tiktok': 'Six videos', 'vc-ig': 'Four reels',
-        'vp-ads': 'Video Ads', 'vc-ads': 'Four videos',
-        'ig-reel': 'Reel', 'ig-post': 'Post', 'ig-ad': 'Video Ad', 'ig-open': 'Open on Instagram ↗',
-        'nav-design': 'Design',
-        'tag-design': 'Visuals', 'design-title': 'Design Work', 'design-desc': "Carousels, graphics, and visual content I've designed.", 'design-type': 'Carousel',
         'tag-services': 'What I Offer', 'svc-title': 'Services', 'svc-desc': 'How I can help.',
         'svc1-title': 'Social Media Management',
         'svc1-desc': 'End-to-end handling of your accounts: strategy, content calendar, posting, community management, and monthly reporting. A social presence that runs consistently.',
@@ -736,21 +951,22 @@
         'cta-h1': 'Got a project?', 'cta-h2': "Let's talk.",
         'cta-desc': 'Open for freelance projects, collaborations, and quick consultations.',
         'cta-wa': 'Chat on WhatsApp', 'cta-email': 'Send an Email',
+        'to-top': 'Back to top',
       },
       id: {
         'nav-about': 'Tentang', 'nav-skills': 'Keahlian', 'nav-work': 'Portofolio',
         'nav-services': 'Layanan', 'nav-contact': 'Kontak',
-        'hero-label': 'Social Media Manager',
+        'hero-label': 'Social Media Manager', 'hero-label2': 'Content Creator',
         'hero-avail': 'Tersedia untuk project',
-        'hero-label2': 'Content Creator', 'about-role': 'Social Media Manager & Content Creator',
-        'brands-label': 'Brand yang pernah saya bantu & ajak kerja sama', 'brands-more': '& banyak lagi',
         'hero-h1a': 'Saya kelola', 'hero-h1b': 'social media',
         'hero-h1c': 'dari strategi sampai',
         'hero-cta1': 'Lihat Karya', 'hero-cta2': 'Hubungi Saya',
+        'meta-views': 'Total tayangan', 'meta-roas': 'ROAS tertinggi', 'meta-years': 'Tahun',
         'tag-about': 'Perkenalan', 'about-title': 'Tentang Saya',
         'about-p1': 'Tiga tahun mengelola social media secara end to end: dari strategi dan pembuatan konten hingga community management, iklan berbayar, dan pelaporan performa.',
         'about-p2': 'Social media yang bagus bukan cuma soal posting. Ini soal <strong>sistem yang bisa diulang</strong>, diukur, dan terus diperbaiki minggu demi minggu.',
         'about-p3': 'Saya juga memanfaatkan AI biar kerja lebih cepat, dan berbagi caranya ke orang lain lewat TikTok.',
+        'about-focus': 'Yang saya kerjakan', 'about-role': 'Social Media Manager & Content Creator',
         'stat1': 'Tahun Pengalaman', 'stat2': 'Konten Dibuat', 'stat3': 'Kopi yang Habis',
         'tag-skills': 'Kapabilitas', 'skills-title': 'Skill Stack',
         'skills-desc': 'Yang saya bawa ke setiap project.',
@@ -767,13 +983,6 @@
         'dur-wts': '2024',
         'desc-wts': 'Mengembangkan strategi konten video untuk penyelenggara blind date dan konsultasi hubungan. Setelah memperhatikan postingan quote romansa tidak performa, saya pivot ke format percakapan santai menampilkan 2 sampai 3 orang membahas topik romansa yang relatable. Format ini secara konsisten meraih 1.000+ tayangan di Instagram dan puncaknya 29.000+ tayangan di TikTok.',
         'desc-port': 'Website ini sendiri, dibangun dengan HTML/CSS/JS murni menggunakan AI-assisted development sebagai showcase kemampuan vibe coding.',
-        'nav-videos': 'Video',
-        'tag-videos': 'Video', 'videos-title': 'Karya Video', 'videos-desc': 'Saya memproduksi konten end-to-end, jauh lebih banyak dari yang ditampilkan di sini. Ini sekadar yang paling saya suka secara personal.',
-        'vc-tiktok': 'Enam video', 'vc-ig': 'Empat reel',
-        'vp-ads': 'Video Ads', 'vc-ads': 'Empat video',
-        'ig-reel': 'Reel', 'ig-post': 'Post', 'ig-ad': 'Iklan Video', 'ig-open': 'Buka di Instagram ↗',
-        'nav-design': 'Desain',
-        'tag-design': 'Visual', 'design-title': 'Karya Desain', 'design-desc': 'Carousel, grafis, dan konten visual yang saya desain.', 'design-type': 'Carousel',
         'tag-services': 'Yang Saya Tawarkan', 'svc-title': 'Layanan', 'svc-desc': 'Apa yang bisa saya bantu.',
         'svc1-title': 'Manajemen Social Media',
         'svc1-desc': 'Pengelolaan akun secara end-to-end: strategi, content calendar, posting, community management, dan laporan bulanan. Social media kamu jalan konsisten.',
@@ -784,10 +993,12 @@
         'cta-h1': 'Punya project?', 'cta-h2': 'Mari ngobrol.',
         'cta-desc': 'Terbuka untuk project freelance, kolaborasi, dan konsultasi singkat.',
         'cta-wa': 'Chat via WhatsApp', 'cta-email': 'Kirim Email',
+        'to-top': 'Kembali ke atas',
       }
     };
 
     let currentLang = 'en';
+    let phrases = ['content.', 'community.', 'ads.', 'reporting.'];
 
     function toggleLang() {
       currentLang = currentLang === 'en' ? 'id' : 'en';
@@ -798,117 +1009,286 @@
       phrases = currentLang === 'id'
         ? ['konten.', 'komunitas.', 'iklan.', 'laporan.']
         : ['content.', 'community.', 'ads.', 'reporting.'];
+      document.documentElement.lang = currentLang;
     }
 
     function applyLang(lang) {
       document.querySelectorAll('[data-i18n]').forEach(el => {
         const key = el.getAttribute('data-i18n');
-        if (translations[lang][key] !== undefined) {
-          el.innerHTML = translations[lang][key];
-        }
+        if (translations[lang][key] !== undefined) el.innerHTML = translations[lang][key];
       });
     }
 
-    // ============ NAVBAR SCROLL ============
+    // ============ ENVIRONMENT ============
+    const root = document.documentElement;
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+    const hasGsap = !!(window.gsap && window.ScrollTrigger);
+    if (!hasGsap) root.classList.add('no-gsap');
+
+    // ============ NAVBAR ============
     const navbar = document.getElementById('navbar');
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 30) navbar.classList.add('scrolled');
-      else navbar.classList.remove('scrolled');
-    });
+    const progress = document.querySelector('.progress');
+    let lastY = 0;
+    function onScroll(y) {
+      navbar.classList.toggle('scrolled', y > 30);
+      navbar.classList.toggle('hidden', y > lastY && y > 500 && !navMenu.classList.contains('open'));
+      lastY = y;
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+      progress.style.transform = `scaleX(${max > 0 ? y / max : 0})`;
+      updateActiveNav(y);
+    }
 
     // ============ MOBILE MENU ============
     const hamburger = document.getElementById('hamburger');
     const navMenu = document.getElementById('navMenu');
+    function setMenuIcon(name) {
+      hamburger.innerHTML = `<i data-lucide="${name}"></i>`;
+      if (window.lucide) lucide.createIcons();
+    }
     hamburger.addEventListener('click', () => {
       navMenu.classList.toggle('open');
-      const icon = navMenu.classList.contains('open') ? 'x' : 'menu';
-      hamburger.innerHTML = `<i data-lucide="${icon}"></i>`;
-      lucide.createIcons();
-    });
-    document.querySelectorAll('[data-link]').forEach(a => {
-      a.addEventListener('click', () => {
-        navMenu.classList.remove('open');
-        hamburger.innerHTML = `<i data-lucide="menu"></i>`;
-        lucide.createIcons();
-      });
+      setMenuIcon(navMenu.classList.contains('open') ? 'x' : 'menu');
     });
 
-    // ============ ACTIVE NAV ON SCROLL ============
-    const sections = ['hero', 'about', 'skills', 'work', 'services', 'contact'];
+    // ============ ACTIVE NAV ============
+    const sectionIds = ['hero', 'about', 'skills', 'work', 'services', 'contact'];
     const navLinks = document.querySelectorAll('.nav-menu a');
-    window.addEventListener('scroll', () => {
+    function updateActiveNav(y) {
       let current = 'hero';
-      sections.forEach(id => {
+      sectionIds.forEach(id => {
         const el = document.getElementById(id);
-        if (el && window.scrollY >= el.offsetTop - 200) current = id;
+        if (el && y >= el.offsetTop - 220) current = id;
       });
-      navLinks.forEach(link => {
-        link.classList.toggle('active', link.getAttribute('href') === `#${current}`);
+      navLinks.forEach(link => link.classList.toggle('active', link.getAttribute('href') === `#${current}`));
+    }
+
+    // ============ SMOOTH SCROLL (Lenis) ============
+    let lenis = null;
+    if (window.Lenis && !reduceMotion) {
+      lenis = new Lenis({ duration: 1.15, easing: t => Math.min(1, 1.001 - Math.pow(2, -10 * t)) });
+      lenis.on('scroll', ({ scroll }) => onScroll(scroll));
+      if (hasGsap) {
+        lenis.on('scroll', ScrollTrigger.update);
+        gsap.ticker.add(time => lenis.raf(time * 1000));
+        gsap.ticker.lagSmoothing(0);
+      } else {
+        const raf = time => { lenis.raf(time); requestAnimationFrame(raf); };
+        requestAnimationFrame(raf);
+      }
+    } else {
+      window.addEventListener('scroll', () => onScroll(window.scrollY), { passive: true });
+    }
+    document.querySelectorAll('[data-scroll]').forEach(a => {
+      a.addEventListener('click', e => {
+        const target = document.querySelector(a.getAttribute('href'));
+        if (!target) return;
+        e.preventDefault();
+        navMenu.classList.remove('open');
+        setMenuIcon('menu');
+        if (lenis) lenis.scrollTo(target, { offset: -70 });
+        else target.scrollIntoView({ behavior: 'smooth' });
       });
     });
 
     // ============ TYPEWRITER ============
     const typewriterEl = document.getElementById('typewriter');
-    let phrases = ['content.', 'community.', 'ads.', 'reporting.'];
     let phraseIdx = 0, charIdx = 0, deleting = false;
-
     function typeLoop() {
-      const current = phrases[phraseIdx];
+      const current = phrases[phraseIdx % phrases.length];
       if (!deleting) {
         typewriterEl.textContent = current.slice(0, ++charIdx);
-        if (charIdx === current.length) {
-          deleting = true;
-          setTimeout(typeLoop, 1800);
-          return;
-        }
+        if (charIdx >= current.length) { deleting = true; setTimeout(typeLoop, 1800); return; }
       } else {
         typewriterEl.textContent = current.slice(0, --charIdx);
-        if (charIdx === 0) {
-          deleting = false;
-          phraseIdx = (phraseIdx + 1) % phrases.length;
-        }
+        if (charIdx <= 0) { deleting = false; phraseIdx = (phraseIdx + 1) % phrases.length; }
       }
       setTimeout(typeLoop, deleting ? 40 : 75);
     }
-    typeLoop();
 
-    // ============ SCROLL REVEAL ============
-    const reveals = document.querySelectorAll('.reveal');
-    const observer = new IntersectionObserver((entries) => {
+    // ============ GENERIC REVEAL ============
+    const revealObserver = new IntersectionObserver(entries => {
       entries.forEach(e => {
-        if (e.isIntersecting) {
-          e.target.classList.add('visible');
-          observer.unobserve(e.target);
+        if (!e.isIntersecting) return;
+        const el = e.target;
+        el.classList.add('visible');
+        revealObserver.unobserve(el);
+        // drop the stagger delay once revealed so hover transitions feel instant
+        setTimeout(() => { el.style.transitionDelay = ''; }, 1600);
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -8% 0px' });
+    document.querySelectorAll('.reveal').forEach(el => {
+      // small stagger for siblings in the same parent
+      const sibIndex = [...el.parentElement.children].filter(c => c.classList.contains('reveal')).indexOf(el);
+      el.style.transitionDelay = `${Math.min(sibIndex, 5) * 80}ms`;
+      revealObserver.observe(el);
+    });
+
+    // ============ COUNTERS ============
+    const counterObserver = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (!e.isIntersecting) return;
+        const el = e.target, target = parseInt(el.dataset.count), suffix = el.dataset.suffix || '';
+        const start = performance.now(), duration = 1800;
+        (function frame(now) {
+          const p = Math.min((now - start) / duration, 1);
+          el.textContent = Math.round((1 - Math.pow(1 - p, 4)) * target) + suffix;
+          if (p < 1) requestAnimationFrame(frame);
+        })(start);
+        counterObserver.unobserve(el);
+      });
+    }, { threshold: 0.5 });
+    if (!reduceMotion) document.querySelectorAll('[data-count]').forEach(c => counterObserver.observe(c));
+
+    // ============ SPOTLIGHT CARDS ============
+    document.querySelectorAll('.work, .service').forEach(card => {
+      card.addEventListener('pointermove', e => {
+        const r = card.getBoundingClientRect();
+        card.style.setProperty('--mx', `${e.clientX - r.left}px`);
+        card.style.setProperty('--my', `${e.clientY - r.top}px`);
+      });
+    });
+
+    // ============ POINTER EFFECTS (desktop only) ============
+    if (finePointer && !reduceMotion) {
+      const cursor = document.querySelector('.cursor');
+      const glow = document.querySelector('.hero-glow');
+      const hero = document.getElementById('hero');
+      let mx = window.innerWidth / 2, my = window.innerHeight / 2, cx = mx, cy = my, gx = mx, gy = my;
+      window.addEventListener('pointermove', e => { mx = e.clientX; my = e.clientY; });
+      (function loop() {
+        cx += (mx - cx) * 0.18; cy += (my - cy) * 0.18;
+        cursor.style.transform = `translate3d(${cx}px, ${cy}px, 0)`;
+        const hr = hero.getBoundingClientRect();
+        gx += (mx - gx) * 0.06; gy += (my - hr.top - gy) * 0.06;
+        glow.style.transform = `translate3d(${gx}px, ${gy}px, 0)`;
+        requestAnimationFrame(loop);
+      })();
+      document.querySelectorAll('a, button, .pill, .about-tag').forEach(el => {
+        el.addEventListener('pointerenter', () => cursor.classList.add('is-hover'));
+        el.addEventListener('pointerleave', () => cursor.classList.remove('is-hover'));
+      });
+
+      // Magnetic buttons
+      document.querySelectorAll('.magnetic').forEach(btn => {
+        btn.addEventListener('pointermove', e => {
+          const r = btn.getBoundingClientRect();
+          const x = (e.clientX - r.left - r.width / 2) * 0.3;
+          const y = (e.clientY - r.top - r.height / 2) * 0.4;
+          btn.style.transform = `translate(${x}px, ${y}px)`;
+        });
+        btn.addEventListener('pointerleave', () => {
+          btn.style.transition = 'transform .6s cubic-bezier(.22,1,.36,1), color .45s, border-color .45s';
+          btn.style.transform = '';
+          setTimeout(() => { btn.style.transition = ''; }, 600);
+        });
+      });
+
+      // Subtle 3D tilt on service cards
+      document.querySelectorAll('.service').forEach(card => {
+        card.addEventListener('pointermove', e => {
+          const r = card.getBoundingClientRect();
+          const rx = ((e.clientY - r.top) / r.height - 0.5) * -6;
+          const ry = ((e.clientX - r.left) / r.width - 0.5) * 6;
+          card.style.transform = `perspective(900px) rotateX(${rx}deg) rotateY(${ry}deg)`;
+        });
+        card.addEventListener('pointerleave', () => { card.style.transform = ''; });
+      });
+    }
+
+    // ============ SPLIT TITLES INTO MASKED WORDS ============
+    function splitWords(el) {
+      const words = el.textContent.trim().split(/\s+/);
+      el.innerHTML = words.map(w => `<span class="w"><span>${w}</span></span>`).join(' ');
+      return el.querySelectorAll('.w > span');
+    }
+
+    // ============ GSAP TIMELINES ============
+    function heroIntro() {
+      if (!hasGsap || reduceMotion) { typeLoop(); return; }
+      const tl = gsap.timeline({ defaults: { ease: 'expo.out' } });
+      tl.to('.hero-title .hl-in', { y: 0, duration: 1.4, stagger: 0.12 })
+        .to('.hero-tagrow .tag', { opacity: 1, y: 0, duration: 1, stagger: 0.08, startAt: { y: 14 } }, '-=1.15')
+        .to(['.hero-sub', '.hero-ctas', '.hero-meta'], { opacity: 1, y: 0, duration: 1.1, stagger: 0.1, startAt: { y: 24 } }, '-=1')
+        .to('.scroll-cue', { opacity: 1, duration: 1 }, '-=0.6')
+        .add(typeLoop, 0.5);
+    }
+
+    function setupScrollAnimations() {
+      if (!hasGsap || reduceMotion) return;
+      gsap.registerPlugin(ScrollTrigger);
+
+      // Section titles: masked word rise
+      document.querySelectorAll('.section-title.split').forEach(title => {
+        const words = splitWords(title);
+        gsap.set(words, { yPercent: 110 });
+        gsap.to(words, {
+          yPercent: 0, duration: 1.2, ease: 'expo.out', stagger: 0.08,
+          scrollTrigger: { trigger: title, start: 'top 85%' }
+        });
+      });
+
+      // Photo: clip-path reveal + parallax
+      const frame = document.getElementById('photoFrame');
+      gsap.to(frame, { clipPath: 'inset(0% 0 0 0)', duration: 1.6, ease: 'expo.inOut', scrollTrigger: { trigger: frame, start: 'top 80%' } });
+      gsap.fromTo(frame.querySelector('img'), { yPercent: -8 }, {
+        yPercent: 0, ease: 'none',
+        scrollTrigger: { trigger: frame, start: 'top bottom', end: 'bottom top', scrub: true }
+      });
+
+      // Hero content drifts up and fades as you scroll away
+      gsap.to('.hero .container', {
+        yPercent: -14, opacity: 0.25, ease: 'none',
+        scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true }
+      });
+
+      // Velocity-reactive skill marquee
+      const track = document.querySelector('#skillMarquee .marquee-track');
+      const loop = gsap.to(track, { xPercent: -50, duration: 32, ease: 'none', repeat: -1 });
+      let direction = 1;
+      ScrollTrigger.create({
+        onUpdate: self => {
+          const v = self.getVelocity();
+          if (v !== 0) direction = v > 0 ? 1 : -1;
+          const boost = gsap.utils.clamp(1, 6, 1 + Math.abs(v) / 400);
+          gsap.to(loop, { timeScale: boost * direction, duration: 0.3, overwrite: true });
+          gsap.to(loop, { timeScale: direction, duration: 1.2, delay: 0.3 });
         }
       });
-    }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
-    reveals.forEach(el => observer.observe(el));
+    }
 
-    // ============ COUNTER ANIMATION ============
-    const counters = document.querySelectorAll('[data-count]');
-    const counterObserver = new IntersectionObserver((entries) => {
-      entries.forEach(e => {
-        if (e.isIntersecting) {
-          const el = e.target;
-          const target = parseInt(el.dataset.count);
-          const suffix = el.dataset.suffix || '';
-          const duration = 1600;
-          const start = performance.now();
-          function frame(now) {
-            const p = Math.min((now - start) / duration, 1);
-            const eased = 1 - Math.pow(1 - p, 3);
-            el.textContent = Math.floor(eased * target).toLocaleString('id-ID') + suffix;
-            if (p < 1) requestAnimationFrame(frame);
-            else el.textContent = target.toLocaleString('id-ID') + suffix;
-          }
-          requestAnimationFrame(frame);
-          counterObserver.unobserve(el);
-        }
-      });
-    }, { threshold: 0.4 });
-    counters.forEach(c => counterObserver.observe(c));
+    // ============ PRELOADER ============
+    function runPreloader(done) {
+      const pre = document.querySelector('.preloader');
+      if (!hasGsap || reduceMotion || !root.classList.contains('js')) {
+        if (pre) pre.remove();
+        done();
+        return;
+      }
+      const countEl = document.getElementById('loadCount');
+      const counter = { v: 0 };
+      const tl = gsap.timeline({ onComplete: () => { pre.remove(); } });
+      tl.from('.preloader-name span', { yPercent: 110, duration: 0.9, ease: 'expo.out' })
+        .to(counter, {
+          v: 100, duration: 1.3, ease: 'power2.inOut',
+          onUpdate: () => { countEl.textContent = Math.round(counter.v); }
+        }, 0.1)
+        .to('.preloader-bar', { width: '100%', duration: 1.3, ease: 'power2.inOut' }, 0.1)
+        .to(pre, { yPercent: -100, duration: 1.1, ease: 'expo.inOut', onStart: done }, '+=0.15');
+    }
 
+    // Kick off once everything (fonts/images) is ready, with a safety fallback.
+    let started = false;
+    function start() {
+      if (started) return;
+      started = true;
+      setupScrollAnimations();
+      runPreloader(heroIntro);
+      onScroll(window.scrollY);
+    }
+    if (document.readyState === 'complete') start();
+    else window.addEventListener('load', start);
+    setTimeout(start, 3000);
   </script>
-
 </body>
 </html>
